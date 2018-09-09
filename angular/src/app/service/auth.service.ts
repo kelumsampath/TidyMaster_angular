@@ -84,4 +84,45 @@ getjobpost(postid){
   return this.http.post("http://localhost:3000/job/viewjob",postid,{headers:headers}).map(res=>res.json());
 }
 
+adminalljobposts(){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  return this.http.post("http://localhost:3000/job/adminalljobs",{headers:headers}).map(res=>res.json());
+}
+
+acceptpost(id){
+  const postid={
+    "postid":id
+  }
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  return this.http.post("http://localhost:3000/admin/acceptpost",postid,{headers:headers}).map(res=>res.json());
+}
+
+rejectpost(id){
+  const postid={
+    "postid":id
+  }
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  return this.http.post("http://localhost:3000/admin/rejectpost",postid,{headers:headers}).map(res=>res.json());
+}
+
+pendingpost(id){
+  const postid={
+    "postid":id
+  }
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  return this.http.post("http://localhost:3000/admin/pendingpost",postid,{headers:headers}).map(res=>res.json());
+}
+
 }
