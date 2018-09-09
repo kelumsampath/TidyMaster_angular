@@ -21,7 +21,7 @@ const applicationRoutes:Routes = [
   {path:'register',component:RegisterComponent},
   {path:'profile',component:ProfileComponent, canActivate: [AuthGuard]},
   {path:'jobpost',component:JobpostComponent, canActivate: [AuthGuard]},
-  {path:'viewjobs',component:RegisterComponent},
+  {path:'viewjobs',component:ViewjobsComponent},
 ];
 
 @NgModule({

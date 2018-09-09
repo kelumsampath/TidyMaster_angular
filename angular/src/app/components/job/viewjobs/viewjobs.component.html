@@ -1,3 +1,13 @@
-<p>
-  viewjobs works!
-</p>
+<div id="menuitem">
+  <ul *ngFor="let jobs of job;let i = index" [attr.data-index]="i">
+     <li>
+       <button  class="add">
+       <div id="menu">
+       
+       <h1> {{ jobs.title }}</h1>
+       <h1> {{ jobs.joblocation }}</h1>
+      </div>
+       </button>
+     </li>
+  </ul>
+</div>
