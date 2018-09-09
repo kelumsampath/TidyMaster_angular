@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 })
 export class AdminpenalComponent implements OnInit {
 job:any;
-
+reason:String;
+postid:String;
   constructor(
     private authservice:AuthService,
     private ngFlashMessageService: NgFlashMessageService,
@@ -36,7 +37,12 @@ getpost(){
 })
 }
 accept(postid){
-  this.authservice.acceptpost(postid).subscribe(res=>{
+  this.reason = prompt("Please enter reason", "correct");
+  const review={
+    "postid":postid,
+    "reason":this.reason
+  }
+  this.authservice.acceptpost(review).subscribe(res=>{
     if(res.state){
      this.getpost();
     }
@@ -47,7 +53,12 @@ accept(postid){
 }
 
 reject(postid){
-  this.authservice.rejectpost(postid).subscribe(res=>{
+  this.reason = prompt("Please enter reason", "reject");
+  const review={
+    "postid":postid,
+    "reason":this.reason
+  }
+  this.authservice.rejectpost(review).subscribe(res=>{
     if(res.state){
      this.getpost();
     }
@@ -58,7 +69,12 @@ reject(postid){
 }
 
 pending(postid){
-  this.authservice.pendingpost(postid).subscribe(res=>{
+  this.reason = prompt("Please enter reason", "pending ");
+  const review={
+    "postid":postid,
+    "reason":this.reason
+  }
+  this.authservice.pendingpost(review).subscribe(res=>{
     if(res.state){
      this.getpost();
     }

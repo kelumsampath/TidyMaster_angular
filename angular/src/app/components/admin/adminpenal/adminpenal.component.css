@@ -37,3 +37,6 @@ ul{
 .statusbtn{
     text-align: right;
 }
+#reason{
+    width: 60%;
+}
