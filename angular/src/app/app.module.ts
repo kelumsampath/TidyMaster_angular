@@ -15,6 +15,8 @@ import { AuthService } from './service/auth.service';
 import { AuthGuard } from './service/auth.guard';
 import { JobpostComponent } from './components/job/jobpost/jobpost.component';
 import { ViewjobsComponent } from './components/job/viewjobs/viewjobs.component';
+import { JobdetailsComponent } from './components/job/jobdetails/jobdetails.component';
+import { AdminpenalComponent } from './components/admin/adminpenal/adminpenal.component';
 
 const applicationRoutes:Routes = [
   {path:'login',component:LoginComponent},
@@ -22,6 +24,9 @@ const applicationRoutes:Routes = [
   {path:'profile',component:ProfileComponent, canActivate: [AuthGuard]},
   {path:'jobpost',component:JobpostComponent, canActivate: [AuthGuard]},
   {path:'viewjobs',component:ViewjobsComponent},
+  {path:'viewjobs/:postid',component:JobdetailsComponent},
+  {path:'adminpanel',component:AdminpenalComponent, canActivate: [AuthGuard]},
+  {path:'adminpanel/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -32,7 +37,9 @@ const applicationRoutes:Routes = [
     RegisterComponent,
     ProfileComponent,
     JobpostComponent,
-    ViewjobsComponent
+    ViewjobsComponent,
+    JobdetailsComponent,
+    AdminpenalComponent
   ],
   imports: [
     BrowserModule,
