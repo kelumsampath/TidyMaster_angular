@@ -13,13 +13,15 @@ import { ProfileComponent } from './components/user/profile/profile.component';
 import { Router } from '@angular/router/src/router';
 import { AuthService } from './service/auth.service';
 import { AuthGuard } from './service/auth.guard';
-import { JobpostComponent } from './components/jobpost/jobpost.component';
+import { JobpostComponent } from './components/job/jobpost/jobpost.component';
+import { ViewjobsComponent } from './components/job/viewjobs/viewjobs.component';
 
 const applicationRoutes:Routes = [
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'profile',component:ProfileComponent, canActivate: [AuthGuard]},
-  {path:'jobpost',component:JobpostComponent},
+  {path:'jobpost',component:JobpostComponent, canActivate: [AuthGuard]},
+  {path:'viewjobs',component:RegisterComponent},
 ];
 
 @NgModule({
@@ -29,7 +31,8 @@ const applicationRoutes:Routes = [
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    JobpostComponent
+    JobpostComponent,
+    ViewjobsComponent
   ],
   imports: [
     BrowserModule,
