@@ -3,7 +3,7 @@
 <div id="menuitem">
   <ul *ngFor="let jobs of job">
      <li>
-       <button  class="add">
+       <button  [routerLink]="['/viewjobs',jobs.postid]" class="add">
        <div id="menu">
        
        <h1> {{ jobs.title }}</h1>

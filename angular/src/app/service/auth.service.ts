@@ -75,4 +75,13 @@ getalljobposts(){
   headers.append('content-Type','application/json');
   return this.http.post("http://localhost:3000/job/getalljobs",{headers:headers}).map(res=>res.json());
 }
+
+getjobpost(postid){
+  //this.fetchtoken();
+  let headers = new Headers();
+  //headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  return this.http.post("http://localhost:3000/job/viewjob",postid,{headers:headers}).map(res=>res.json());
+}
+
 }
