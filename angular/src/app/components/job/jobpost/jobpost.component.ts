@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../service/auth.service';
 import { NgFlashMessageService } from 'ng-flash-messages';
 import { Router } from '@angular/router';
+import { Time } from '@angular/common';
 
 @Component({
   selector: 'app-jobpost',
@@ -15,6 +16,9 @@ export class JobpostComponent implements OnInit {
   estimatedtime:String;
   joblocation:String;
   jobdate:Date;
+  levelofjob:String;
+  numberofcleaners:Number;
+  timeforstart:Time;
 
   constructor(
     private authservice:AuthService,
@@ -33,6 +37,9 @@ export class JobpostComponent implements OnInit {
       estimatedtime:this.estimatedtime,
       joblocation:this.joblocation,
       jobdate:this.jobdate,
+      levelofjob:this.levelofjob,
+      numberofcleaners:this.numberofcleaners,
+      timeforstart:this.timeforstart
     }
     this.authservice.postjob(job).subscribe(res=>{
       if(res.state){
