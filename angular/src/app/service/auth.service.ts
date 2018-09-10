@@ -60,4 +60,60 @@ loggedIn(){
   
 }
 
+postjob(job){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  return this.http.post("http://localhost:3000/job/jobpost",job,{headers:headers}).map(res=>res.json());
+}
+
+getalljobposts(){
+  //this.fetchtoken();
+  let headers = new Headers();
+  //headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  return this.http.post("http://localhost:3000/job/getalljobs",{headers:headers}).map(res=>res.json());
+}
+
+getjobpost(postid){
+  //this.fetchtoken();
+  let headers = new Headers();
+  //headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  return this.http.post("http://localhost:3000/job/viewjob",postid,{headers:headers}).map(res=>res.json());
+}
+
+adminalljobposts(){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  return this.http.post("http://localhost:3000/job/adminalljobs",{headers:headers}).map(res=>res.json());
+}
+
+acceptpost(review){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  return this.http.post("http://localhost:3000/admin/acceptpost",review,{headers:headers}).map(res=>res.json());
+}
+
+rejectpost(review){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  return this.http.post("http://localhost:3000/admin/rejectpost",review,{headers:headers}).map(res=>res.json());
+}
+
+pendingpost(review){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  return this.http.post("http://localhost:3000/admin/pendingpost",review,{headers:headers}).map(res=>res.json());
+}
+
 }

@@ -10,6 +10,9 @@
      
     </ul>
     <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/viewjobs']">View jobs <span class="sr-only">(current)</span></a>
+          </li>
         <li class="nav-item active" *ngIf='authservice.loggedIn()'>
             <a class="nav-link" [routerLink]="['/profile']">Profile <span class="sr-only">(current)</span></a>
           </li>
