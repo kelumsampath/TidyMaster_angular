@@ -9,9 +9,8 @@
     height: 200px;
     box-align:center;
     border-style: solid;
-    border-color: red; 
+    border-color: rgb(79,191,219); 
     text-align: center;
-    background-color: blue;
 }
 
 ul{
@@ -23,5 +22,4 @@ ul{
     width: 80%;
     margin-top: 3%;
     text-align: center;
-    background-color: aqua;
 }
