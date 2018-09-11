@@ -1,11 +1,11 @@
+nav{
+    background-color:rgba(0, 0, 0, 0.7);list-style-type: none;overflow: hidden;padding:10px;
+}
 nav a:hover{
     color:rgb(79,191,219);
-    border: 1.5px solid rgb(255, 255, 255);
-    transition:all 0.25s ease-in;
     padding: 9px 9px;
-    border-radius: 10px;
 }
-div ul li a:hover{
+nav div ul li a:hover{
     color:rgb(79,191,219);
     border: 1.5px solid rgb(255, 255, 255);
     transition:all 0.25s ease-in;

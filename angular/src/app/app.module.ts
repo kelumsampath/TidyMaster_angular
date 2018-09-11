@@ -17,8 +17,10 @@ import { JobpostComponent } from './components/job/jobpost/jobpost.component';
 import { ViewjobsComponent } from './components/job/viewjobs/viewjobs.component';
 import { JobdetailsComponent } from './components/job/jobdetails/jobdetails.component';
 import { AdminpenalComponent } from './components/admin/adminpenal/adminpenal.component';
+import { HomeComponent } from './components/home/home.component';
 
 const applicationRoutes:Routes = [
+  {path:'home',component:HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'profile',component:ProfileComponent, canActivate: [AuthGuard]},
@@ -27,6 +29,7 @@ const applicationRoutes:Routes = [
   {path:'viewjobs/:postid',component:JobdetailsComponent},
   {path:'adminpanel',component:AdminpenalComponent, canActivate: [AuthGuard]},
   {path:'adminpanel/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
+  {path:'',redirectTo:'/home',pathMatch:'full'},
 ];
 
 @NgModule({
@@ -39,7 +42,8 @@ const applicationRoutes:Routes = [
     JobpostComponent,
     ViewjobsComponent,
     JobdetailsComponent,
-    AdminpenalComponent
+    AdminpenalComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
