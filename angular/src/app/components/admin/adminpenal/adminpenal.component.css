@@ -9,18 +9,21 @@
     height: 200px;
     box-align:center;
     border-style: solid;
-    border-color: red; 
+    border-color: rgb(79,191,219); 
     text-align: center;
     
 }
 .accepted{
     background-color: lawngreen;
+    opacity: 0.8;
 }
 .rejected{
     background-color: lightcoral;
+    opacity: 0.8;
 }
 .pending{
     background-color: lightyellow;
+    opacity: 0.8;
 }
 
 ul{

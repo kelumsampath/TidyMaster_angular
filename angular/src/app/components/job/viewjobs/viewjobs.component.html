@@ -1,9 +1,9 @@
-<div class="outerbox">
+<div class="outerbox" style="background-color:rgba(255, 255, 255, 0.7)">
   <h2>All JOB POSTS</h2>
 <div id="menuitem">
   <ul *ngFor="let jobs of job">
      <li>
-       <button  [routerLink]="['/viewjobs',jobs.postid]" class="add">
+       <button  [routerLink]="['/viewjobs',jobs.postid]" class="add" style="background-color:rgba(255, 255, 255, 0.7)">
        <div id="menu">
        
        <h1> {{ jobs.title }}</h1>
