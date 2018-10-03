@@ -14,13 +14,13 @@ export class AuthService {
   registerUser(user){
     let headers = new Headers();
     headers.append('content-Type','application/json');
-    return this.http.post("http://localhost:3000/register",user,{headers:headers}).map(res=>res.json());
+    return this.http.post("http://localhost:3000/user/register",user,{headers:headers}).map(res=>res.json());
   };
 
   loginUser(user){
     let headers = new Headers();
     headers.append('content-Type','application/json');
-    return this.http.post("http://localhost:3000/login",user,{headers:headers}).map(res=>res.json());
+    return this.http.post("http://localhost:3000/user/login",user,{headers:headers}).map(res=>res.json());
   };
 
   storeData(token,userdata){
@@ -35,7 +35,7 @@ getprofile(){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.get("http://localhost:3000/profile",{headers:headers}).map(res=>res.json());
+  return this.http.get("http://localhost:3000/user/profile",{headers:headers}).map(res=>res.json());
   
 };
 fetchtoken(){
@@ -52,7 +52,7 @@ logOut(){
   this.authtoken = null;
   this.user = null;
   localStorage.clear();
-  return this.http.get("http://localhost:3000/logout",{headers:headers}).map(res=>res.json()); 
+  return this.http.get("http://localhost:3000/user/logout",{headers:headers}).map(res=>res.json()); 
 }
 
 loggedIn(){
@@ -65,7 +65,7 @@ postjob(job){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.post("http://localhost:3000/job/jobpost",job,{headers:headers}).map(res=>res.json());
+  return this.http.post("http://localhost:3000/customer/jobpost",job,{headers:headers}).map(res=>res.json());
 }
 
 getalljobposts(){
@@ -73,7 +73,7 @@ getalljobposts(){
   let headers = new Headers();
   //headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.post("http://localhost:3000/job/getalljobs",{headers:headers}).map(res=>res.json());
+  return this.http.post("http://localhost:3000/cleaner/getalljobs",{headers:headers}).map(res=>res.json());
 }
 
 getjobpost(postid){
@@ -81,7 +81,7 @@ getjobpost(postid){
   let headers = new Headers();
   //headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.post("http://localhost:3000/job/viewjob",postid,{headers:headers}).map(res=>res.json());
+  return this.http.post("http://localhost:3000/cleaner/viewjob",postid,{headers:headers}).map(res=>res.json());
 }
 
 adminalljobposts(){
@@ -89,7 +89,7 @@ adminalljobposts(){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.post("http://localhost:3000/job/adminalljobs",{headers:headers}).map(res=>res.json());
+  return this.http.post("http://localhost:3000/admin/adminalljobs",{headers:headers}).map(res=>res.json());
 }
 
 acceptpost(review){
