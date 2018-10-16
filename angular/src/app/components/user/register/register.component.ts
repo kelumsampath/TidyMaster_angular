@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   username:String;
   email:String;
   phoneno:Number;
-  password:String;
+  nic:String;
 
   constructor(
     private authservice:AuthService,
@@ -31,7 +31,7 @@ registerData(){
     username:this.username,
     email:this.email,
     phoneno:this.phoneno,
-    password:this.password,
+    nic:this.nic,
   }
   this.authservice.registerUser(user).subscribe(res=>{
     if(res.state){
@@ -39,7 +39,7 @@ registerData(){
     this.router.navigate(['/login']);}
     else{
     console.log(res.msg);
-    this.ngFlashMessageService.showFlashMessage({messages: ["Something went wrong!"],dismissible: false,timeout: 4000,type: 'danger'});
+    this.ngFlashMessageService.showFlashMessage({messages: [res.msg],dismissible: false,timeout: 4000,type: 'danger'});
     this.router.navigate(['/register']);
     }
   });
