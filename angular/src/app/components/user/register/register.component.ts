@@ -10,11 +10,15 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  fullname:String;
+  firstname:String;
+  lastname:String;
   username:String;
   email:String;
   phoneno:Number;
-  password:String;
+  nic:String;
+  gender:String;
+  role:String;
+  address:String;
 
   constructor(
     private authservice:AuthService,
@@ -27,19 +31,24 @@ export class RegisterComponent implements OnInit {
 
 registerData(){
   const user={
-    fullname:this.fullname,
+    firstname:this.firstname,
+    lastname:this.lastname,
     username:this.username,
     email:this.email,
+    gender:this.gender,
     phoneno:this.phoneno,
-    password:this.password,
+    nic:this.nic,
+    role:this.role,
+    address:this.address
   }
+  console.log(user);
   this.authservice.registerUser(user).subscribe(res=>{
     if(res.state){
-    this.ngFlashMessageService.showFlashMessage({messages: ["You are registered!"],dismissible: true,timeout: 4000,type: 'success'});
+    this.ngFlashMessageService.showFlashMessage({messages: [res.msg],dismissible: true,timeout: 4000,type: 'success'});
     this.router.navigate(['/login']);}
     else{
     console.log(res.msg);
-    this.ngFlashMessageService.showFlashMessage({messages: ["Something went wrong!"],dismissible: false,timeout: 4000,type: 'danger'});
+    this.ngFlashMessageService.showFlashMessage({messages: [res.msg],dismissible: false,timeout: 4000,type: 'danger'});
     this.router.navigate(['/register']);
     }
   });
