@@ -28,8 +28,13 @@ export class LoginComponent implements OnInit {
     this.authservice.loginUser(user).subscribe(res=>{
       if(res.state){
         this.authservice.storeData(res.token,res.user);
+        console.log(res.user.role)
         this.ngFlashMessageService.showFlashMessage({messages: ["You are loggedin!"],dismissible: true,timeout: 4000,type: 'success'});
-        this.router.navigate(['/profile']);
+        if(res.user.role=="admin"||res.user.role=="superadmin"){
+          this.router.navigate(['/adminhome']);
+        }else{
+          this.router.navigate(['/profile']);
+        }
       }
         else{
         this.ngFlashMessageService.showFlashMessage({messages: [res.msg],dismissible: false,timeout: 4000,type: 'danger'});
