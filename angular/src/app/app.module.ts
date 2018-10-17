@@ -18,6 +18,7 @@ import { ViewjobsComponent } from './components/job/viewjobs/viewjobs.component'
 import { JobdetailsComponent } from './components/job/jobdetails/jobdetails.component';
 import { AdminpenalComponent } from './components/admin/adminpenal/adminpenal.component';
 import { HomeComponent } from './components/home/home.component';
+import { AdminhomeComponent } from './components/admin/adminhome/adminhome.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -30,6 +31,7 @@ const applicationRoutes:Routes = [
   {path:'adminpanel',component:AdminpenalComponent, canActivate: [AuthGuard]},
   {path:'adminpanel/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
   {path:'',redirectTo:'/home',pathMatch:'full'},
+  {path:'adminhome',component:AdminhomeComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -43,7 +45,8 @@ const applicationRoutes:Routes = [
     ViewjobsComponent,
     JobdetailsComponent,
     AdminpenalComponent,
-    HomeComponent
+    HomeComponent,
+    AdminhomeComponent
   ],
   imports: [
     BrowserModule,
