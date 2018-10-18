@@ -116,4 +116,15 @@ pendingpost(review){
   return this.http.post("http://localhost:3000/admin/pendingpost",review,{headers:headers}).map(res=>res.json());
 }
 
+isadmin(){
+  var user={
+
+  }
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  return this.http.post("http://localhost:3000/admin/isadmin",user,{headers:headers}).map(res=>res.json());
+}
+
 }
