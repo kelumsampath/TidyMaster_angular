@@ -32,7 +32,11 @@ export class LoginComponent implements OnInit {
         this.ngFlashMessageService.showFlashMessage({messages: ["You are loggedin!"],dismissible: true,timeout: 4000,type: 'success'});
         if(res.user.role=="admin"||res.user.role=="superadmin"){
           this.router.navigate(['/adminhome']);
-        }else{
+        }
+        else if(res.user.role=="cleaner"){
+          this.router.navigate(['/cleanerhome']);
+        }
+        else{
           this.router.navigate(['/profile']);
         }
       }
