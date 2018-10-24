@@ -19,6 +19,7 @@ import { JobdetailsComponent } from './components/job/jobdetails/jobdetails.comp
 import { AdminpenalComponent } from './components/admin/adminpenal/adminpenal.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminhomeComponent } from './components/admin/adminhome/adminhome.component';
+import { RegadminComponent } from './components/admin/regadmin/regadmin.component';
 import { CleanerhomeComponent } from './components/cleaner/cleanerhome/cleanerhome.component';
 
 const applicationRoutes:Routes = [
@@ -33,6 +34,7 @@ const applicationRoutes:Routes = [
   {path:'adminpanel/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
   {path:'',redirectTo:'/home',pathMatch:'full'},
   {path:'adminhome',component:AdminhomeComponent, canActivate: [AuthGuard]},
+  {path:'regadmin',component:RegadminComponent, canActivate: [AuthGuard]},
   {path:'cleanerhome',component:CleanerhomeComponent, canActivate: [AuthGuard]},
 ];
 
@@ -49,6 +51,7 @@ const applicationRoutes:Routes = [
     AdminpenalComponent,
     HomeComponent,
     AdminhomeComponent,
+    RegadminComponent,
     CleanerhomeComponent
   ],
   imports: [
