@@ -156,7 +156,25 @@ registerAdvertiser(user){
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
   headers.append('accessresource','registeradvertiser');
-  return this.http.post("http://localhost:3000/admin/registerAdvertiser",user,{headers:headers}).map(res=>res.json());
+  return this.http.post("http://localhost:3000/admin/specialuser",user,{headers:headers}).map(res=>res.json());
+};
+
+registerAdmin(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','registeramin');
+  return this.http.post("http://localhost:3000/admin/specialuser",user,{headers:headers}).map(res=>res.json());
+};
+
+registerSuperAdmin(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','registersuperadmin');
+  return this.http.post("http://localhost:3000/admin/specialuser",user,{headers:headers}).map(res=>res.json());
 };
 
 }

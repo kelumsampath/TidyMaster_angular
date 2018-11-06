@@ -6,20 +6,20 @@
         <div class="menu-list">
   
             <ul id="menu-content" class="menu-content collapse out">
-                <li>
-                  <a [routerLink]="['/adminhome']">
-                  <i class="fa fa-dashboard fa-lg"></i> Dashboard
+                
+                  <a [routerLink]="['/adminhome']"><li>
+                  <i class="fa fa-dashboard fa-lg"></i> Dashboard</li>
                   </a>
-                </li>
+                
 
                 <li  data-toggle="collapse" data-target="#products" class="collapsed active">
                   <i class="fa fa-gift fa-lg"></i> Creat New User <span class="arrow"></span>
                 </li>
                 <ul class="sub-menu collapse" id="products">
                   <a [routerLink]="['/addadvertiser']"><li>create new advertiser</li></a>
-                  <a [routerLink]="['/addadvertiser']"><li>create new admin</li></a>
-                  <a [routerLink]="['/sample']"><li>RFT-H3</li></a>
-                  <a [routerLink]="['/addadvertiser']"><li>RFT-H4</li></a>
+                  <a [routerLink]="['/addadmin']"><li>create new admin</li></a>
+                  <a [routerLink]="['/addsuperadmin']"><li>create new superadmin</li></a>
+              
                 </ul>
 
 
