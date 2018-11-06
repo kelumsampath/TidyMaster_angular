@@ -24,6 +24,7 @@ import { CleanerhomeComponent } from './components/cleaner/cleanerhome/cleanerho
 
 import { AdvertiserhomeComponent } from './components/advertiser/advertiserhome/advertiserhome.component';
 import { AddadvertiserComponent } from './components/admin/addadvertiser/addadvertiser.component';
+import { SidemenuComponent } from './components/admin/sidemenu/sidemenu.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -58,7 +59,8 @@ const applicationRoutes:Routes = [
     AddadvertiserComponent,
     AdminhomeComponent,
     RegadminComponent,
-    CleanerhomeComponent
+    CleanerhomeComponent,
+    SidemenuComponent
   ],
   imports: [
     BrowserModule,
