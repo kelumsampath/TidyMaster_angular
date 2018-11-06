@@ -1,0 +1,59 @@
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <app-sidemenu></app-sidemenu>
+  </div>
+  <div class="column2" style="background-color:#bbb;min-height: 800px;">
+            <div class="container">
+              <form class="form" #form=ngForm (submit)="registerData()">
+                  <fieldset>
+                    <legend>Register Superadmin</legend>
+                      <div class="form-group">
+                          <label for="exampleInputPassword1">First Name :</label>
+                          <input type="text" class="form-control" id="firstname" placeholder="Your first name" name="firstname" [(ngModel)]="firstname" required>
+                        </div>
+                      
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Last Name :</label>
+                          <input type="text" class="form-control" id="lastname" placeholder="Your last name" name="lastname" [(ngModel)]="lastname" required>
+                        </div>
+              
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">User name :</label>
+                            <input type="text" class="form-control" id="inputname" placeholder="Your username" name="username" [(ngModel)]="username" required>
+                          </div>
+              
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Email :</label>
+                            <input type="text" class="form-control" id="inputemail" placeholder="Your email" name="email" [(ngModel)]="email" required>
+                          </div>
+                        
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Gender :</label>
+                            <input type="radio" class="form-control" id="gender" value='Male' name="gender" [(ngModel)]="gender" required style="width:20%;">Male
+                            <input type="radio" class="form-control" id="gender" value='Female' name="gender" [(ngModel)]="gender" required uired style="width:20%;">Female
+                          </div>
+              
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Phone No :</label>
+                            <input type="number" class="form-control" id="inputphoneno" placeholder="Your Phone number" name="phoneno" [(ngModel)]="phoneno" required>
+                          </div>
+              
+                      <div class="form-group">
+                          <label for="exampleInputPassword1">NIC :</label>
+                          <input type="text" class="form-control" id="nic" placeholder="Your NIC" name="nic" [(ngModel)]="nic" required>
+                        </div>
+              
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Address :</label>
+                          <input type="text" class="form-control" id="address" placeholder="Your address" name="address" [(ngModel)]="address" required>
+                        </div>
+
+              
+                    <button type="submit" [disabled]="!form.valid" class="btn btn-primary center-block">Submit</button>
+              
+                  </fieldset>
+                </form>
+              </div>
+  </div>
+</div>

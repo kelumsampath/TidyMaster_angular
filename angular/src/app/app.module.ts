@@ -26,6 +26,8 @@ import { AdvertiserhomeComponent } from './components/advertiser/advertiserhome/
 import { AddadvertiserComponent } from './components/admin/addadvertiser/addadvertiser.component';
 import { SidemenuComponent } from './components/admin/sidemenu/sidemenu.component';
 import { SampleComponent } from './components/admin/sample/sample.component';
+import { AddadminComponent } from './components/admin/addadmin/addadmin.component';
+import { AddsuperadminComponent } from './components/admin/addsuperadmin/addsuperadmin.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -43,6 +45,8 @@ const applicationRoutes:Routes = [
   {path:'regadmin',component:RegadminComponent, canActivate: [AuthGuard]},
   {path:'cleanerhome',component:CleanerhomeComponent, canActivate: [AuthGuard]},
   {path:'addadvertiser',component:AddadvertiserComponent, canActivate: [AuthGuard]},
+  {path:'addadmin',component:AddadminComponent, canActivate: [AuthGuard]},
+  {path:'addsuperadmin',component:AddsuperadminComponent, canActivate: [AuthGuard]},
   {path:'sample',component:SampleComponent, canActivate: [AuthGuard]},
   
 ];
@@ -65,7 +69,9 @@ const applicationRoutes:Routes = [
     RegadminComponent,
     CleanerhomeComponent,
     SidemenuComponent,
-    SampleComponent
+    SampleComponent,
+    AddadminComponent,
+    AddsuperadminComponent
   ],
   imports: [
     BrowserModule,
