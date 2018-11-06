@@ -18,6 +18,7 @@ export class AddadvertiserComponent implements OnInit {
   gender:String;
   role="advertiser";
   address:String;
+  company:String;
 
   constructor(
     private authservice:AuthService,
@@ -38,17 +39,19 @@ export class AddadvertiserComponent implements OnInit {
       phoneno:this.phoneno,
       nic:this.nic,
       role:this.role,
-      address:this.address
+      address:this.address,
+      company:this.company
     }
-    console.log(user);
+    //console.log(user);
     this.authservice.registerAdvertiser(user).subscribe(res=>{
       if(res.state){
       this.ngFlashMessageService.showFlashMessage({messages: [res.msg],dismissible: true,timeout: 4000,type: 'success'});
-      //this.router.navigate(['/login']);
+      alert(res.msg)
       }else{
       console.log(res.msg);
       this.ngFlashMessageService.showFlashMessage({messages: [res.msg],dismissible: false,timeout: 4000,type: 'danger'});
       //this.router.navigate(['/register']);
+      alert(res.msg)
       }
     });
     
