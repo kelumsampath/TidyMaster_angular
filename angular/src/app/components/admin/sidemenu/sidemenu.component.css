@@ -1,6 +1,10 @@
 i{
     margin-right: 2%;
 }
+a:hover{
+  text-decoration: none;
+}
+
 .nav-side-menu {
     overflow: auto;
     font-family: verdana;
@@ -13,7 +17,7 @@ i{
     height: 100%;
     min-height: 800px;
     color: #e1ffff;
-    
+    padding-left: 8%;
   }
   .nav-side-menu .brand {
     background-color: #23282e;

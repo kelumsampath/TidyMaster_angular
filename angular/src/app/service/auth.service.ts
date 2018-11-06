@@ -150,4 +150,13 @@ issuperadmin(){
   return this.http.post("http://localhost:3000/admin/issuperadmin",user,{headers:headers}).map(res=>res.json());
 }
 
+registerAdvertiser(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','registeradvertiser');
+  return this.http.post("http://localhost:3000/admin/registerAdvertiser",user,{headers:headers}).map(res=>res.json());
+};
+
 }

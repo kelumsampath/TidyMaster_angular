@@ -25,6 +25,7 @@ import { CleanerhomeComponent } from './components/cleaner/cleanerhome/cleanerho
 import { AdvertiserhomeComponent } from './components/advertiser/advertiserhome/advertiserhome.component';
 import { AddadvertiserComponent } from './components/admin/addadvertiser/addadvertiser.component';
 import { SidemenuComponent } from './components/admin/sidemenu/sidemenu.component';
+import { SampleComponent } from './components/admin/sample/sample.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -41,6 +42,9 @@ const applicationRoutes:Routes = [
   {path:'advertiserhome',component:AdvertiserhomeComponent, canActivate: [AuthGuard]},
   {path:'regadmin',component:RegadminComponent, canActivate: [AuthGuard]},
   {path:'cleanerhome',component:CleanerhomeComponent, canActivate: [AuthGuard]},
+  {path:'addadvertiser',component:AddadvertiserComponent, canActivate: [AuthGuard]},
+  {path:'sample',component:SampleComponent, canActivate: [AuthGuard]},
+  
 ];
 
 @NgModule({
@@ -60,7 +64,8 @@ const applicationRoutes:Routes = [
     AdminhomeComponent,
     RegadminComponent,
     CleanerhomeComponent,
-    SidemenuComponent
+    SidemenuComponent,
+    SampleComponent
   ],
   imports: [
     BrowserModule,
