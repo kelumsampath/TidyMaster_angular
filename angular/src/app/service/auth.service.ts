@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 export class AuthService {
   user:any;
   authtoken:any;
+  adminorsuperadmin:boolean=false;
 
   constructor(
     private http:Http,
