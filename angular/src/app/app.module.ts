@@ -18,6 +18,12 @@ import { ViewjobsComponent } from './components/job/viewjobs/viewjobs.component'
 import { JobdetailsComponent } from './components/job/jobdetails/jobdetails.component';
 import { AdminpenalComponent } from './components/admin/adminpenal/adminpenal.component';
 import { HomeComponent } from './components/home/home.component';
+import { AdminhomeComponent } from './components/admin/adminhome/adminhome.component';
+import { RegadminComponent } from './components/admin/regadmin/regadmin.component';
+import { CleanerhomeComponent } from './components/cleaner/cleanerhome/cleanerhome.component';
+
+import { AdvertiserhomeComponent } from './components/advertiser/advertiserhome/advertiserhome.component';
+import { AddadvertiserComponent } from './components/admin/addadvertiser/addadvertiser.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -30,6 +36,10 @@ const applicationRoutes:Routes = [
   {path:'adminpanel',component:AdminpenalComponent, canActivate: [AuthGuard]},
   {path:'adminpanel/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
   {path:'',redirectTo:'/home',pathMatch:'full'},
+  {path:'adminhome',component:AdminhomeComponent, canActivate: [AuthGuard]},
+  {path:'advertiserhome',component:AdvertiserhomeComponent, canActivate: [AuthGuard]},
+  {path:'regadmin',component:RegadminComponent, canActivate: [AuthGuard]},
+  {path:'cleanerhome',component:CleanerhomeComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -43,7 +53,12 @@ const applicationRoutes:Routes = [
     ViewjobsComponent,
     JobdetailsComponent,
     AdminpenalComponent,
-    HomeComponent
+    HomeComponent,
+    AdvertiserhomeComponent,
+    AddadvertiserComponent,
+    AdminhomeComponent,
+    RegadminComponent,
+    CleanerhomeComponent
   ],
   imports: [
     BrowserModule,
