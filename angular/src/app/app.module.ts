@@ -41,6 +41,7 @@ const applicationRoutes:Routes = [
   {path:'advertiserhome',component:AdvertiserhomeComponent, canActivate: [AuthGuard]},
   {path:'regadmin',component:RegadminComponent, canActivate: [AuthGuard]},
   {path:'cleanerhome',component:CleanerhomeComponent, canActivate: [AuthGuard]},
+  {path:'addadvertiser',component:AddadvertiserComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
