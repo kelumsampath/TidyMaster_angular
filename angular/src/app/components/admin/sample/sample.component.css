@@ -1,3 +1,4 @@
+/* coloum view start */
 * {
     box-sizing: border-box;
     margin-top: -10px;
@@ -23,3 +24,4 @@
     display: table;
     clear: both;
 }
+/* coloum view end */
