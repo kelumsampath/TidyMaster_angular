@@ -19,6 +19,7 @@ export class JobpostComponent implements OnInit {
   levelofjob:String;
   numberofcleaners:Number;
   timeforstart:Time;
+  catogaryname:String;
 
   constructor(
     private authservice:AuthService,
@@ -39,7 +40,8 @@ export class JobpostComponent implements OnInit {
       jobdate:this.jobdate,
       levelofjob:this.levelofjob,
       numberofcleaners:this.numberofcleaners,
-      timeforstart:this.timeforstart
+      timeforstart:this.timeforstart,
+      catogaryname:"gardning"
     }
     this.authservice.postjob(job).subscribe(res=>{
       if(res.state){
