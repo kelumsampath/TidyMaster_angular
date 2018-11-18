@@ -177,4 +177,14 @@ registerSuperAdmin(user){
   return this.http.post("http://localhost:3000/admin/specialuser",user,{headers:headers}).map(res=>res.json());
 };
 
+loadprofpic(){
+  var user={
+
+  }
+  let headers = new Headers();
+  headers.append('content-Type','application/json');
+  headers.append('Authorization',this.authtoken);
+  return this.http.post("http://localhost:3000/admin/profpic",user,{headers:headers}).map(res=>res.json());
+}
+
 }
