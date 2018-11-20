@@ -30,6 +30,9 @@ import { AddadminComponent } from './components/admin/addadmin/addadmin.componen
 import { AddsuperadminComponent } from './components/admin/addsuperadmin/addsuperadmin.component';
 import { ChartsComponent } from './components/advertiser/charts/charts.component';
 import { SidebarComponent } from './components/advertiser/sidebar/sidebar.component';
+import { PendingjobpostsComponent } from './components/admin/pendingjobposts/pendingjobposts.component';
+import { AcceptjobpostComponent } from './components/admin/acceptjobpost/acceptjobpost.component';
+import { RejectedjobpostComponent } from './components/admin/rejectedjobpost/rejectedjobpost.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -41,6 +44,12 @@ const applicationRoutes:Routes = [
   {path:'viewjobs/:postid',component:JobdetailsComponent},
   {path:'alljobpost',component:AdminpenalComponent, canActivate: [AuthGuard]},
   {path:'alljobpost/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
+  {path:'pendingjobpost',component:PendingjobpostsComponent, canActivate: [AuthGuard]},
+  {path:'pendingjobpost/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
+  {path:'acceptedjobpost',component:AcceptjobpostComponent, canActivate: [AuthGuard]},
+  {path:'acceptedjobpost/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
+  {path:'rejectedjobpost',component:RejectedjobpostComponent, canActivate: [AuthGuard]},
+  {path:'rejectedjobpost/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
   {path:'',redirectTo:'/home',pathMatch:'full'},
   {path:'adminhome',component:AdminhomeComponent, canActivate: [AuthGuard]},
   {path:'advertiserhome',component:AdvertiserhomeComponent, canActivate: [AuthGuard]},
@@ -75,7 +84,10 @@ const applicationRoutes:Routes = [
     AddadminComponent,
     AddsuperadminComponent,
     ChartsComponent,
-    SidebarComponent
+    SidebarComponent,
+    PendingjobpostsComponent,
+    AcceptjobpostComponent,
+    RejectedjobpostComponent
   ],
   imports: [
     BrowserModule,
