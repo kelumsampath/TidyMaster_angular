@@ -1,3 +1,18 @@
-<p>
-  advertiserhome works!
-</p>
+<div class="main-content">
+    
+    <div class="container-fluid">
+            <div class="column" style="background-color:#aaa;">
+                    <app-sidebar></app-sidebar>
+                </div>
+        <div class="column2">
+
+            <div class="col-md-8, chart">
+                <app-charts [title]="'Past Activities'" [subtitle]="'5 Months Performance'" [chartType]="hoursChartType" [chartData]="hoursChartData"
+                    [chartOptions]="hoursChartOptions" [chartResponsive]="hoursChartResponsive" [legendItems]="hoursChartLegendItems"
+                    [withHr]="true" [footerIconClass]="'fa fa-history'" [footerText]="'Updated 3 minutes ago'">
+                </app-charts>
+            </div>
+        </div>
+
+    </div>
+</div>

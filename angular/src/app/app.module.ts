@@ -28,6 +28,8 @@ import { SidemenuComponent } from './components/admin/sidemenu/sidemenu.componen
 import { SampleComponent } from './components/admin/sample/sample.component';
 import { AddadminComponent } from './components/admin/addadmin/addadmin.component';
 import { AddsuperadminComponent } from './components/admin/addsuperadmin/addsuperadmin.component';
+import { ChartsComponent } from './components/advertiser/charts/charts.component';
+import { SidebarComponent } from './components/advertiser/sidebar/sidebar.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -71,7 +73,9 @@ const applicationRoutes:Routes = [
     SidemenuComponent,
     SampleComponent,
     AddadminComponent,
-    AddsuperadminComponent
+    AddsuperadminComponent,
+    ChartsComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
