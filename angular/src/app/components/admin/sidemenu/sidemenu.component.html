@@ -2,7 +2,7 @@
 <div class="nav-side-menu">
     
     <img src="{{this.profurl}}" alt="profile Photo" id="profpic">
-    <div class="brand">{{this.username}}l</div>
+    <div class="brand">{{this.username}}</div>
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
   
         <div class="menu-list">
@@ -26,10 +26,10 @@
 
 
                 <li data-toggle="collapse" data-target="#service" class="collapsed">
-                  <i class="fa fa-globe fa-lg"></i> Auswertungen <span class="arrow"></span>
+                  <i class="fa fa-th-list fa-lg"></i> Review Job Post <span class="arrow"></span>
                 </li>  
                 <ul class="sub-menu collapse" id="service">
-                  <li>Trendmonitoring</li>
+                    <a [routerLink]="['/alljobpost']"><li>All Job Post</li></a>
                   <li>Alarmmonitoring</li>
                   <li>Audit-Trail</li>
                 </ul>
