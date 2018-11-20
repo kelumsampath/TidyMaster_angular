@@ -4,11 +4,11 @@ import { NgFlashMessageService } from 'ng-flash-messages';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-addadvertiser',
-  templateUrl: './addadvertiser.component.html',
-  styleUrls: ['./addadvertiser.component.css']
+  selector: 'app-addadmin',
+  templateUrl: './addadmin.component.html',
+  styleUrls: ['./addadmin.component.css']
 })
-export class AddadvertiserComponent implements OnInit {
+export class AddadminComponent implements OnInit {
   firstname:String;
   lastname:String;
   username:String;
@@ -16,15 +16,14 @@ export class AddadvertiserComponent implements OnInit {
   phoneno:Number;
   nic:String;
   gender:String;
-  role="advertiser";
+  role="admin";
   address:String;
-  company:String;
-
+  company:String="NO";
   constructor(
     private authservice:AuthService,
     private ngFlashMessageService: NgFlashMessageService,
     private router:Router,
-  ) { 
+  ) {
     this.authservice.isadmin().subscribe(res=>{
       if(res.state){
         
@@ -32,7 +31,7 @@ export class AddadvertiserComponent implements OnInit {
           this.router.navigate(['/..']);
         }
       })
-  }
+   }
 
   ngOnInit() {
   }
@@ -51,7 +50,7 @@ export class AddadvertiserComponent implements OnInit {
       company:this.company
     }
     //console.log(user);
-    this.authservice.registerAdvertiser(user).subscribe(res=>{
+    this.authservice.registerAdmin(user).subscribe(res=>{
       if(res.state){
       this.ngFlashMessageService.showFlashMessage({messages: [res.msg],dismissible: true,timeout: 4000,type: 'success'});
       alert(res.msg)

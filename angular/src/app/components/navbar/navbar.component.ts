@@ -21,10 +21,13 @@ export class NavbarComponent implements OnInit {
 
   logoutUser(){
     this.authservice.logOut().subscribe(res=>{
-    console.log(res)})
-    this.ngFlashMessageService.showFlashMessage({messages: ["You are successfully logged out!"],dismissible: true,timeout: 4000,type: 'success'});
-    this.router.navigate(['/home']);
-    return false;
+    if(res.state){
+      this.authservice.adminorsuperadmin=false;
+      this.ngFlashMessageService.showFlashMessage({messages: ["You are successfully logged out!"],dismissible: true,timeout: 4000,type: 'success'});
+      this.router.navigate(['/home']);
+      return false;
+    }})
+    
   }
 
 
