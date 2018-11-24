@@ -1,6 +1,8 @@
 
 <div class="nav-side-menu">
-    <div class="brand">Press Curing Control</div>
+    
+    <img src="{{this.profurl}}" alt="profile Photo" id="profpic">
+    <div class="brand">{{this.username}}</div>
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
   
         <div class="menu-list">
@@ -13,7 +15,7 @@
                 
 
                 <li  data-toggle="collapse" data-target="#products" class="collapsed active">
-                  <i class="fa fa-gift fa-lg"></i> Creat New User <span class="arrow"></span>
+                  <i class="fa fa-users fa-lg"></i> Creat New User <span class="arrow"></span>
                 </li>
                 <ul class="sub-menu collapse" id="products">
                   <a [routerLink]="['/addadvertiser']"><li>create new advertiser</li></a>
@@ -24,12 +26,13 @@
 
 
                 <li data-toggle="collapse" data-target="#service" class="collapsed">
-                  <i class="fa fa-globe fa-lg"></i> Auswertungen <span class="arrow"></span>
+                  <i class="fa fa-th-list fa-lg"></i> Review Job Post <span class="arrow"></span>
                 </li>  
                 <ul class="sub-menu collapse" id="service">
-                  <li>Trendmonitoring</li>
-                  <li>Alarmmonitoring</li>
-                  <li>Audit-Trail</li>
+                    <a [routerLink]="['/alljobpost']"><li>All Job Post</li></a>
+                    <a [routerLink]="['/pendingjobpost']"><li>Pending Job Post</li></a>
+                    <a [routerLink]="['/acceptedjobpost']"><li>Accepted Job Post</li></a>
+                    <a [routerLink]="['/rejectedjobpost']"><li>Rejected Job Post</li></a>
                 </ul>
 
 

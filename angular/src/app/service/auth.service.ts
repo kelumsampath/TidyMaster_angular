@@ -98,6 +98,7 @@ acceptpost(review){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
+  headers.append('accessresource','jobpostreview');
   return this.http.post("http://localhost:3000/admin/acceptpost",review,{headers:headers}).map(res=>res.json());
 }
 
@@ -106,6 +107,7 @@ rejectpost(review){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
+  headers.append('accessresource','jobpostreview');
   return this.http.post("http://localhost:3000/admin/rejectpost",review,{headers:headers}).map(res=>res.json());
 }
 
@@ -114,6 +116,7 @@ pendingpost(review){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
+  headers.append('accessresource','jobpostreview');
   return this.http.post("http://localhost:3000/admin/pendingpost",review,{headers:headers}).map(res=>res.json());
 }
 
@@ -176,5 +179,15 @@ registerSuperAdmin(user){
   headers.append('accessresource','registersuperadmin');
   return this.http.post("http://localhost:3000/admin/specialuser",user,{headers:headers}).map(res=>res.json());
 };
+
+loadprofpic(){
+  var user={
+
+  }
+  let headers = new Headers();
+  headers.append('content-Type','application/json');
+  headers.append('Authorization',this.authtoken);
+  return this.http.post("http://localhost:3000/admin/profpic",user,{headers:headers}).map(res=>res.json());
+}
 
 }

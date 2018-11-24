@@ -3,12 +3,13 @@ import { AuthService } from '../../../service/auth.service';
 import { NgFlashMessageService } from 'ng-flash-messages';
 import { Router } from '@angular/router';
 
+
 @Component({
-  selector: 'app-sidemenu',
-  templateUrl: './sidemenu.component.html',
-  styleUrls: ['./sidemenu.component.css']
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.css']
 })
-export class SidemenuComponent implements OnInit {
+export class SidebarComponent implements OnInit {
   profurl:String;
   username:String;
   constructor(

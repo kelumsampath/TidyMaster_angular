@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 i{
     margin-right: 2%;
 }
@@ -8,16 +9,16 @@ a:hover{
 .nav-side-menu {
     overflow: auto;
     font-family: verdana;
-    font-size: 150%;
+    font-size: 100%;
     /*font-weight: 200;*/
     background-color: #2e353d;
     position: relative;
     top: 0px;
     width: 100%;
-    height: 100%;
-    min-height: 800px;
+    height: 550px;
+    
     color: #e1ffff;
-    padding-left: 8%;
+   
   }
   .nav-side-menu .brand {
     background-color: #23282e;
@@ -25,6 +26,7 @@ a:hover{
     display: block;
     text-align: center;
     font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
   }
   .nav-side-menu .toggle-btn {
     display: none;
@@ -55,24 +57,24 @@ a:hover{
     font-family: FontAwesome;
     content: "\f078";
     display: inline-block;
-    padding-left: 10px;
+    
     padding-right: 10px;
     vertical-align: middle;
     float: right;
   }
   .nav-side-menu ul .active,
   .nav-side-menu li .active {
-    border-left: 3px solid #d19b3d;
+    border-left: 3px solid #1818f3;
     background-color: #4f5b69;
   }
   .nav-side-menu ul .sub-menu li.active,
   .nav-side-menu li .sub-menu li.active {
-    color: #d19b3d;
+    color: #1818f3;
   }
   
   .nav-side-menu ul .sub-menu li.active a,
   .nav-side-menu li .sub-menu li.active a {
-    color: #d19b3d;
+    color: #1818f3;
   }
   .nav-side-menu ul .sub-menu li,
   .nav-side-menu li .sub-menu li {
@@ -105,12 +107,12 @@ a:hover{
     color: #e1ffff;
   }
   .nav-side-menu li a i {
-    padding-left: 10px;
+    
     width: 20px;
     padding-right: 20px;
   }
   .nav-side-menu li:hover {
-    border-left: 3px solid #d19b3d;
+    border-left: 3px solid #1818f3;;
     background-color: #4f5b69;
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
@@ -156,12 +158,12 @@ a:hover{
   
   .nav-side-menu ul .sub-menu ul .sub-line li.active,
   .nav-side-menu li .sub-menu li .sub-line li.active {
-    color: #d19b3d;
+    color: #1818f3;
   }
   
   .nav-side-menu ul .sub-menu li .sub-line li.active a,
   .nav-side-menu li .sub-menu li .sub-line li.active a {
-    color: #d19b3d;
+    color: #1818f3;
   }
   .nav-side-menu ul .sub-menu li .sub-line li,
   .nav-side-menu li .sub-menu li .sub-line li {
@@ -195,12 +197,12 @@ a:hover{
     color: #e1ffff;
   }
   .sub-menu li a i {
-    padding-left: 10px;
+   
     width: 20px;
     padding-right: 20px;
   }
   .nav-side-menu li .sub-menu li:hover {
-    border-left: 3px solid #d19b3d;
+    border-left: 3px solid #1818f3;
     background-color: #4f5b69;
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
@@ -230,12 +232,12 @@ a:hover{
     
     .sub-line ul .sub-press li.active,
   .sub-line li .sub-press li.active {
-    color: #d19b3d;
+    color: #1818f3;
   }
   
   .sub-line ul .sub-press li.active a,
   .sub-line li .sub-press li.active a {
-    color: #d19b3d;
+    color: #1818f3;
   }
   .sub-line ul .sub-press li,
   .sub-line li .sub-press li {
@@ -274,7 +276,7 @@ a:hover{
     padding-right: 20px;
   }
   .sub-line li:hover {
-    border-left: 3px solid #d19b3d;
+    border-left: 3px solid #1818f3;
     background-color: #4f5b69;
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
