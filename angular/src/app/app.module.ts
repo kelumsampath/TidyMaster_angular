@@ -33,6 +33,7 @@ import { SidebarComponent } from './components/advertiser/sidebar/sidebar.compon
 import { PendingjobpostsComponent } from './components/admin/pendingjobposts/pendingjobposts.component';
 import { AcceptjobpostComponent } from './components/admin/acceptjobpost/acceptjobpost.component';
 import { RejectedjobpostComponent } from './components/admin/rejectedjobpost/rejectedjobpost.component';
+import { SearchusersComponent } from './components/admin/searchusers/searchusers.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -59,6 +60,7 @@ const applicationRoutes:Routes = [
   {path:'addadmin',component:AddadminComponent, canActivate: [AuthGuard]},
   {path:'addsuperadmin',component:AddsuperadminComponent, canActivate: [AuthGuard]},
   {path:'sample',component:SampleComponent, canActivate: [AuthGuard]},
+  {path:'searchusers',component:SearchusersComponent, canActivate: [AuthGuard]},
   
 ];
 
@@ -87,7 +89,8 @@ const applicationRoutes:Routes = [
     SidebarComponent,
     PendingjobpostsComponent,
     AcceptjobpostComponent,
-    RejectedjobpostComponent
+    RejectedjobpostComponent,
+    SearchusersComponent
   ],
   imports: [
     BrowserModule,
