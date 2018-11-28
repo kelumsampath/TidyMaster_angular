@@ -10,10 +10,10 @@ import { AuthService } from '../../../service/auth.service';
 })
 export class SearchusersComponent implements OnInit {
   search:string;
-  recipe:any;
+  users:any;
   imgurl:String;
   searchstatus:boolean;
-  recipecount:boolean;
+  usercount:boolean;
   constructor(
     private authservice:AuthService,
     private ngFlashMessageService: NgFlashMessageService,
@@ -25,7 +25,7 @@ export class SearchusersComponent implements OnInit {
   ngOnInit() {
   }
 
-  searchrecipe(){
+  searchuser(){
     this.searchstatus=true;
     const username={
       username:this.search
@@ -33,9 +33,9 @@ export class SearchusersComponent implements OnInit {
     this.authservice.searchUser(username).subscribe(res=>{
       
       if(res.state){
-        this.recipecount=res.usercount;
+        this.usercount=res.usercount;
       if(res.usercount){
-      this.recipe =res.users;
+      this.users =res.users;
       this.imgurl = res.users.photourl;
       //console.log(this.recipe)
       }else{
@@ -49,6 +49,10 @@ export class SearchusersComponent implements OnInit {
       console.log(res)
       }
     });
+  }
+
+  remove(){
+    
   }
 }
 

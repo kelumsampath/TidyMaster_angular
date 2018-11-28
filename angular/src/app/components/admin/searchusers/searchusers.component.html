@@ -5,9 +5,9 @@
   <div class="column2" style="background-color:#bbb;min-height: 800px;">
     <div class="outerbox">
       <div class="searchform">
-        <form class="form" #form=ngForm (submit)="searchrecipe()">
+        <form class="form" #form=ngForm (submit)="searchuser()">
           <div class="form-group searchtab">
-            <input type="text" class="form-control" id="search" placeholder="Recipe name" name="search" [(ngModel)]="search"
+            <input type="text" class="form-control" id="search" placeholder="User name" name="search" [(ngModel)]="search"
               required><br>
             <button type="submit" class="btn btn-success btn-lg" [disabled]="!form.valid">Search</button>
           </div>
@@ -16,20 +16,20 @@
     </div>
 
     <div class="container" *ngIf="this.searchstatus==true">
-      <div id="menuitem" *ngIf="this.recipecount==true">
-        <ul *ngFor="let recipies of recipe;let i = index" [attr.data-index]="i">
+      <div id="menuitem" *ngIf="this.usercount==true">
+        <ul *ngFor="let userlist of users;let i = index" [attr.data-index]="i">
           <li>
-            <button [routerLink]="['/allrecipe',recipies.recipename]" class="add">
+            <button [routerLink]="['/allrecipe',userlist.recipename]" class="add">
               <div id="container" style="height:15%">
                 <div class="row" style="height:15%">
                   <div class="col-dm-8 col-md-push-3" style="width:40%; padding-left:2% ">
-                    <img src="{{ recipies.photourl }}" id="pic" class="img-rounded" alt="" style="width:50%;">
+                    <img src="{{ userlist.photourl }}" id="pic" class="img-rounded" alt="" style="width:50%;">
                   </div>
                   <div class="col-dm-8 col-md-pull-8" style="width:50%;height:10%;padding-left: 5%;">
-                    <h1 style="font-size:210%; margin-top: 20px;margin-left: -20%;"> {{ recipies.username }}</h1><br>
-                    <h2 style="font-size:110%;margin-left:-150%;">{{ recipies.firstName }} {{ recipies.lastName }}</h2>
-                    <h2 style="font-size:110%;margin-left:-150%;">Role:{{ recipies.rolename }}</h2>
-                    <h2 style="font-size:110%;margin-left:-150%;">Gender:{{ recipies.gender }}</h2>
+                    <h1 style="font-size:210%; margin-top: 20px;margin-left: -20%;"> {{ userlist.username }}</h1><br>
+                    <h2 style="font-size:110%;margin-left:-150%;">{{ userlist.firstName }} {{ userlist.lastName }}</h2>
+                    <h2 style="font-size:110%;margin-left:-150%;">Role:{{ userlist.rolename }}</h2>
+                    <h2 style="font-size:110%;margin-left:-150%;">Gender:{{ userlist.gender }}</h2>
                   </div>
                   <div style="margin-left:70%">
                   <button type="submit" class="btn btn-warning btn-md" (click)="this.warn()">Warn</button>
@@ -41,9 +41,9 @@
         </ul>
       </div>
 
-      <div id="menuitem" *ngIf="this.recipecount==false">
+      <div id="menuitem" *ngIf="this.usercount==false">
         <div class="norecipe">
-          <h3>NO RECIPE FOUND!</h3>
+          <h3>NO USER FOUND!</h3>
         </div>
       </div>
     </div>
