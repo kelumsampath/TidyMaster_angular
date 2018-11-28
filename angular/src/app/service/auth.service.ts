@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 export class AuthService {
   user:any;
   authtoken:any;
+  adminorsuperadmin:boolean=false;
 
   constructor(
     private http:Http,
@@ -97,6 +98,7 @@ acceptpost(review){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
+  headers.append('accessresource','jobpostreview');
   return this.http.post("http://localhost:3000/admin/acceptpost",review,{headers:headers}).map(res=>res.json());
 }
 
@@ -105,6 +107,7 @@ rejectpost(review){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
+  headers.append('accessresource','jobpostreview');
   return this.http.post("http://localhost:3000/admin/rejectpost",review,{headers:headers}).map(res=>res.json());
 }
 
@@ -113,6 +116,7 @@ pendingpost(review){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
+  headers.append('accessresource','jobpostreview');
   return this.http.post("http://localhost:3000/admin/pendingpost",review,{headers:headers}).map(res=>res.json());
 }
 
@@ -125,6 +129,65 @@ isadmin(){
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
   return this.http.post("http://localhost:3000/admin/isadmin",user,{headers:headers}).map(res=>res.json());
+}
+
+
+iscleaner(){
+  var user={
+  }
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  return this.http.post("http://localhost:3000/cleaner/iscleaner",user,{headers:headers}).map(res=>res.json());
+}
+  
+
+issuperadmin(){
+  var user={
+  }
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  return this.http.post("http://localhost:3000/admin/issuperadmin",user,{headers:headers}).map(res=>res.json());
+}
+
+registerAdvertiser(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','registeradvertiser');
+  return this.http.post("http://localhost:3000/admin/specialuser",user,{headers:headers}).map(res=>res.json());
+};
+
+registerAdmin(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','registeramin');
+  return this.http.post("http://localhost:3000/admin/specialuser",user,{headers:headers}).map(res=>res.json());
+};
+
+registerSuperAdmin(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','registersuperadmin');
+  return this.http.post("http://localhost:3000/admin/specialuser",user,{headers:headers}).map(res=>res.json());
+};
+
+loadprofpic(){
+  var user={
+
+  }
+  let headers = new Headers();
+  headers.append('content-Type','application/json');
+  headers.append('Authorization',this.authtoken);
+  return this.http.post("http://localhost:3000/admin/profpic",user,{headers:headers}).map(res=>res.json());
 }
 
 }

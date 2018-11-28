@@ -1,0 +1,12 @@
+.ct-chart{
+fill: skyblue;
+stroke: darkgrey;
+padding-left: 100px;
+stroke-dasharray: 0.1%
+}
+.legend{
+    padding-left: 150px;
+}
+.header{
+    padding-left: 15px;
+}
