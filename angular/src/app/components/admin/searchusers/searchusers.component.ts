@@ -51,8 +51,22 @@ export class SearchusersComponent implements OnInit {
     });
   }
 
-  remove(){
-    
+  remove(uid){
+    var user={
+      uid:uid
+    }
+    this.authservice.removeuser(user).subscribe(res=>{
+      if(res.state){
+        this.ngFlashMessageService.showFlashMessage({messages: ["user removed!"],dismissible: true,timeout: 4000,type: 'success'});
+        this.searchuser();
+      }
+        else{
+          this.ngFlashMessageService.showFlashMessage({messages: ["SERVER ERROR OCCUERED!"],dismissible: true,timeout: 4000,type: 'danger'});
+        }
+  })
+  }
+  warn(uid){
+      alert(uid)
   }
 }
 

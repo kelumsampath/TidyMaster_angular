@@ -199,4 +199,13 @@ searchUser(username){
   return this.http.post("http://localhost:3000/admin/searchusers",username,{headers:headers}).map(res=>res.json());
 }
 
+removeuser(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','removeuser');
+  return this.http.post("http://localhost:3000/admin/removeuser",user,{headers:headers}).map(res=>res.json());
+}
+
 }

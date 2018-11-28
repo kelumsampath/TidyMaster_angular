@@ -32,8 +32,8 @@
                     <h2 style="font-size:110%;margin-left:-150%;">Gender:{{ userlist.gender }}</h2>
                   </div>
                   <div style="margin-left:70%">
-                  <button type="submit" class="btn btn-warning btn-md" (click)="this.warn()">Warn</button>
-                  <button type="submit" class="btn btn-danger btn-md" (click)="this.remove()">Remove</button>
+                  <button type="submit" class="btn btn-warning btn-md" (click)="this.warn(userlist.uid)">Warn</button>
+                  <button type="submit" class="btn btn-danger btn-md" (click)="this.remove(userlist.uid)">Remove</button>
                   </div>
                 </div>
               </div>
