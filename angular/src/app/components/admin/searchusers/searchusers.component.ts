@@ -81,7 +81,7 @@ export class SearchusersComponent implements OnInit {
     this.authservice.removeuser(user).subscribe(res => {
       if (res.state) {
         this.ngFlashMessageService.showFlashMessage({ messages: ["user removed!"], dismissible: true, timeout: 4000, type: 'success' });
-        this.searchuser();
+        this.searchAlluser();
       }
       else {
         this.ngFlashMessageService.showFlashMessage({ messages: [res.msg], dismissible: true, timeout: 4000, type: 'danger' });
