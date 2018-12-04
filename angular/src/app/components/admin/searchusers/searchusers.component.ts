@@ -84,7 +84,7 @@ export class SearchusersComponent implements OnInit {
         this.searchuser();
       }
       else {
-        this.ngFlashMessageService.showFlashMessage({ messages: ["SERVER ERROR OCCUERED!"], dismissible: true, timeout: 4000, type: 'danger' });
+        this.ngFlashMessageService.showFlashMessage({ messages: [res.msg], dismissible: true, timeout: 4000, type: 'danger' });
       }
     })
   }
@@ -103,7 +103,7 @@ export class SearchusersComponent implements OnInit {
           this.searchAlluser();
         }
         else {
-          this.ngFlashMessageService.showFlashMessage({ messages: ["SERVER ERROR OCCUERED!"], dismissible: true, timeout: 4000, type: 'danger' });
+          this.ngFlashMessageService.showFlashMessage({ messages: [res.msg], dismissible: true, timeout: 4000, type: 'danger' });
         }
       })
 
