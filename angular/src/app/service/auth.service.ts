@@ -219,4 +219,14 @@ removeuser(user){
   return this.http.post("http://localhost:3000/admin/removeuser",user,{headers:headers}).map(res=>res.json());
 }
 
+warnuser(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','warnuser');
+  return this.http.post("http://localhost:3000/admin/warnuser",user,{headers:headers}).map(res=>res.json());
+}
+
+
 }
