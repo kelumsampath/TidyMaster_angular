@@ -23,6 +23,7 @@ export class SearchusersComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.searchAlluser()
   }
 
   searchuser(){
@@ -39,7 +40,29 @@ export class SearchusersComponent implements OnInit {
       this.imgurl = res.users.photourl;
       //console.log(this.recipe)
       }else{
-        console.log("sdddd")
+        alert("no user found!")
+      }
+      //console.log(res);
+      } else{
+      //console.log(res.msg);
+      this.ngFlashMessageService.showFlashMessage({messages: ["Server Error!"],dismissible: false,timeout: 4000,type: 'danger'});
+      console.log(res)
+      }
+    });
+  }
+
+  searchAlluser(){
+    this.searchstatus=true;
+   
+    this.authservice.searchAllUser().subscribe(res=>{
+      
+      if(res.state){
+        this.usercount=res.usercount;
+      if(res.usercount){
+      this.users =res.users;
+      this.imgurl = res.users.photourl;
+      console.log(this.users)
+      }else{
         document.getElementById("norecipe").innerHTML = "Hello World";
       }
       //console.log(res);

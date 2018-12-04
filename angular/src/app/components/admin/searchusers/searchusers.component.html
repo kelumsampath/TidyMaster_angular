@@ -16,10 +16,10 @@
     </div>
 
     <div class="container" *ngIf="this.searchstatus==true">
-      <div id="menuitem" *ngIf="this.usercount==true">
-        <ul *ngFor="let userlist of users;let i = index" [attr.data-index]="i">
+      <div id="menuitem" >
+        <ul *ngFor="let userlist of users">
           <li>
-            <button [routerLink]="['/allrecipe',userlist.recipename]" class="add">
+            <button [routerLink]="['/allrecipe',userlist.username]" class="add">
               <div id="container" style="height:15%">
                 <div class="row" style="height:15%">
                   <div class="col-dm-8 col-md-push-3" style="width:40%; padding-left:2% ">
@@ -40,13 +40,6 @@
             </button>
         </ul>
       </div>
-
-      <div id="menuitem" *ngIf="this.usercount==false">
-        <div class="norecipe">
-          <h3>NO USER FOUND!</h3>
-        </div>
-      </div>
-    </div>
 
 
   </div>

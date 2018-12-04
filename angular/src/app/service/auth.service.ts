@@ -195,9 +195,20 @@ searchUser(username){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  headers.append('accessresource','registersuperadmin');
+  headers.append('accessresource','');
   return this.http.post("http://localhost:3000/admin/searchusers",username,{headers:headers}).map(res=>res.json());
 }
+
+searchAllUser(){
+  const username={};
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','');
+  return this.http.post("http://localhost:3000/admin/searchusersmob",username,{headers:headers}).map(res=>res.json());
+}
+
 
 removeuser(user){
   this.fetchtoken();
