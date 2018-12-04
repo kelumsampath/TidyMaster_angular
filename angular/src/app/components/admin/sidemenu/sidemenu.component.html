@@ -64,11 +64,15 @@
       </li>
 
       <li data-toggle="collapse" data-target="#new2" class="collapsed">
-        <i class="fa fa-car fa-lg"></i> Service <span class="arrow"></span>
+        <i class="fa fa-car fa-lg"></i> Complains <span class="arrow"></span>
       </li>
       <ul class="sub-menu collapse" id="new2">
-        <li>Sensorkonfiguration</li>
-        <li>Betriebsarten</li>
+        <a [routerLink]="['/pendingjobpost']">
+          <li>Checked</li>
+        </a>
+        <a [routerLink]="['/acceptedjobpost']">
+          <li>Unchecked</li>
+        </a>
       </ul>
 
     </ul>
