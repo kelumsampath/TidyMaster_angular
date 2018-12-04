@@ -195,7 +195,7 @@ searchUser(username){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  headers.append('accessresource','');
+  headers.append('accessresource','searchuser');
   return this.http.post("http://localhost:3000/admin/searchusers",username,{headers:headers}).map(res=>res.json());
 }
 
@@ -205,7 +205,7 @@ searchAllUser(){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  headers.append('accessresource','');
+  headers.append('accessresource','searchuser');
   return this.http.post("http://localhost:3000/admin/searchusersmob",username,{headers:headers}).map(res=>res.json());
 }
 
