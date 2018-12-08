@@ -45,7 +45,7 @@ export class SearchusersComponent implements OnInit {
         //console.log(res);
       } else {
         //console.log(res.msg);
-        this.ngFlashMessageService.showFlashMessage({ messages: ["Server Error!"], dismissible: false, timeout: 4000, type: 'danger' });
+        this.ngFlashMessageService.showFlashMessage({ messages: [res.msg], dismissible: false, timeout: 4000, type: 'danger' });
         console.log(res)
       }
     });
@@ -68,7 +68,7 @@ export class SearchusersComponent implements OnInit {
         //console.log(res);
       } else {
         //console.log(res.msg);
-        this.ngFlashMessageService.showFlashMessage({ messages: ["Server Error!"], dismissible: false, timeout: 4000, type: 'danger' });
+        this.ngFlashMessageService.showFlashMessage({ messages: [res.msg], dismissible: false, timeout: 4000, type: 'danger' });
         console.log(res)
       }
     });
@@ -78,6 +78,7 @@ export class SearchusersComponent implements OnInit {
     var user = {
       uid: uid
     }
+    //alert(user.uid)
     this.authservice.removeuser(user).subscribe(res => {
       if (res.state) {
         this.ngFlashMessageService.showFlashMessage({ messages: ["user removed!"], dismissible: true, timeout: 4000, type: 'success' });
