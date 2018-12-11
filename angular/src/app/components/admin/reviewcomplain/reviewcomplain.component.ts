@@ -40,12 +40,13 @@ export class ReviewcomplainComponent implements OnInit {
     });
   }
 
-  remove(uid) {
+  complaineduserremove(uid,complainid) {
     var user = {
-      uid: uid
+      uid: uid,
+      complainid:complainid
     }
     //alert(user.uid)
-    this.authservice.removeuser(user).subscribe(res => {
+    this.authservice.complaineduserremove(user).subscribe(res => {
       if (res.state) {
         this.ngFlashMessageService.showFlashMessage({ messages: ["user removed!"], dismissible: true, timeout: 4000, type: 'success' });
         this.searchAlluser();
@@ -55,16 +56,17 @@ export class ReviewcomplainComponent implements OnInit {
       }
     })
   }
-  warn(uid) {
+  complaineduserwarn(uid,complainid) {
     var reason = prompt("Please enter reason:", "warn");
     if (reason == null || reason == "") {
 
     } else {
       var user = {
         uid: uid,
-        reason:reason
+        reason:reason,
+        complainid:complainid
       }
-      this.authservice.warnuser(user).subscribe(res => {
+      this.authservice.complaineduserwarn(user).subscribe(res => {
         if (res.state) {
           this.ngFlashMessageService.showFlashMessage({ messages: ["user Warned!"], dismissible: true, timeout: 4000, type: 'success' });
           this.searchAlluser();
