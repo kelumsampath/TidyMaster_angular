@@ -34,6 +34,8 @@ import { PendingjobpostsComponent } from './components/admin/pendingjobposts/pen
 import { AcceptjobpostComponent } from './components/admin/acceptjobpost/acceptjobpost.component';
 import { RejectedjobpostComponent } from './components/admin/rejectedjobpost/rejectedjobpost.component';
 import { SearchusersComponent } from './components/admin/searchusers/searchusers.component';
+import { ReviewcomplainComponent } from './components/admin/reviewcomplain/reviewcomplain.component';
+import { CheckedcomplainsComponent } from './components/admin/checkedcomplains/checkedcomplains.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -61,7 +63,8 @@ const applicationRoutes:Routes = [
   {path:'addsuperadmin',component:AddsuperadminComponent, canActivate: [AuthGuard]},
   {path:'sample',component:SampleComponent, canActivate: [AuthGuard]},
   {path:'searchusers',component:SearchusersComponent, canActivate: [AuthGuard]},
-  
+  {path:'reviewcomplain',component:ReviewcomplainComponent, canActivate: [AuthGuard]},
+  {path:'checkedcomplains',component:CheckedcomplainsComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -90,7 +93,9 @@ const applicationRoutes:Routes = [
     PendingjobpostsComponent,
     AcceptjobpostComponent,
     RejectedjobpostComponent,
-    SearchusersComponent
+    SearchusersComponent,
+    ReviewcomplainComponent,
+    CheckedcomplainsComponent
   ],
   imports: [
     BrowserModule,

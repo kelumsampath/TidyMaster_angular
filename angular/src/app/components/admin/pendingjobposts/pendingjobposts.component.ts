@@ -46,7 +46,7 @@ export class PendingjobpostsComponent implements OnInit {
        this.getpost();
       }
         else{
-          this.ngFlashMessageService.showFlashMessage({messages: ["SERVER ERROR OCCUERED!"],dismissible: true,timeout: 4000,type: 'danger'});
+          this.ngFlashMessageService.showFlashMessage({messages: [res.msg],dismissible: true,timeout: 4000,type: 'danger'});
         }
   })
   }

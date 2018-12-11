@@ -4,67 +4,33 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../../service/auth.service';
 
 @Component({
-  selector: 'app-searchusers',
-  templateUrl: './searchusers.component.html',
-  styleUrls: ['./searchusers.component.css']
+  selector: 'app-reviewcomplain',
+  templateUrl: './reviewcomplain.component.html',
+  styleUrls: ['./reviewcomplain.component.css']
 })
-export class SearchusersComponent implements OnInit {
-  search: string;
-  users: any;
-  imgurl: String;
+export class ReviewcomplainComponent implements OnInit {
+  complains: any;
   searchstatus: boolean;
-  usercount: boolean;
   constructor(
     private authservice: AuthService,
     private ngFlashMessageService: NgFlashMessageService,
     private router: Router,
   ) {
-    this.searchstatus = false;
   }
 
   ngOnInit() {
     this.searchAlluser()
   }
 
-  searchuser() {
-    this.searchstatus = true;
-    const username = {
-      username: this.search
-    }
-    this.authservice.searchUser(username).subscribe(res => {
-
-      if (res.state) {
-        this.usercount = res.usercount;
-        if (res.usercount) {
-          this.users = res.users;
-          this.imgurl = res.users.photourl;
-          //console.log(this.recipe)
-        } else {
-          alert("no user found!")
-        }
-        //console.log(res);
-      } else {
-        //console.log(res.msg);
-        this.ngFlashMessageService.showFlashMessage({ messages: [res.msg], dismissible: false, timeout: 4000, type: 'danger' });
-        console.log(res)
-      }
-    });
-  }
-
   searchAlluser() {
     this.searchstatus = true;
 
-    this.authservice.searchAllUser().subscribe(res => {
+    this.authservice.uncheckedcomplains().subscribe(res => {
 
       if (res.state) {
-        this.usercount = res.usercount;
-        if (res.usercount) {
-          this.users = res.users;
-          this.imgurl = res.users.photourl;
-          console.log(this.users)
-        } else {
-          document.getElementById("norecipe").innerHTML = "Hello World";
-        }
+          this.complains = res.complains;
+          console.log(this.complains)
+        
         //console.log(res);
       } else {
         //console.log(res.msg);
@@ -74,12 +40,13 @@ export class SearchusersComponent implements OnInit {
     });
   }
 
-  remove(uid) {
+  complaineduserremove(uid,complainid) {
     var user = {
-      uid: uid
+      uid: uid,
+      complainid:complainid
     }
     //alert(user.uid)
-    this.authservice.removeuser(user).subscribe(res => {
+    this.authservice.complaineduserremove(user).subscribe(res => {
       if (res.state) {
         this.ngFlashMessageService.showFlashMessage({ messages: ["user removed!"], dismissible: true, timeout: 4000, type: 'success' });
         this.searchAlluser();
@@ -89,16 +56,17 @@ export class SearchusersComponent implements OnInit {
       }
     })
   }
-  warn(uid) {
+  complaineduserwarn(uid,complainid) {
     var reason = prompt("Please enter reason:", "warn");
     if (reason == null || reason == "") {
 
     } else {
       var user = {
         uid: uid,
-        reason:reason
+        reason:reason,
+        complainid:complainid
       }
-      this.authservice.warnuser(user).subscribe(res => {
+      this.authservice.complaineduserwarn(user).subscribe(res => {
         if (res.state) {
           this.ngFlashMessageService.showFlashMessage({ messages: ["user Warned!"], dismissible: true, timeout: 4000, type: 'success' });
           this.searchAlluser();

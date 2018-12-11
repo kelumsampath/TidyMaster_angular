@@ -4,67 +4,33 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../../service/auth.service';
 
 @Component({
-  selector: 'app-searchusers',
-  templateUrl: './searchusers.component.html',
-  styleUrls: ['./searchusers.component.css']
+  selector: 'app-checkedcomplains',
+  templateUrl: './checkedcomplains.component.html',
+  styleUrls: ['./checkedcomplains.component.css']
 })
-export class SearchusersComponent implements OnInit {
-  search: string;
-  users: any;
-  imgurl: String;
+export class CheckedcomplainsComponent implements OnInit {
+  complains: any;
   searchstatus: boolean;
-  usercount: boolean;
   constructor(
     private authservice: AuthService,
     private ngFlashMessageService: NgFlashMessageService,
     private router: Router,
   ) {
-    this.searchstatus = false;
   }
 
   ngOnInit() {
     this.searchAlluser()
   }
 
-  searchuser() {
-    this.searchstatus = true;
-    const username = {
-      username: this.search
-    }
-    this.authservice.searchUser(username).subscribe(res => {
-
-      if (res.state) {
-        this.usercount = res.usercount;
-        if (res.usercount) {
-          this.users = res.users;
-          this.imgurl = res.users.photourl;
-          //console.log(this.recipe)
-        } else {
-          alert("no user found!")
-        }
-        //console.log(res);
-      } else {
-        //console.log(res.msg);
-        this.ngFlashMessageService.showFlashMessage({ messages: [res.msg], dismissible: false, timeout: 4000, type: 'danger' });
-        console.log(res)
-      }
-    });
-  }
-
   searchAlluser() {
     this.searchstatus = true;
 
-    this.authservice.searchAllUser().subscribe(res => {
+    this.authservice.checkedcomplains().subscribe(res => {
 
       if (res.state) {
-        this.usercount = res.usercount;
-        if (res.usercount) {
-          this.users = res.users;
-          this.imgurl = res.users.photourl;
-          console.log(this.users)
-        } else {
-          document.getElementById("norecipe").innerHTML = "Hello World";
-        }
+          this.complains = res.complains;
+          console.log(this.complains)
+        
         //console.log(res);
       } else {
         //console.log(res.msg);
