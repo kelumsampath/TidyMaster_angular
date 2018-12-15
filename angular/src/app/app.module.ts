@@ -33,6 +33,7 @@ import { SidebarComponent } from './components/advertiser/sidebar/sidebar.compon
 import { PendingjobpostsComponent } from './components/admin/pendingjobposts/pendingjobposts.component';
 import { AcceptjobpostComponent } from './components/admin/acceptjobpost/acceptjobpost.component';
 import { RejectedjobpostComponent } from './components/admin/rejectedjobpost/rejectedjobpost.component';
+import { FooterComponent } from './components/advertiser/footer/footer.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -87,7 +88,8 @@ const applicationRoutes:Routes = [
     SidebarComponent,
     PendingjobpostsComponent,
     AcceptjobpostComponent,
-    RejectedjobpostComponent
+    RejectedjobpostComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
