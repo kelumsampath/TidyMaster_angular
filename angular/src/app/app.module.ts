@@ -33,6 +33,7 @@ import { SidebarComponent } from './components/advertiser/sidebar/sidebar.compon
 import { PendingjobpostsComponent } from './components/admin/pendingjobposts/pendingjobposts.component';
 import { AcceptjobpostComponent } from './components/admin/acceptjobpost/acceptjobpost.component';
 import { RejectedjobpostComponent } from './components/admin/rejectedjobpost/rejectedjobpost.component';
+
 import { SearchusersComponent } from './components/admin/searchusers/searchusers.component';
 import { ReviewcomplainComponent } from './components/admin/reviewcomplain/reviewcomplain.component';
 import { CheckedcomplainsComponent } from './components/admin/checkedcomplains/checkedcomplains.component';
@@ -96,6 +97,7 @@ const applicationRoutes:Routes = [
     SearchusersComponent,
     ReviewcomplainComponent,
     CheckedcomplainsComponent
+
   ],
   imports: [
     BrowserModule,
