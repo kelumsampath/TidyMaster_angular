@@ -34,6 +34,9 @@ import { PendingjobpostsComponent } from './components/admin/pendingjobposts/pen
 import { AcceptjobpostComponent } from './components/admin/acceptjobpost/acceptjobpost.component';
 import { RejectedjobpostComponent } from './components/admin/rejectedjobpost/rejectedjobpost.component';
 import { FooterComponent } from './components/advertiser/footer/footer.component';
+import { SearchusersComponent } from './components/admin/searchusers/searchusers.component';
+import { ReviewcomplainComponent } from './components/admin/reviewcomplain/reviewcomplain.component';
+import { CheckedcomplainsComponent } from './components/admin/checkedcomplains/checkedcomplains.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -89,6 +92,9 @@ const applicationRoutes:Routes = [
     PendingjobpostsComponent,
     AcceptjobpostComponent,
     RejectedjobpostComponent,
+    SearchusersComponent,
+    ReviewcomplainComponent,
+    CheckedcomplainsComponent
     FooterComponent
   ],
   imports: [
