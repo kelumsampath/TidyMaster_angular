@@ -1,3 +1,63 @@
-<p>
-  cleanerhome works!
-</p>
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+      <div class="card" style="width:400px">
+          <img class="card-img-bottom" src="/assets/DP.png" alt="Display Picture" style="margin:auto;;width:80%">
+          <div class="card-header">
+              <h2 class="card-title">{{user.username}}</h2>
+              <h4 class="card-title"><i>{{user.email}}</i></h4>
+              <p class="card-text"><br>This person can be Owner,Admin,Customer,Cleaner or Advertiser.</p>
+          </div>
+    </div>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <h1>Confirmed Jobs</h1>
+    <div class="ex3">
+      <ul>
+      <li><h3>this is an example</h3></li>
+      <br>
+      <li><h3>this is an example</h3></li>
+      <br>
+      <li><h3>this is an example</h3></li>
+      <br>
+      <li><h3>this is an example</h3></li>
+      <br>
+      <li><h3>this is an example</h3></li>
+      <br>
+      <li><h3>this is an example</h3></li>
+      <br>
+      <li><h3>this is an example</h3></li>
+      <br>
+      <li><h3>this is an example</h3></li>
+      <br>
+      <li><h3>this is an example</h3></li>
+      <br>
+      <li><h3>this is an example</h3></li>
+      <br>
+      <li><h3>this is an example</h3></li>
+      <br>
+      <li><h3>this is an example</h3></li>
+      <br>
+      <li><h3>this is an example</h3></li>
+      <br>
+      <li><h3>this is an example</h3></li>
+      <br>
+      </ul>
+      this is an example
+      <br>
+    </div>
+  </div>
+  <div class="column" style="background-color:#ccc;">
+    <h1>All Job Posts</h1>
+    <div class="ex3">
+    <ul *ngFor="let jobs of job">
+      <li *ngIf="jobs.status=='accepted'">
+      <div>
+          <h5> {{ jobs.title }}</h5>
+          <h6> {{ jobs.joblocation }}</h6>
+         <button [routerLink]="['/acceptedjobpost',jobs.postid]" class="btn btn-info btn-lg">View job</button><br>
+      </div>
+      </li>
+      </ul>
+    </div>
+  </div>
+</div>

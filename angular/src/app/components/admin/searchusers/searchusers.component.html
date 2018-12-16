@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <app-sidemenu></app-sidemenu>
+  </div>
+  <div class="column2" style="background-color:#bbb;min-height: 800px;">
+    <div class="outerbox">
+      <div class="searchform">
+        <form class="form" #form=ngForm (submit)="searchuser()">
+          <div class="form-group searchtab">
+            <input type="text" class="form-control" id="search" placeholder="User name" name="search" [(ngModel)]="search"
+              required><br>
+            <button type="submit" class="btn btn-success btn-lg" [disabled]="!form.valid">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="container" *ngIf="this.searchstatus==true">
+      <div id="menuitem" >
+        <ul *ngFor="let userlist of users">
+          <li>
+            <button [routerLink]="['/allrecipe',userlist.username]" class="add">
+              <div id="container" style="height:15%">
+                <div class="row" style="height:15%">
+                  <div class="col-dm-8 col-md-push-3" style="width:40%; padding-left:2% ">
+                    <img src="{{ userlist.photourl }}" id="pic" class="img-rounded" alt="" style="width:50%;">
+                  </div>
+                  <div class="col-dm-8 col-md-pull-8" style="width:50%;height:10%;padding-left: 5%;">
+                    <h1 style="font-size:210%; margin-top: 20px;margin-left: -20%;"> {{ userlist.username }}</h1><br>
+                    <h2 style="font-size:110%;margin-left:-150%;">{{ userlist.firstName }} {{ userlist.lastName }}</h2>
+                    <h2 style="font-size:110%;margin-left:-150%;">Email:{{ userlist.email }}</h2>
+                    <h2 style="font-size:110%;margin-left:-150%;">Role:{{ userlist.rolename }}</h2>
+                    <h2 style="font-size:110%;margin-left:-150%;">Gender:{{ userlist.gender }}</h2>
+                  </div>
+                  <div style="margin-left:70%">
+                  <button type="submit" class="btn btn-warning btn-md" (click)="this.warn(userlist.uid)">Warn</button>
+                  <button type="submit" class="btn btn-danger btn-md" (click)="this.remove(userlist.uid)">Remove</button>
+                  </div>
+                </div>
+              </div>
+            </button>
+        </ul>
+      </div>
+
+
+  </div>

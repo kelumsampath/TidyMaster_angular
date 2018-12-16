@@ -190,4 +190,80 @@ loadprofpic(){
   return this.http.post("http://localhost:3000/admin/profpic",user,{headers:headers}).map(res=>res.json());
 }
 
+searchUser(username){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','searchuser');
+  return this.http.post("http://localhost:3000/admin/searchusers",username,{headers:headers}).map(res=>res.json());
+}
+
+searchAllUser(){
+  const username={};
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','searchuser');
+  return this.http.post("http://localhost:3000/admin/searchusersmob",username,{headers:headers}).map(res=>res.json());
+}
+
+
+removeuser(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','complainview');
+  return this.http.post("http://localhost:3000/admin/removeuser",user,{headers:headers}).map(res=>res.json());
+}
+
+warnuser(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','complainview');
+  return this.http.post("http://localhost:3000/admin/warnuser",user,{headers:headers}).map(res=>res.json());
+}
+
+uncheckedcomplains(){
+  var user={}
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','complainview');
+  return this.http.post("http://localhost:3000/admin/viewuncheckedcomplains",user,{headers:headers}).map(res=>res.json());
+}
+
+checkedcomplains(){
+  var user={}
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','complainview');
+  return this.http.post("http://localhost:3000/admin/viewcheckedcomplains",user,{headers:headers}).map(res=>res.json());
+}
+
+complaineduserremove(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','complainview');
+  return this.http.post("http://localhost:3000/admin/complaineduserremove",user,{headers:headers}).map(res=>res.json());
+}
+
+complaineduserwarn(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','complainview');
+  return this.http.post("http://localhost:3000/admin/complaineduserwarn",user,{headers:headers}).map(res=>res.json());
+}
+
 }
