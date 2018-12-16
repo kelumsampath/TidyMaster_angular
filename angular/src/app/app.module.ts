@@ -38,6 +38,7 @@ import { SearchusersComponent } from './components/admin/searchusers/searchusers
 import { ReviewcomplainComponent } from './components/admin/reviewcomplain/reviewcomplain.component';
 import { CheckedcomplainsComponent } from './components/admin/checkedcomplains/checkedcomplains.component';
 import { FooterComponent } from './components/advertiser/footer/footer.component';
+import { AdvertiserprofileComponent } from './components/advertiser/advertiserprofile/advertiserprofile.component';
 
 
 const applicationRoutes:Routes = [
@@ -68,6 +69,7 @@ const applicationRoutes:Routes = [
   {path:'searchusers',component:SearchusersComponent, canActivate: [AuthGuard]},
   {path:'reviewcomplain',component:ReviewcomplainComponent, canActivate: [AuthGuard]},
   {path:'checkedcomplains',component:CheckedcomplainsComponent, canActivate: [AuthGuard]},
+  {path:'advertiserProfile',component:AdvertiserprofileComponent,canActivate:[AuthGuard]}
 ];
 
 @NgModule({
@@ -99,7 +101,8 @@ const applicationRoutes:Routes = [
     SearchusersComponent,
     ReviewcomplainComponent,
     CheckedcomplainsComponent,
-    FooterComponent
+    FooterComponent,
+    AdvertiserprofileComponent
   ],
   imports: [
     BrowserModule,
