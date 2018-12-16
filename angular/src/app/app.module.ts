@@ -37,6 +37,8 @@ import { RejectedjobpostComponent } from './components/admin/rejectedjobpost/rej
 import { SearchusersComponent } from './components/admin/searchusers/searchusers.component';
 import { ReviewcomplainComponent } from './components/admin/reviewcomplain/reviewcomplain.component';
 import { CheckedcomplainsComponent } from './components/admin/checkedcomplains/checkedcomplains.component';
+import { FooterComponent } from './components/advertiser/footer/footer.component';
+
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -96,8 +98,8 @@ const applicationRoutes:Routes = [
     RejectedjobpostComponent,
     SearchusersComponent,
     ReviewcomplainComponent,
-    CheckedcomplainsComponent
-
+    CheckedcomplainsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
