@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 export class AuthService {
   user:any;
   authtoken:any;
+  adminorsuperadmin:boolean=false;
 
   constructor(
     private http:Http,
@@ -97,6 +98,7 @@ acceptpost(review){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
+  headers.append('accessresource','jobpostreview');
   return this.http.post("http://localhost:3000/admin/acceptpost",review,{headers:headers}).map(res=>res.json());
 }
 
@@ -105,6 +107,7 @@ rejectpost(review){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
+  headers.append('accessresource','jobpostreview');
   return this.http.post("http://localhost:3000/admin/rejectpost",review,{headers:headers}).map(res=>res.json());
 }
 
@@ -113,6 +116,7 @@ pendingpost(review){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
+  headers.append('accessresource','jobpostreview');
   return this.http.post("http://localhost:3000/admin/pendingpost",review,{headers:headers}).map(res=>res.json());
 }
 
@@ -147,6 +151,128 @@ issuperadmin(){
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
   return this.http.post("http://localhost:3000/admin/issuperadmin",user,{headers:headers}).map(res=>res.json());
+}
+
+registerAdvertiser(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','registeradvertiser');
+  return this.http.post("http://localhost:3000/admin/specialuser",user,{headers:headers}).map(res=>res.json());
+};
+
+registerAdmin(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','registeramin');
+  return this.http.post("http://localhost:3000/admin/specialuser",user,{headers:headers}).map(res=>res.json());
+};
+
+registerSuperAdmin(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','registersuperadmin');
+  return this.http.post("http://localhost:3000/admin/specialuser",user,{headers:headers}).map(res=>res.json());
+};
+
+loadprofpic(){
+  var user={
+
+  }
+  let headers = new Headers();
+  headers.append('content-Type','application/json');
+  headers.append('Authorization',this.authtoken);
+  return this.http.post("http://localhost:3000/admin/profpic",user,{headers:headers}).map(res=>res.json());
+}
+
+searchUser(username){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','searchuser');
+  return this.http.post("http://localhost:3000/admin/searchusers",username,{headers:headers}).map(res=>res.json());
+}
+
+searchAllUser(){
+  const username={};
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','searchuser');
+  return this.http.post("http://localhost:3000/admin/searchusersmob",username,{headers:headers}).map(res=>res.json());
+}
+
+
+removeuser(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','complainview');
+  return this.http.post("http://localhost:3000/admin/removeuser",user,{headers:headers}).map(res=>res.json());
+}
+
+warnuser(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','complainview');
+  return this.http.post("http://localhost:3000/admin/warnuser",user,{headers:headers}).map(res=>res.json());
+}
+
+uncheckedcomplains(){
+  var user={}
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','complainview');
+  return this.http.post("http://localhost:3000/admin/viewuncheckedcomplains",user,{headers:headers}).map(res=>res.json());
+}
+
+checkedcomplains(){
+  var user={}
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','complainview');
+  return this.http.post("http://localhost:3000/admin/viewcheckedcomplains",user,{headers:headers}).map(res=>res.json());
+}
+
+complaineduserremove(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','complainview');
+  return this.http.post("http://localhost:3000/admin/complaineduserremove",user,{headers:headers}).map(res=>res.json());
+}
+
+complaineduserwarn(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','complainview');
+  return this.http.post("http://localhost:3000/admin/complaineduserwarn",user,{headers:headers}).map(res=>res.json());
+}
+
+addadvertiesment(addvertiesment){
+  alert('Ddd')
+  const formData: FormData = new FormData();
+  formData.append('addvertiesment', addvertiesment.fileToUpload,addvertiesment.fileToUpload.name);
+  formData.append('title',addvertiesment.title);
+  formData.append('venderurl',addvertiesment.venderurl);
+  return this.http.post("http://localhost:3000/admin/addadvertiesment", formData).map(res=>res.json()); 
 }
 
 }

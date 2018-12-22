@@ -1,0 +1,99 @@
+/* coloum view start */
+* {
+    box-sizing: border-box;
+    margin-top: -10px;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    
+    height: 100%; /* Should be removed. Only for demonstration */
+}
+.column2 {
+    float: left;
+    width: 75%;
+    padding: 10px;
+    height: 100%; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* coloum view end */
+
+/*search*/
+.searchform{
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+}
+.outerbox{
+    text-align: center;
+    margin-top: 4%;
+}
+#menuitem{
+    float: center;
+    width: 100%;
+}
+
+ul{
+    list-style-type:none;
+    margin-top: 20px;
+    height: 20%;
+    }
+
+.container{
+    background-color:floralwhite;
+    width: 70%;
+    border-style: double;
+    border-width: 5px;
+    border-color: #545952;
+    text-align: center;
+    font-size: 3mm;
+}
+.norecipe{
+    text-align: center;
+    margin-top: 5%;
+}
+img {
+    float: left;
+    margin-top: 20px
+}
+
+.add{
+    width: 70%;
+    box-align:"left";
+    border-style: solid;
+    border-color: #605f5c; 
+    text-align: center;
+    background-color: #bcbbb7;
+    border-radius: 10px;
+    padding-left: 3%;
+}
+.add:hover{
+   color: aqua;
+    transition:all 0.40s ease-in;
+    background-color: #605b4b;
+    border-radius: 10px;
+    border-color: #c9a428;
+    border-style: solid;
+    border-width: thick;
+    
+}
+ul{
+    list-style-type:none;
+    margin-top: 20px;
+    }
+img {
+    float: center;
+}
+
+.searchtab{
+    width: 40%;
+    margin-left: 30%;
+}
