@@ -8,6 +8,7 @@ export class AuthService {
   user:any;
   authtoken:any;
   adminorsuperadmin:boolean=false;
+  url:String="http://tidymaster.projects.uom.lk:3000";
 
   constructor(
     private http:Http,
@@ -15,13 +16,13 @@ export class AuthService {
   registerUser(user){
     let headers = new Headers();
     headers.append('content-Type','application/json');
-    return this.http.post("http://localhost:3000/user/register",user,{headers:headers}).map(res=>res.json());
+    return this.http.post(this.url+"/user/register",user,{headers:headers}).map(res=>res.json());
   };
 
   loginUser(user){
     let headers = new Headers();
     headers.append('content-Type','application/json');
-    return this.http.post("http://localhost:3000/user/login",user,{headers:headers}).map(res=>res.json());
+    return this.http.post(this.url+"/user/login",user,{headers:headers}).map(res=>res.json());
   };
 
   storeData(token,userdata){
@@ -36,7 +37,7 @@ getprofile(){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.get("http://localhost:3000/user/profile",{headers:headers}).map(res=>res.json());
+  return this.http.get(this.url+"/user/profile",{headers:headers}).map(res=>res.json());
   
 };
 fetchtoken(){
@@ -53,7 +54,7 @@ logOut(){
   this.authtoken = null;
   this.user = null;
   localStorage.clear();
-  return this.http.get("http://localhost:3000/user/logout",{headers:headers}).map(res=>res.json()); 
+  return this.http.get(this.url+"/user/logout",{headers:headers}).map(res=>res.json()); 
 }
 
 loggedIn(){
@@ -66,7 +67,7 @@ postjob(job){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.post("http://localhost:3000/customer/jobpost",job,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/customer/jobpost",job,{headers:headers}).map(res=>res.json());
 }
 
 getalljobposts(){
@@ -74,7 +75,7 @@ getalljobposts(){
   let headers = new Headers();
   //headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.post("http://localhost:3000/cleaner/getalljobs",{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/cleaner/getalljobs",{headers:headers}).map(res=>res.json());
 }
 
 getjobpost(postid){
@@ -82,7 +83,7 @@ getjobpost(postid){
   let headers = new Headers();
   //headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.post("http://localhost:3000/cleaner/viewjob",postid,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/cleaner/viewjob",postid,{headers:headers}).map(res=>res.json());
 }
 
 adminalljobposts(){
@@ -90,7 +91,7 @@ adminalljobposts(){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.post("http://localhost:3000/admin/adminalljobs",{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/admin/adminalljobs",{headers:headers}).map(res=>res.json());
 }
 
 acceptpost(review){
@@ -99,7 +100,7 @@ acceptpost(review){
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
   headers.append('accessresource','jobpostreview');
-  return this.http.post("http://localhost:3000/admin/acceptpost",review,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/admin/acceptpost",review,{headers:headers}).map(res=>res.json());
 }
 
 rejectpost(review){
@@ -108,7 +109,7 @@ rejectpost(review){
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
   headers.append('accessresource','jobpostreview');
-  return this.http.post("http://localhost:3000/admin/rejectpost",review,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/admin/rejectpost",review,{headers:headers}).map(res=>res.json());
 }
 
 pendingpost(review){
@@ -117,7 +118,7 @@ pendingpost(review){
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
   headers.append('accessresource','jobpostreview');
-  return this.http.post("http://localhost:3000/admin/pendingpost",review,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/admin/pendingpost",review,{headers:headers}).map(res=>res.json());
 }
 
 isadmin(){
@@ -128,7 +129,7 @@ isadmin(){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.post("http://localhost:3000/admin/isadmin",user,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/admin/isadmin",user,{headers:headers}).map(res=>res.json());
 }
 
 
@@ -139,7 +140,7 @@ iscleaner(){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.post("http://localhost:3000/cleaner/iscleaner",user,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/cleaner/iscleaner",user,{headers:headers}).map(res=>res.json());
 }
   
 
@@ -150,7 +151,7 @@ issuperadmin(){
   let headers = new Headers();
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
-  return this.http.post("http://localhost:3000/admin/issuperadmin",user,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/admin/issuperadmin",user,{headers:headers}).map(res=>res.json());
 }
 
 registerAdvertiser(user){
@@ -159,7 +160,7 @@ registerAdvertiser(user){
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
   headers.append('accessresource','registeradvertiser');
-  return this.http.post("http://localhost:3000/admin/specialuser",user,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/admin/specialuser",user,{headers:headers}).map(res=>res.json());
 };
 
 registerAdmin(user){
@@ -168,7 +169,7 @@ registerAdmin(user){
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
   headers.append('accessresource','registeramin');
-  return this.http.post("http://localhost:3000/admin/specialuser",user,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/admin/specialuser",user,{headers:headers}).map(res=>res.json());
 };
 
 registerSuperAdmin(user){
@@ -177,7 +178,7 @@ registerSuperAdmin(user){
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
   headers.append('accessresource','registersuperadmin');
-  return this.http.post("http://localhost:3000/admin/specialuser",user,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/admin/specialuser",user,{headers:headers}).map(res=>res.json());
 };
 
 loadprofpic(){
@@ -187,7 +188,7 @@ loadprofpic(){
   let headers = new Headers();
   headers.append('content-Type','application/json');
   headers.append('Authorization',this.authtoken);
-  return this.http.post("http://localhost:3000/admin/profpic",user,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/admin/profpic",user,{headers:headers}).map(res=>res.json());
 }
 
 searchUser(username){
@@ -196,7 +197,7 @@ searchUser(username){
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
   headers.append('accessresource','searchuser');
-  return this.http.post("http://localhost:3000/admin/searchusers",username,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/admin/searchusers",username,{headers:headers}).map(res=>res.json());
 }
 
 searchAllUser(){
@@ -206,7 +207,7 @@ searchAllUser(){
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
   headers.append('accessresource','searchuser');
-  return this.http.post("http://localhost:3000/admin/searchusersmob",username,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/admin/searchusersmob",username,{headers:headers}).map(res=>res.json());
 }
 
 
@@ -216,7 +217,7 @@ removeuser(user){
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
   headers.append('accessresource','complainview');
-  return this.http.post("http://localhost:3000/admin/removeuser",user,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/admin/removeuser",user,{headers:headers}).map(res=>res.json());
 }
 
 warnuser(user){
@@ -225,7 +226,7 @@ warnuser(user){
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
   headers.append('accessresource','complainview');
-  return this.http.post("http://localhost:3000/admin/warnuser",user,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/admin/warnuser",user,{headers:headers}).map(res=>res.json());
 }
 
 uncheckedcomplains(){
@@ -235,7 +236,7 @@ uncheckedcomplains(){
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
   headers.append('accessresource','complainview');
-  return this.http.post("http://localhost:3000/admin/viewuncheckedcomplains",user,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/admin/viewuncheckedcomplains",user,{headers:headers}).map(res=>res.json());
 }
 
 checkedcomplains(){
@@ -245,7 +246,7 @@ checkedcomplains(){
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
   headers.append('accessresource','complainview');
-  return this.http.post("http://localhost:3000/admin/viewcheckedcomplains",user,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/admin/viewcheckedcomplains",user,{headers:headers}).map(res=>res.json());
 }
 
 complaineduserremove(user){
@@ -254,7 +255,7 @@ complaineduserremove(user){
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
   headers.append('accessresource','complainview');
-  return this.http.post("http://localhost:3000/admin/complaineduserremove",user,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/admin/complaineduserremove",user,{headers:headers}).map(res=>res.json());
 }
 
 complaineduserwarn(user){
@@ -263,7 +264,7 @@ complaineduserwarn(user){
   headers.append('Authorization',this.authtoken);
   headers.append('content-Type','application/json');
   headers.append('accessresource','complainview');
-  return this.http.post("http://localhost:3000/admin/complaineduserwarn",user,{headers:headers}).map(res=>res.json());
+  return this.http.post(this.url+"/admin/complaineduserwarn",user,{headers:headers}).map(res=>res.json());
 }
 
 addadvertiesment(addvertiesment){
@@ -272,7 +273,7 @@ addadvertiesment(addvertiesment){
   formData.append('addvertiesment', addvertiesment.fileToUpload,addvertiesment.fileToUpload.name);
   formData.append('title',addvertiesment.title);
   formData.append('venderurl',addvertiesment.venderurl);
-  return this.http.post("http://localhost:3000/admin/addadvertiesment", formData).map(res=>res.json()); 
+  return this.http.post(this.url+"/admin/addadvertiesment", formData).map(res=>res.json()); 
 }
 
 }
