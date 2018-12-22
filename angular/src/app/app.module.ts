@@ -102,7 +102,7 @@ const applicationRoutes:Routes = [
     SearchusersComponent,
     ReviewcomplainComponent,
     CheckedcomplainsComponent,
-    AddadvertiesmentComponent
+    AddadvertiesmentComponent,
     FooterComponent,
     AdvertiserprofileComponent
   ],
