@@ -266,4 +266,13 @@ complaineduserwarn(user){
   return this.http.post("http://localhost:3000/admin/complaineduserwarn",user,{headers:headers}).map(res=>res.json());
 }
 
+addadvertiesment(addvertiesment){
+  alert('Ddd')
+  const formData: FormData = new FormData();
+  formData.append('addvertiesment', addvertiesment.fileToUpload,addvertiesment.fileToUpload.name);
+  formData.append('title',addvertiesment.title);
+  formData.append('venderurl',addvertiesment.venderurl);
+  return this.http.post("http://localhost:3000/admin/addadvertiesment", formData).map(res=>res.json()); 
+}
+
 }

@@ -37,9 +37,9 @@ import { RejectedjobpostComponent } from './components/admin/rejectedjobpost/rej
 import { SearchusersComponent } from './components/admin/searchusers/searchusers.component';
 import { ReviewcomplainComponent } from './components/admin/reviewcomplain/reviewcomplain.component';
 import { CheckedcomplainsComponent } from './components/admin/checkedcomplains/checkedcomplains.component';
+import { AddadvertiesmentComponent } from './components/admin/addadvertiesment/addadvertiesment.component';
 import { FooterComponent } from './components/advertiser/footer/footer.component';
 import { AdvertiserprofileComponent } from './components/advertiser/advertiserprofile/advertiserprofile.component';
-
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -69,6 +69,7 @@ const applicationRoutes:Routes = [
   {path:'searchusers',component:SearchusersComponent, canActivate: [AuthGuard]},
   {path:'reviewcomplain',component:ReviewcomplainComponent, canActivate: [AuthGuard]},
   {path:'checkedcomplains',component:CheckedcomplainsComponent, canActivate: [AuthGuard]},
+  {path:'addadvertiesment',component:AddadvertiesmentComponent, canActivate: [AuthGuard]},
   {path:'advertiserProfile',component:AdvertiserprofileComponent,canActivate:[AuthGuard]}
 ];
 
@@ -101,6 +102,7 @@ const applicationRoutes:Routes = [
     SearchusersComponent,
     ReviewcomplainComponent,
     CheckedcomplainsComponent,
+    AddadvertiesmentComponent
     FooterComponent,
     AdvertiserprofileComponent
   ],
