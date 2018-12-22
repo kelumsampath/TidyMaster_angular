@@ -33,10 +33,13 @@ import { SidebarComponent } from './components/advertiser/sidebar/sidebar.compon
 import { PendingjobpostsComponent } from './components/admin/pendingjobposts/pendingjobposts.component';
 import { AcceptjobpostComponent } from './components/admin/acceptjobpost/acceptjobpost.component';
 import { RejectedjobpostComponent } from './components/admin/rejectedjobpost/rejectedjobpost.component';
+
 import { SearchusersComponent } from './components/admin/searchusers/searchusers.component';
 import { ReviewcomplainComponent } from './components/admin/reviewcomplain/reviewcomplain.component';
 import { CheckedcomplainsComponent } from './components/admin/checkedcomplains/checkedcomplains.component';
 import { AddadvertiesmentComponent } from './components/admin/addadvertiesment/addadvertiesment.component';
+import { FooterComponent } from './components/advertiser/footer/footer.component';
+import { AdvertiserprofileComponent } from './components/advertiser/advertiserprofile/advertiserprofile.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -67,6 +70,7 @@ const applicationRoutes:Routes = [
   {path:'reviewcomplain',component:ReviewcomplainComponent, canActivate: [AuthGuard]},
   {path:'checkedcomplains',component:CheckedcomplainsComponent, canActivate: [AuthGuard]},
   {path:'addadvertiesment',component:AddadvertiesmentComponent, canActivate: [AuthGuard]},
+  {path:'advertiserProfile',component:AdvertiserprofileComponent,canActivate:[AuthGuard]}
 ];
 
 @NgModule({
@@ -99,6 +103,8 @@ const applicationRoutes:Routes = [
     ReviewcomplainComponent,
     CheckedcomplainsComponent,
     AddadvertiesmentComponent
+    FooterComponent,
+    AdvertiserprofileComponent
   ],
   imports: [
     BrowserModule,

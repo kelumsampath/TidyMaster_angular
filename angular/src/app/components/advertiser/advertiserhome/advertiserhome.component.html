@@ -1,18 +1,20 @@
-<div class="main-content">
-    
-    <div class="container-fluid">
-            <div class="column" style="background-color:#aaa;">
-                    <app-sidebar></app-sidebar>
-                </div>
-        <div class="column2">
+<header>
 
-            <div class="col-md-8, chart">
-                <app-charts [title]="'Past Activities'" [subtitle]="'5 Months Performance'" [chartType]="hoursChartType" [chartData]="hoursChartData"
+</header>
+<section>
+
+    <nav>
+        <app-sidebar></app-sidebar>
+    </nav>
+    <article>
+        <app-charts [title]="'Past Activities'" [subtitle]= "'Past Months'" [chartType]="hoursChartType" [chartData]="hoursChartData"
                     [chartOptions]="hoursChartOptions" [chartResponsive]="hoursChartResponsive" [legendItems]="hoursChartLegendItems"
                     [withHr]="true" [footerIconClass]="'fa fa-history'" [footerText]="'Updated 3 minutes ago'">
-                </app-charts>
-            </div>
-        </div>
-
-    </div>
-</div>
+        </app-charts>
+    </article>
+</section>
+<footer>
+    <app-footer>
+        
+    </app-footer>
+</footer>
