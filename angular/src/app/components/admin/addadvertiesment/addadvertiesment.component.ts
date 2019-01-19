@@ -14,8 +14,8 @@ export class AddadvertiesmentComponent implements OnInit {
   venderurl: String;
   imageUrl: String = "../../../assets/defualt.jpg";
   fileToUpload: File = null;
-  selectedValue='null';
-  options = [1, 2, 3]
+  selectedValue = 'null';
+  options = []
   constructor(
     private authservice: AuthService,
     private ngFlashMessageService: NgFlashMessageService,
@@ -24,10 +24,10 @@ export class AddadvertiesmentComponent implements OnInit {
     this.fileToUpload = new File([""], "defualt.jpg");
     //this.fileToUpload = new File([''], "../../../assets/images/defualt.jpg");
     //console.log(this.fileToUpload);
-    this.authservice.alladproviders().subscribe(res=>{
+    this.authservice.alladproviders().subscribe(res => {
       if (res.state) {
         console.log(res.addproviders);
-        this.options=res.addproviders;
+        this.options = res.addproviders;
       }
       else {
         //console.log(res.msg);
@@ -39,14 +39,16 @@ export class AddadvertiesmentComponent implements OnInit {
 
   ngOnInit() {
   }
-  onOptionsSelected(event){
-  //alert(event.type)
- console.log(event); //option value will be sent as event
-}
-  registerData() {
+  onOptionsSelected(event) {
+    //alert(event.type)
+    console.log(event); //option value will be sent as event
+  }
+  postadd() {
     const advertiesment = {
       title: this.title,
       venderurl: this.venderurl,
+      addprovider: this.selectedValue,
+      fileToUpload:this.fileToUpload
     }
     this.authservice.addadvertiesment(advertiesment).subscribe(res => {
       if (res.state) {

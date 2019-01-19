@@ -269,12 +269,14 @@ complaineduserwarn(user){
 }
 
 addadvertiesment(addvertiesment){
-  alert('Ddd')
+  this.fetchtoken();
   const formData: FormData = new FormData();
   formData.append('addvertiesment', addvertiesment.fileToUpload,addvertiesment.fileToUpload.name);
   formData.append('title',addvertiesment.title);
+  formData.append('Authorization',this.authtoken);
   formData.append('venderurl',addvertiesment.venderurl);
-  return this.http.post(this.url+"/admin/addadvertiesment", formData).map(res=>res.json()); 
+  formData.append('advertiser',addvertiesment.addprovider);
+  return this.http.post(this.url+"/admin/postadd", formData).map(res=>res.json()); 
 }
 
 alladproviders(){
