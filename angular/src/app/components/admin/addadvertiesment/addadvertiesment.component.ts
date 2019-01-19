@@ -13,6 +13,8 @@ export class AddadvertiesmentComponent implements OnInit {
   title: String;
   venderurl: String;
   imageUrl: String = "../../../assets/defualt.jpg";
+  startdate:Date;
+  enddate:Date;
   fileToUpload: File = null;
   selectedValue = 'null';
   options = []
@@ -48,7 +50,9 @@ export class AddadvertiesmentComponent implements OnInit {
       title: this.title,
       venderurl: this.venderurl,
       addprovider: this.selectedValue,
-      fileToUpload:this.fileToUpload
+      fileToUpload:this.fileToUpload,
+      startdate:this.startdate,
+      enddate:this.enddate
     }
     this.authservice.addadvertiesment(advertiesment).subscribe(res => {
       if (res.state) {

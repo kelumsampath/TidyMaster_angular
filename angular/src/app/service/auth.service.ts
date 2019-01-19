@@ -276,6 +276,8 @@ addadvertiesment(addvertiesment){
   formData.append('Authorization',this.authtoken);
   formData.append('venderurl',addvertiesment.venderurl);
   formData.append('advertiser',addvertiesment.addprovider);
+  formData.append('startdate',addvertiesment.startdate);
+  formData.append('enddate',addvertiesment.enddate);
   return this.http.post(this.url+"/admin/postadd", formData).map(res=>res.json()); 
 }
 
