@@ -8,7 +8,8 @@ export class AuthService {
   user:any;
   authtoken:any;
   adminorsuperadmin:boolean=false;
-  url:String="http://tidymaster.projects.uom.lk:3000";
+  url:String="http://localhost:3000";
+  //url:String="http://tidymaster.projects.uom.lk:3000";
 
   constructor(
     private http:Http,
@@ -274,6 +275,16 @@ addadvertiesment(addvertiesment){
   formData.append('title',addvertiesment.title);
   formData.append('venderurl',addvertiesment.venderurl);
   return this.http.post(this.url+"/admin/addadvertiesment", formData).map(res=>res.json()); 
+}
+
+alladproviders(){
+  this.fetchtoken();
+  let headers = new Headers();
+  var user={}
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','');
+  return this.http.post(this.url+"/admin/getalladproviders",user,{headers:headers}).map(res=>res.json());
 }
 
 }

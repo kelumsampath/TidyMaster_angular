@@ -4,16 +4,29 @@
   </div>
   <div class="column2" style="background-color:#bbb;">
     <div class="container register">
+        <div class="form-group" style="width:50%;margin-left:25%;">
+            <label for="exampleInputPassword1">Select Advertiser:</label>
+            <select type="submit" [(ngModel)]="selectedValue">
+                <option *ngFor="let option of options" value="{{option.username}}">{{ option.username }}</option>
+              </select>
+              <br>
+              {{ selectedValue }}
+      </div>
+      <div *ngIf="selectedValue!='null'">
       <form class="form" #form=ngForm (submit)="registerData()">
         <fieldset>
           <legend>
-            <h2>Register</h2>
+            <h2>Add advertiesment</h2>
           </legend>
+          
+          
+
+
           <div class="form-group" style="width:50%;margin-left:25%;">
-            <label for="exampleInputPassword1">Title:</label>
+            <label for="exampleInputPassword1">Title: </label>
             <input type="text" class="form-control" id="inputfullname" placeholder="Your title" name="title"
-              [(ngModel)]="title" required>
-          </div>
+              [(ngModel)]="title" required (ngModelChange)='onOptionsSelected($event)'>
+          </div>{{ title }}
 
           <div class="form-group" style="width:50%;margin-left:25%;">
             <label for="exampleInputPassword1">Vender url:</label>
@@ -32,6 +45,7 @@
           <button type="reset" class="btn btn-secondary btn-lg">Reset</button>
         </fieldset>
       </form>
+    </div>
     </div>
   </div>
 </div>
