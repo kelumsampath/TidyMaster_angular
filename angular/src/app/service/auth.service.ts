@@ -8,8 +8,10 @@ export class AuthService {
   user:any;
   authtoken:any;
   adminorsuperadmin:boolean=false;
-  url:String="http://tidymaster.projects.uom.lk:3000";
-  
+
+  url:String="http://localhost:3000";
+  //url:String="http://tidymaster.projects.uom.lk:3000";
+
   constructor(
     private http:Http,
   ) { }
@@ -268,12 +270,27 @@ complaineduserwarn(user){
 }
 
 addadvertiesment(addvertiesment){
-  alert('Ddd')
+  this.fetchtoken();
   const formData: FormData = new FormData();
   formData.append('addvertiesment', addvertiesment.fileToUpload,addvertiesment.fileToUpload.name);
   formData.append('title',addvertiesment.title);
+  formData.append('Authorization',this.authtoken);
   formData.append('venderurl',addvertiesment.venderurl);
-  return this.http.post(this.url+"/admin/addadvertiesment", formData).map(res=>res.json()); 
+  formData.append('advertiser',addvertiesment.addprovider);
+  formData.append('startdate',addvertiesment.startdate);
+  formData.append('enddate',addvertiesment.enddate);
+  return this.http.post(this.url+"/admin/postadd", formData).map(res=>res.json()); 
+}
+
+
+alladproviders(){
+  this.fetchtoken();
+  let headers = new Headers();
+  var user={}
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','');
+  return this.http.post(this.url+"/admin/getalladproviders",user,{headers:headers}).map(res=>res.json());
 }
 
 }

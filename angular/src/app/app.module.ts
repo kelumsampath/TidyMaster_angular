@@ -40,6 +40,7 @@ import { CheckedcomplainsComponent } from './components/admin/checkedcomplains/c
 import { AddadvertiesmentComponent } from './components/admin/addadvertiesment/addadvertiesment.component';
 import { FooterComponent } from './components/advertiser/footer/footer.component';
 import { AdvertiserprofileComponent } from './components/advertiser/advertiserprofile/advertiserprofile.component';
+import { PostadvertismentComponent } from './components/admin/postadvertisment/postadvertisment.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -70,6 +71,7 @@ const applicationRoutes:Routes = [
   {path:'reviewcomplain',component:ReviewcomplainComponent, canActivate: [AuthGuard]},
   {path:'checkedcomplains',component:CheckedcomplainsComponent, canActivate: [AuthGuard]},
   {path:'addadvertiesment',component:AddadvertiesmentComponent, canActivate: [AuthGuard]},
+  {path:'postadvertisment',component:PostadvertismentComponent, canActivate: [AuthGuard]},
   {path:'advertiserProfile',component:AdvertiserprofileComponent,canActivate:[AuthGuard]}
 ];
 
@@ -104,7 +106,8 @@ const applicationRoutes:Routes = [
     CheckedcomplainsComponent,
     AddadvertiesmentComponent,
     FooterComponent,
-    AdvertiserprofileComponent
+    AdvertiserprofileComponent,
+    PostadvertismentComponent
   ],
   imports: [
     BrowserModule,
