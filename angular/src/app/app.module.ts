@@ -41,6 +41,7 @@ import { AddadvertiesmentComponent } from './components/admin/addadvertiesment/a
 import { FooterComponent } from './components/advertiser/footer/footer.component';
 import { AdvertiserprofileComponent } from './components/advertiser/advertiserprofile/advertiserprofile.component';
 import { PostadvertismentComponent } from './components/admin/postadvertisment/postadvertisment.component';
+import { ViewadvertismentComponent } from './components/admin/viewadvertisment/viewadvertisment.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -72,7 +73,8 @@ const applicationRoutes:Routes = [
   {path:'checkedcomplains',component:CheckedcomplainsComponent, canActivate: [AuthGuard]},
   {path:'addadvertiesment',component:AddadvertiesmentComponent, canActivate: [AuthGuard]},
   {path:'postadvertisment',component:PostadvertismentComponent, canActivate: [AuthGuard]},
-  {path:'advertiserProfile',component:AdvertiserprofileComponent,canActivate:[AuthGuard]}
+  {path:'advertiserProfile',component:AdvertiserprofileComponent,canActivate:[AuthGuard]},
+  {path:'viewadvertisments',component:ViewadvertismentComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -107,7 +109,8 @@ const applicationRoutes:Routes = [
     AddadvertiesmentComponent,
     FooterComponent,
     AdvertiserprofileComponent,
-    PostadvertismentComponent
+    PostadvertismentComponent,
+    ViewadvertismentComponent
   ],
   imports: [
     BrowserModule,

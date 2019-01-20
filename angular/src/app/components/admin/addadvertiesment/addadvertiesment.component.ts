@@ -11,7 +11,6 @@ import { Options } from 'selenium-webdriver/edge';
 })
 export class AddadvertiesmentComponent implements OnInit {
   title: String;
-  venderurl: String;
   imageUrl: String = "../../../assets/defualt.jpg";
   startdate:Date;
   enddate:Date;
@@ -48,7 +47,6 @@ export class AddadvertiesmentComponent implements OnInit {
   postadd() {
     const advertiesment = {
       title: this.title,
-      venderurl: this.venderurl,
       addprovider: this.selectedValue,
       fileToUpload:this.fileToUpload,
       startdate:this.startdate,
