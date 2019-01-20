@@ -1,0 +1,42 @@
+/* coloum view start */
+* {
+    box-sizing: border-box;
+    margin-top: -10px;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    
+    height: 100%; /* Should be removed. Only for demonstration */
+}
+.column2 {
+    float: left;
+    width: 75%;
+    padding: 10px;
+    height: 100%; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* coloum view end */
+
+.register{
+
+    color: aliceblue;
+    margin-top: 2%;
+    
+    text-align: center;
+    padding: 3% 5% 3% 5%;
+    background-color: #4c5941;
+    border-radius: 10px;
+    border-color: #a0a39e;
+    border-style: solid;
+    border-width: 5px;
+  
+}
