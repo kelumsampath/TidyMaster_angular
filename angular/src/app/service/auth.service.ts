@@ -301,4 +301,18 @@ getadvetisments(){
   return this.http.post(this.url+"/admin/getadvetisments",user,{headers:headers}).map(res=>res.json());
 }
 
+deletead(adid,imgid){
+  this.fetchtoken();
+  let headers = new Headers();
+  var ads={
+    adid:adid,
+    imageId:imgid
+  }
+  //alert(ads.imageId)
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','');
+  return this.http.post(this.url+"/admin/deletead",ads,{headers:headers}).map(res=>res.json());
+}
+
 }

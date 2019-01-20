@@ -55,7 +55,7 @@ export class AddadvertiesmentComponent implements OnInit {
     this.authservice.addadvertiesment(advertiesment).subscribe(res => {
       if (res.state) {
         this.ngFlashMessageService.showFlashMessage({ messages: [res.msg], dismissible: true, timeout: 4000, type: 'success' });
-        //this.router.navigate(['/login'])
+        this.router.navigate(['/addadvertiesment'])
         ;
       }
       else {

@@ -15,6 +15,13 @@ export class ViewadvertismentComponent implements OnInit {
     private ngFlashMessageService: NgFlashMessageService,
     private router: Router,
   ) {
+    this.viewads();
+   }
+
+  ngOnInit() {
+  }
+
+  viewads(){
     this.authservice.getadvetisments().subscribe(res=>{
       if(res.state){
         this.advertisments=res.advertisments;
@@ -24,9 +31,18 @@ export class ViewadvertismentComponent implements OnInit {
         console.log(res)
       }
     })
-   }
-
-  ngOnInit() {
   }
 
+  deletead(adid,imgid){
+    //alert(imgid)
+    this.authservice.deletead(adid,imgid).subscribe(res=>{
+      if(res.state){
+        this.ngFlashMessageService.showFlashMessage({ messages: [res.msg], dismissible: false, timeout: 4000, type: 'danger' });
+        this.viewads();
+      }else{
+        this.ngFlashMessageService.showFlashMessage({ messages: [res.msg], dismissible: false, timeout: 4000, type: 'danger' });
+        //console.log(res)
+      }
+    })
+  }
 }

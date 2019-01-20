@@ -21,8 +21,8 @@
                     <h2 style="font-size:110%;margin-left:-150%;">{{ adslist.adproviderid }}</h2>
                   </div>
                   <div style="margin-left:60%">
-                  <button type="submit" class="btn btn-warning btn-md" >Warn User</button>
-                  <button type="submit" class="btn btn-danger btn-md" >Remove User</button>
+                  
+                  <button type="submit" class="btn btn-danger btn-md" (click)="deletead(adslist.adId,adslist.imageId)">Delete</button>
                   </div>
                 </div>
               </div>
