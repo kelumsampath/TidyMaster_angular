@@ -275,7 +275,6 @@ addadvertiesment(addvertiesment){
   formData.append('addvertiesment', addvertiesment.fileToUpload,addvertiesment.fileToUpload.name);
   formData.append('title',addvertiesment.title);
   formData.append('Authorization',this.authtoken);
-  formData.append('venderurl',addvertiesment.venderurl);
   formData.append('advertiser',addvertiesment.addprovider);
   formData.append('startdate',addvertiesment.startdate);
   formData.append('enddate',addvertiesment.enddate);
@@ -291,6 +290,30 @@ alladproviders(){
   headers.append('content-Type','application/json');
   headers.append('accessresource','');
   return this.http.post(this.url+"/admin/getalladproviders",user,{headers:headers}).map(res=>res.json());
+}
+
+getadvetisments(){
+  var user={}
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','');
+  return this.http.post(this.url+"/admin/getadvetisments",user,{headers:headers}).map(res=>res.json());
+}
+
+deletead(adid,imgid){
+  this.fetchtoken();
+  let headers = new Headers();
+  var ads={
+    adid:adid,
+    imageId:imgid
+  }
+  //alert(ads.imageId)
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type','application/json');
+  headers.append('accessresource','');
+  return this.http.post(this.url+"/admin/deletead",ads,{headers:headers}).map(res=>res.json());
 }
 
 }
