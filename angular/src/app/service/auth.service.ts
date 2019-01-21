@@ -10,8 +10,8 @@ export class AuthService {
   authtoken:any;
   adminorsuperadmin:boolean=false;
 
-  //url:String="http://localhost:3000";
-  url:String="http://tidymaster.projects.uom.lk:3000";
+  url:String="http://localhost:3000";
+  //url:String="http://tidymaster.projects.uom.lk:3000";
 
   constructor(
     private http: Http,
@@ -43,6 +43,7 @@ export class AuthService {
     return this.http.get(this.url + "/user/profile", { headers: headers }).map(res => res.json());
 
   };
+  
   fetchtoken() {
     const token = localStorage.getItem("tokenid");
     this.authtoken = token;
@@ -316,5 +317,13 @@ export class AuthService {
     headers.append('accessresource', '');
     return this.http.post(this.url + "/admin/deletead", ads, { headers: headers }).map(res => res.json());
   }
+
+  getuserprofile(username) {
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization', this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/admin/userprofile", username, { headers: headers }).map(res => res.json());
+  };
 
 }
