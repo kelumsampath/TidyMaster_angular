@@ -42,6 +42,7 @@ import { FooterComponent } from './components/advertiser/footer/footer.component
 import { AdvertiserprofileComponent } from './components/advertiser/advertiserprofile/advertiserprofile.component';
 import { PostadvertismentComponent } from './components/admin/postadvertisment/postadvertisment.component';
 import { ViewadvertismentComponent } from './components/admin/viewadvertisment/viewadvertisment.component';
+import { ViewuserprofileComponent } from './components/admin/viewuserprofile/viewuserprofile.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -75,6 +76,7 @@ const applicationRoutes:Routes = [
   {path:'postadvertisment',component:PostadvertismentComponent, canActivate: [AuthGuard]},
   {path:'advertiserProfile',component:AdvertiserprofileComponent,canActivate:[AuthGuard]},
   {path:'viewadvertisments',component:ViewadvertismentComponent, canActivate: [AuthGuard]},
+  {path:'searchusers/:username',component:ViewuserprofileComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -110,7 +112,8 @@ const applicationRoutes:Routes = [
     FooterComponent,
     AdvertiserprofileComponent,
     PostadvertismentComponent,
-    ViewadvertismentComponent
+    ViewadvertismentComponent,
+    ViewuserprofileComponent
   ],
   imports: [
     BrowserModule,
