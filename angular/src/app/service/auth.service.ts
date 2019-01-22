@@ -326,4 +326,13 @@ export class AuthService {
     return this.http.post(this.url + "/admin/userprofile", username, { headers: headers }).map(res => res.json());
   };
 
+  getAllAdsByMonth(){
+    var user={};
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization',this.authtoken);
+    headers.append('content-Type','application/json');
+    return this.http.post(this.url + "/advertiser/getAllAdsByMonth",user,{headers:headers}).map(res=>res.json());
+  }
+  
 }
