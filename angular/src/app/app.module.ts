@@ -43,6 +43,7 @@ import { AdvertiserprofileComponent } from './components/advertiser/advertiserpr
 import { PostadvertismentComponent } from './components/admin/postadvertisment/postadvertisment.component';
 import { ViewadvertismentComponent } from './components/admin/viewadvertisment/viewadvertisment.component';
 import { ViewuserprofileComponent } from './components/admin/viewuserprofile/viewuserprofile.component';
+import { StatisticsComponent } from './components/advertiser/statistics/statistics.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -113,7 +114,8 @@ const applicationRoutes:Routes = [
     AdvertiserprofileComponent,
     PostadvertismentComponent,
     ViewadvertismentComponent,
-    ViewuserprofileComponent
+    ViewuserprofileComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
