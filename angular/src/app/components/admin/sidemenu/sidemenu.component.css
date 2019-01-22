@@ -8,13 +8,13 @@ a:hover{
 .nav-side-menu {
     overflow: auto;
     font-size: 100%;
-    background-color: #2e353d;
+    background-color: #000000;
     position: relative;
     top: 0px;
     width: 100%;
     height: 100%;
     min-height: 800px;
-    color: #e1ffff;
+    color: #ffffff;
     padding-left: 8%;
     padding-right: 4%;
     padding-top: 8%;
@@ -78,8 +78,8 @@ a:hover{
     vertical-align: middle;
   }
   .nav-side-menu li {
-    padding-left: 0px;
-    border-left: 3px solid #2e353d;
+    padding-left: 20px;
+    border-left: 1px solid #2e353d;
     border-bottom: 1px solid #23282e;
   }
   .nav-side-menu li a {
@@ -92,8 +92,8 @@ a:hover{
     padding-right: 20px;
   }
   .nav-side-menu li:hover {
-    border-left: 3px solid #d19b3d;
-    background-color: #4f5b69;
+    /*border-left: 1px solid rgb(79,191,219);*/
+    background-color: rgb(79,191,219);
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -147,7 +147,7 @@ a:hover{
   }
   .nav-side-menu ul .sub-menu li .sub-line li,
   .nav-side-menu li .sub-menu li .sub-line li {
-    background-color: #181c20;
+    background-color: #000000;
     border: none;
     line-height: 28px;
     border-bottom: 1px solid #23282e;
@@ -183,7 +183,7 @@ a:hover{
   }
   .nav-side-menu li .sub-menu li:hover {
     border-left: 3px solid #d19b3d;
-    background-color: #4f5b69;
+    background-color: #000000;
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -221,7 +221,7 @@ a:hover{
   }
   .sub-line ul .sub-press li,
   .sub-line li .sub-press li {
-    background-color: #181c20;
+    background-color: #000000;
     border: none;
     line-height: 28px;
     border-bottom: 1px solid #23282e;
@@ -264,12 +264,12 @@ a:hover{
     -ms-transition: all 1s ease;
     transition: all 1s ease;
   }
-  @media (max-width: 767px) {
+  /*@media (max-width: 767px) {
     .sub-line {
       position: relative;
       width: 100%;
       margin-bottom: 10px;
-    }
+    }*/
     .sub-line .toggle-btn {
       display: block;
       cursor: pointer;
@@ -284,4 +284,3 @@ a:hover{
       text-align: center;
     }
 }
-} 
