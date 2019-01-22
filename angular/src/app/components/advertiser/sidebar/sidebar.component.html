@@ -2,14 +2,14 @@
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
         <img src="{{this.profurl}}" alt="profile Photo" id="profpic">
-        <div class="brand">{{this.username}}</div>
+        
       <li class="sidebar-brand">
         <a href="#">
             {{this.username}}
         </a>
       </li>
       <li>
-        <a href="#">Dashboard</a>
+        <a [routerLink]="['/advertiserhome']">Dashboard</a>
       </li>
       <li>
         <a [routerLink]="['/advertiserProfile']">Profile</a>
