@@ -32,19 +32,22 @@
             <a [routerLink]="['/acceptedjobpost']"><li>accepted job post</li></a>
             <a [routerLink]="['/rejectedjobpost']"><li>rejected job post</li></a>
           </ul>
-          <li data-toggle="collapse" data-target="#new" class="collapsed">
-            Reporting <span class="arrow"></span>
+          <li>
+            <a [routerLink]="['/searchusers']"> Search User</a>
           </li>
-          <ul class="sub-menu collapse" id="new">
-            <li>want to add feild</li>
-            <li>want to add feild</li>
-          </ul>
           <li data-toggle="collapse" data-target="#new2" class="collapsed">
-            Service<span class="arrow"></span>
+            Complains <span class="arrow"></span>
           </li>
           <ul class="sub-menu collapse" id="new2">
-            <li>want to add feild</li>
-            <li>want to add feild</li>
+            <a [routerLink]="['/reviewcomplain']"><li>Unchecked</li></a>
+            <a [routerLink]="['/checkedcomplains']"><li>Checked</li></a>
+          </ul>
+          <li data-toggle="collapse" data-target="#advertiesment" class="collapsed">
+             Advertiesment <span class="arrow"></span>
+          </li>
+          <ul class="sub-menu collapse" id="advertiesment">
+            <a [routerLink]="['/addadvertiesment']"><li>add advertiesment</li></a>
+            <a [routerLink]="['/viewadvertisments']"><li>view addvertiesment</li></a>
           </ul>
         </ul>
        </div>
