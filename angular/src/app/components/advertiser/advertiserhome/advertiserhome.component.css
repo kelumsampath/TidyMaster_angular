@@ -8,23 +8,42 @@
     box-sizing: border-box;
     margin-top: -10px;
 }
+* {
+    box-sizing: border-box;
+  }
 
 /* Create two equal columns that floats next to each other */
-.column {
-    padding-left: 0%;
-    float: left;
-    width: 25%;
-
-}
-.column2 {
-    float: left;
-    width: 75%;
-    
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
+article {
+    -webkit-flex: 5;
+    -ms-flex: 5;
+    flex: 5;
+    background-color: #f1f1f1;
+    padding: 10px;
+  }
+  
+  /* Style the footer */
+  footer {
+    background-color: rgb(97, 92, 92);
+    padding: 30px;
+    text-align: center;
+    color: white;
+  }
+  section {
+    display: -webkit-flex;
+    display: flex;
+  }
+  
+  /* Style the navigation menu */
+  nav {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    background: #f1f1f1;
+    padding: 20px;
+  }
+  @media (max-width: 600px) {
+    section {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    }
+  }
