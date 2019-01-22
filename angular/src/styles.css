@@ -4,8 +4,5 @@
     font-family: Segoe UI;
 }
 body{
-    position: relative;
-    height: 100vh;
-    background-position: center;
-    background-size: cover; 
+    background-color: rgba(79, 191, 219, 0.137);
 }
