@@ -11,7 +11,6 @@ import { Options } from 'selenium-webdriver/edge';
 })
 export class AddadvertiesmentComponent implements OnInit {
   title: String;
-  venderurl: String;
   imageUrl: String = "../../../assets/defualt.jpg";
   startdate:Date;
   enddate:Date;
@@ -48,7 +47,6 @@ export class AddadvertiesmentComponent implements OnInit {
   postadd() {
     const advertiesment = {
       title: this.title,
-      venderurl: this.venderurl,
       addprovider: this.selectedValue,
       fileToUpload:this.fileToUpload,
       startdate:this.startdate,
@@ -57,7 +55,7 @@ export class AddadvertiesmentComponent implements OnInit {
     this.authservice.addadvertiesment(advertiesment).subscribe(res => {
       if (res.state) {
         this.ngFlashMessageService.showFlashMessage({ messages: [res.msg], dismissible: true, timeout: 4000, type: 'success' });
-        //this.router.navigate(['/login'])
+        this.router.navigate(['/addadvertiesment'])
         ;
       }
       else {

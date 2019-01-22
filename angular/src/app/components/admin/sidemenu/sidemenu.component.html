@@ -1,95 +1,51 @@
 <div class="nav-side-menu">
-
-  <img src="{{this.profurl}}" alt="profile Photo" id="profpic">
-  <div class="brand">{{this.username}}</div>
-  <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-
-  <div class="menu-list">
-
-    <ul id="menu-content" class="menu-content collapse out">
-
-      <a [routerLink]="['/adminhome']">
-        <li>
-          <i class="fa fa-tachometer-alt fa-lg"></i> Dashboard</li>
-      </a>
-
-
-      <li data-toggle="collapse" data-target="#products" class="collapsed active">
-        <i class="fa fa-users fa-lg"></i> Creat New User <span class="arrow"></span>
-      </li>
-      <ul class="sub-menu collapse" id="products">
-        <a [routerLink]="['/addadvertiser']">
-          <li>create new advertiser</li>
-        </a>
-        <a [routerLink]="['/addadmin']">
-          <li>create new admin</li>
-        </a>
-        <a [routerLink]="['/addsuperadmin']">
-          <li>create new superadmin</li>
-        </a>
-
-      </ul>
-
-
-      <li data-toggle="collapse" data-target="#service" class="collapsed">
-        <i class="fa fa-th-list fa-lg"></i> Review Job Post <span class="arrow"></span>
-      </li>
-      <ul class="sub-menu collapse" id="service">
-        <a [routerLink]="['/alljobpost']">
-          <li>All Job Post</li>
-        </a>
-        <a [routerLink]="['/pendingjobpost']">
-          <li>Pending Job Post</li>
-        </a>
-        <a [routerLink]="['/acceptedjobpost']">
-          <li>Accepted Job Post</li>
-        </a>
-        <a [routerLink]="['/rejectedjobpost']">
-          <li>Rejected Job Post</li>
-        </a>
-      </ul>
-
-
-      <li>
-        <a [routerLink]="['/searchusers']">
-          <i class="fa fa-address-book fa-lg" aria-hidden="true"></i> Search User
-        </a>
-      </li>
-
-
-      <li>
-        <a [routerLink]="['/adminhome']">
-          <i class="fa fa-user fa-lg"></i> Profile
-        </a>
-      </li>
-
-      <li data-toggle="collapse" data-target="#new2" class="collapsed">
-        <i class="fa fa-car fa-lg"></i> Complains <span class="arrow"></span>
-      </li>
-      <ul class="sub-menu collapse" id="new2">
-        <a [routerLink]="['/reviewcomplain']">
-          <li>Unchecked</li>
-        </a>
-        <a [routerLink]="['/checkedcomplains']">
-          <li>Checked</li>
-        </a>
-      </ul>
-
-      <li data-toggle="collapse" data-target="#advertiesment" class="collapsed">
-        <i class="fa fa-car fa-lg"></i> Advertiesment <span class="arrow"></span>
-      </li>
-      <ul class="sub-menu collapse" id="advertiesment">
-        <a [routerLink]="['/addadvertiesment']">
-          <li>add advertiesment</li>
-        </a>
-        <a [routerLink]="['/postadvertisment']">
-          <li>post advertiesment</li>
-        </a>
-        <a [routerLink]="['/checkedcomplains']">
-          <li>view addvertiesment</li>
-        </a>
-      </ul>
-
-    </ul>
+<!-- Profile -->
+  <div class="w3-card w3-round w3-white">
+    <div class="w3-container">
+      <h4 class="w3-center">{{this.username}}</h4>
+      <p class="w3-center"><img src="{{this.profurl}}" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+      <hr>
+      <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i>Cleaner | Colombo</p>
+      <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
+      <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
+    </div>
   </div>
+  <br>
+  <br>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+      <div class="menu-list">
+        <ul id="menu-content" class="menu-content collapse out">
+          <li  data-toggle="collapse" data-target="#products" class="collapsed active">
+            Create New User<span class="arrow"></span>
+          </li>
+          <ul class="sub-menu collapse" id="products">
+            <a [routerLink]="['/addadvertiser']"><li>create new advertiser</li></a>
+            <a [routerLink]="['/addadmin']"><li>create new admin</li></a>
+            <a [routerLink]="['/addsuperadmin']"><li>create new superadmin</li></a>
+          </ul>
+          <li data-toggle="collapse" data-target="#service" class="collapsed">
+            Review Job Post <span class="arrow"></span>
+          </li>  
+          <ul class="sub-menu collapse" id="service">
+            <a [routerLink]="['/alljobpost']"><li>all job post</li></a>
+            <a [routerLink]="['/pendingjobpost']"><li>pending job post</li></a>
+            <a [routerLink]="['/acceptedjobpost']"><li>accepted job post</li></a>
+            <a [routerLink]="['/rejectedjobpost']"><li>rejected job post</li></a>
+          </ul>
+          <li data-toggle="collapse" data-target="#new" class="collapsed">
+            Reporting <span class="arrow"></span>
+          </li>
+          <ul class="sub-menu collapse" id="new">
+            <li>want to add feild</li>
+            <li>want to add feild</li>
+          </ul>
+          <li data-toggle="collapse" data-target="#new2" class="collapsed">
+            Service<span class="arrow"></span>
+          </li>
+          <ul class="sub-menu collapse" id="new2">
+            <li>want to add feild</li>
+            <li>want to add feild</li>
+          </ul>
+        </ul>
+       </div>
 </div>

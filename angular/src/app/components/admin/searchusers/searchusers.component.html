@@ -19,7 +19,7 @@
       <div id="menuitem" >
         <ul *ngFor="let userlist of users">
           <li>
-            <button [routerLink]="['/allrecipe',userlist.username]" class="add">
+            <button [routerLink]="['/searchusers',userlist.username]" class="add">
               <div id="container" style="height:15%">
                 <div class="row" style="height:15%">
                   <div class="col-dm-8 col-md-push-3" style="width:40%; padding-left:2% ">
