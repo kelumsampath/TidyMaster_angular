@@ -30,11 +30,13 @@ export class AdvertiserhomeComponent implements OnInit {
     private authservice:AuthService,
     private ngFlashMessageService: NgFlashMessageService,
     private router: Router,
-  ) { }
-
-  ngOnInit() {
+  ) { 
     this.getUser() ;
     this.setChart();
+  }
+
+  ngOnInit() {
+    
    
     /*this.hoursChartType = ChartType.Line;
     this.hoursChartData = {
@@ -111,11 +113,12 @@ export class AdvertiserhomeComponent implements OnInit {
   
   
       this.authservice.getAllAdsByMonth().subscribe(res => {
+       // console.log(res.state)
         if (res.state) {
           this.active = res.ad;
           
           // var data = JSON.parse(this.active); 
-          //console.log(this.active)
+          console.log("this.active")
           var i;
           for (i = 0; i < this.active.length; i++) {
             console.log(this.active[i])
