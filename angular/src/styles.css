@@ -4,9 +4,5 @@
     font-family: Segoe UI;
 }
 body{
-    position: relative;
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.4)),url("/../assets/cleaning-service.jpg");
-    height: 100vh;
-    background-position: center;
-    background-size: cover; 
+    background-color: rgba(79, 191, 219, 0.137);
 }
