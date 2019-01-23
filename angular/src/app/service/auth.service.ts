@@ -336,5 +336,24 @@ export class AuthService {
     headers.append('accessresource', '');
     return this.http.post(this.url + "/advertiser/getAllAdsByMonth",user, { headers: headers }).map(res=>res.json());
   }
+
+  iscustomer() {
+    var user = {
+    }
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization', this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/customer/iscustomer", user, { headers: headers }).map(res => res.json());
+  }
+
+  editimage(image){
+    this.fetchtoken();
+   // console.log(this.authtoken)
+    const formData: FormData = new FormData();
+    formData.append('Authorization',this.authtoken);
+    formData.append('editprofpic', image.editimage,image.editimage.name);
+    return this.http.post(this.url +"/user/profpicchange", formData).map(res=>res.json()); 
+  };
   
 }

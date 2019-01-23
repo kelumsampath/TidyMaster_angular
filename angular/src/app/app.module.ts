@@ -43,6 +43,8 @@ import { AdvertiserprofileComponent } from './components/advertiser/advertiserpr
 import { PostadvertismentComponent } from './components/admin/postadvertisment/postadvertisment.component';
 import { ViewadvertismentComponent } from './components/admin/viewadvertisment/viewadvertisment.component';
 import { ViewuserprofileComponent } from './components/admin/viewuserprofile/viewuserprofile.component';
+import { CustomerhomeComponent } from './components/customer/customerhome/customerhome.component';
+import { StatisticsComponent } from './components/advertiser/statistics/statistics.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -77,6 +79,7 @@ const applicationRoutes:Routes = [
   {path:'advertiserProfile',component:AdvertiserprofileComponent,canActivate:[AuthGuard]},
   {path:'viewadvertisments',component:ViewadvertismentComponent, canActivate: [AuthGuard]},
   {path:'searchusers/:username',component:ViewuserprofileComponent, canActivate: [AuthGuard]},
+  {path:'customerhome',component:CustomerhomeComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -113,7 +116,9 @@ const applicationRoutes:Routes = [
     AdvertiserprofileComponent,
     PostadvertismentComponent,
     ViewadvertismentComponent,
-    ViewuserprofileComponent
+    ViewuserprofileComponent,
+    CustomerhomeComponent,
+    StatisticsComponent,
   ],
   imports: [
     BrowserModule,
