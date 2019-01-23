@@ -17,7 +17,7 @@
             <a class="nav-link" [routerLink]="['/adminhome']" *ngIf='authservice.adminorsuperadmin'> Dashboard</a>
         </li>
         <li class="nav-link">
-            <a class="nav-link" [routerLink]="['/cleanerhome']" *ngIf='authservice.iscleaner'><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+            <a class="nav-link" [routerLink]="['/cleanerhome']" *ngIf='authservice.loggedIn()'><i class="fa fa-home" aria-hidden="true"></i> Home</a>
         </li>
 
         <li class="nav-link">

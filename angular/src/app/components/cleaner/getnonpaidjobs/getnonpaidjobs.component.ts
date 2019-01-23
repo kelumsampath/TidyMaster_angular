@@ -4,31 +4,29 @@ import { NgFlashMessageService } from 'ng-flash-messages';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-getdonejobs',
-  templateUrl: './getdonejobs.component.html',
-  styleUrls: ['./getdonejobs.component.css']
+  selector: 'app-getnonpaidjobs',
+  templateUrl: './getnonpaidjobs.component.html',
+  styleUrls: ['./getnonpaidjobs.component.css']
 })
-export class GetdonejobsComponent implements OnInit {
+export class GetnonpaidjobsComponent implements OnInit {
   job:any;
   constructor(
     private authservice:AuthService,
     private ngFlashMessageService: NgFlashMessageService,
     private router:Router,
-  ) { this.getdonejobs(); }
+  ) { this.getnonpaidjobs(); }
 
   ngOnInit() {
   }
 
-  getdonejobs(){
-    this.authservice.getdonejobs().subscribe(res=>{
+  getnonpaidjobs(){
+    this.authservice.getnonpaidjobs().subscribe(res=>{
       if(res.state){
         this.job = res.jobs;
-        console.log(this.job);
       }
         else{
           this.ngFlashMessageService.showFlashMessage({messages: ["SERVER ERROR OCCUERED!"],dismissible: true,timeout: 4000,type: 'danger'});
         }
   })
   }
-
 }
