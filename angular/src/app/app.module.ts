@@ -34,6 +34,21 @@ import { PendingjobpostsComponent } from './components/admin/pendingjobposts/pen
 import { AcceptjobpostComponent } from './components/admin/acceptjobpost/acceptjobpost.component';
 import { RejectedjobpostComponent } from './components/admin/rejectedjobpost/rejectedjobpost.component';
 
+import { SearchusersComponent } from './components/admin/searchusers/searchusers.component';
+import { ReviewcomplainComponent } from './components/admin/reviewcomplain/reviewcomplain.component';
+import { CheckedcomplainsComponent } from './components/admin/checkedcomplains/checkedcomplains.component';
+import { AddadvertiesmentComponent } from './components/admin/addadvertiesment/addadvertiesment.component';
+import { FooterComponent } from './components/advertiser/footer/footer.component';
+import { AdvertiserprofileComponent } from './components/advertiser/advertiserprofile/advertiserprofile.component';
+import { PostadvertismentComponent } from './components/admin/postadvertisment/postadvertisment.component';
+import { ViewadvertismentComponent } from './components/admin/viewadvertisment/viewadvertisment.component';
+import { ViewuserprofileComponent } from './components/admin/viewuserprofile/viewuserprofile.component';
+import { CustomerhomeComponent } from './components/customer/customerhome/customerhome.component';
+import { StatisticsComponent } from './components/advertiser/statistics/statistics.component';
+import { CleanerSideComponent } from './components/cleaner/cleaner-side/cleaner-side.component';
+import { GetallaplliedjobsComponent } from './components/cleaner/getallaplliedjobs/getallaplliedjobs.component';
+import { GetdonejobsComponent } from './components/cleaner/getdonejobs/getdonejobs.component';
+
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
   {path:'login',component:LoginComponent},
@@ -59,7 +74,17 @@ const applicationRoutes:Routes = [
   {path:'addadmin',component:AddadminComponent, canActivate: [AuthGuard]},
   {path:'addsuperadmin',component:AddsuperadminComponent, canActivate: [AuthGuard]},
   {path:'sample',component:SampleComponent, canActivate: [AuthGuard]},
-  
+  {path:'searchusers',component:SearchusersComponent, canActivate: [AuthGuard]},
+  {path:'reviewcomplain',component:ReviewcomplainComponent, canActivate: [AuthGuard]},
+  {path:'checkedcomplains',component:CheckedcomplainsComponent, canActivate: [AuthGuard]},
+  {path:'addadvertiesment',component:AddadvertiesmentComponent, canActivate: [AuthGuard]},
+  {path:'postadvertisment',component:PostadvertismentComponent, canActivate: [AuthGuard]},
+  {path:'advertiserProfile',component:AdvertiserprofileComponent,canActivate:[AuthGuard]},
+  {path:'viewadvertisments',component:ViewadvertismentComponent, canActivate: [AuthGuard]},
+  {path:'searchusers/:username',component:ViewuserprofileComponent, canActivate: [AuthGuard]},
+  {path:'customerhome',component:CustomerhomeComponent, canActivate: [AuthGuard]},
+  {path:'getallappliedjobs',component:GetallaplliedjobsComponent, canActivate: [AuthGuard]},
+  {path:'getdonejobs',component:GetdonejobsComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -87,7 +112,21 @@ const applicationRoutes:Routes = [
     SidebarComponent,
     PendingjobpostsComponent,
     AcceptjobpostComponent,
-    RejectedjobpostComponent
+    RejectedjobpostComponent,
+    SearchusersComponent,
+    ReviewcomplainComponent,
+    CheckedcomplainsComponent,
+    AddadvertiesmentComponent,
+    FooterComponent,
+    AdvertiserprofileComponent,
+    PostadvertismentComponent,
+    ViewadvertismentComponent,
+    ViewuserprofileComponent,
+    CustomerhomeComponent,
+    StatisticsComponent,
+    CleanerSideComponent,
+    GetallaplliedjobsComponent,
+    GetdonejobsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,23 +1,26 @@
 i{
-    margin-right: 2%;
+    margin-right: 0%;
 }
 a:hover{
   text-decoration: none;
 }
+.linkclass{
+  color: rgb(255, 255, 255);
+}
 
 .nav-side-menu {
     overflow: auto;
-    font-family: verdana;
-    font-size: 150%;
-    /*font-weight: 200;*/
-    background-color: #2e353d;
+    font-size: 100%;
+    background-color: #000000;
     position: relative;
     top: 0px;
     width: 100%;
     height: 100%;
     min-height: 800px;
-    color: #e1ffff;
+    color: #ffffff;
     padding-left: 8%;
+    padding-right: 4%;
+    padding-top: 8%;
   }
   .nav-side-menu .brand {
     background-color: #23282e;
@@ -36,34 +39,15 @@ a:hover{
     margin: 0px;
     line-height: 35px;
     cursor: pointer;
-    /*    
-      .collapsed{
-         .arrow:before{
-                   font-family: FontAwesome;
-                   content: "\f053";
-                   display: inline-block;
-                   padding-left:10px;
-                   padding-right: 10px;
-                   vertical-align: middle;
-                   float:right;
-              }
-       }
-  */
   }
   .nav-side-menu ul :not(collapsed) .arrow:before,
   .nav-side-menu li :not(collapsed) .arrow:before {
-    font-family: FontAwesome;
     content: "\f078";
     display: inline-block;
     padding-left: 10px;
     padding-right: 10px;
     vertical-align: middle;
     float: right;
-  }
-  .nav-side-menu ul .active,
-  .nav-side-menu li .active {
-    border-left: 3px solid #d19b3d;
-    background-color: #4f5b69;
   }
   .nav-side-menu ul .sub-menu li.active,
   .nav-side-menu li .sub-menu li.active {
@@ -96,8 +80,8 @@ a:hover{
     vertical-align: middle;
   }
   .nav-side-menu li {
-    padding-left: 0px;
-    border-left: 3px solid #2e353d;
+    padding-left: 20px;
+    border-left: 1px solid #2e353d;
     border-bottom: 1px solid #23282e;
   }
   .nav-side-menu li a {
@@ -110,8 +94,8 @@ a:hover{
     padding-right: 20px;
   }
   .nav-side-menu li:hover {
-    border-left: 3px solid #d19b3d;
-    background-color: #4f5b69;
+    /*border-left: 1px solid rgb(79,191,219);*/
+    background-color: rgb(79,191,219);
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -165,7 +149,7 @@ a:hover{
   }
   .nav-side-menu ul .sub-menu li .sub-line li,
   .nav-side-menu li .sub-menu li .sub-line li {
-    background-color: #181c20;
+    background-color: #000000;
     border: none;
     line-height: 28px;
     border-bottom: 1px solid #23282e;
@@ -201,7 +185,7 @@ a:hover{
   }
   .nav-side-menu li .sub-menu li:hover {
     border-left: 3px solid #d19b3d;
-    background-color: #4f5b69;
+    background-color: #000000;
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -239,7 +223,7 @@ a:hover{
   }
   .sub-line ul .sub-press li,
   .sub-line li .sub-press li {
-    background-color: #181c20;
+    background-color: #000000;
     border: none;
     line-height: 28px;
     border-bottom: 1px solid #23282e;
@@ -282,12 +266,12 @@ a:hover{
     -ms-transition: all 1s ease;
     transition: all 1s ease;
   }
-  @media (max-width: 767px) {
+  /*@media (max-width: 767px) {
     .sub-line {
       position: relative;
       width: 100%;
       margin-bottom: 10px;
-    }
+    }*/
     .sub-line .toggle-btn {
       display: block;
       cursor: pointer;
@@ -301,24 +285,4 @@ a:hover{
       width: 40px;
       text-align: center;
     }
-}
-} 
-
-#profpic{
-  margin-top: 5%;
-  margin-bottom: 5%;
-  margin-left: 25%;
-  width: 50%;
-  
-}
-
-img {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 150px;
-}
-
-img:hover {
-  box-shadow: 0 0 2px 5px rgba(0, 140, 186, 0.6);
 }

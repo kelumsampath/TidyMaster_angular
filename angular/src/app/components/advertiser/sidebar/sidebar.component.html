@@ -1,29 +1,29 @@
-<div class="nav-side-menu">
-
-  <img src="{{this.profurl}}" alt="profile Photo" id="profpic">
-  <div class="brand">{{this.username}}l</div>
-  <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-
-  <div class="menu-list">
-
-    <ul id="menu-content" class="menu-content collapse out">
-
-      <a [routerLink]="['/advertiserhome']">
-        <li data-toggle="collapse" data-target="advertiserhome" class=" active">
-          <i class="fa fa-dashboard fa-lg"></i> Dashboard</li>
-      </a>
-
-      <li data-toggle="collapse" data-target="/home" class="collapsed">
-        <i class="fa fa-bar-chart"></i> Statistics</li>
-
-
-      <li data-toggle="collapse" data-target="#" class="collapsed">
-        <i class="fa fa-user"></i> Profile</li>
-
-
-      <li data-toggle="collapse" data-target="#" class="collapsed">
-        <i class="fa fa-pencil"></i> Publish </li>
-
+<div id="wrapper">
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <img src="{{this.profurl}}" alt="profile Photo" id="profpic">
+        
+      <li class="sidebar-brand">
+        <a href="#">
+            {{this.username}}
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/advertiserhome']">Dashboard</a>
+      </li>
+      <li>
+        <a [routerLink]="['/advertiserProfile']">Profile</a>
+      </li>
+      <li>
+        <a href="#">Statistics</a>
+      </li>
+      <li>
+        <a href="#">New Ad</a>
+      </li>
+      <li>
+          <a ></a>
+      </li>
+      
     </ul>
   </div>
 </div>
