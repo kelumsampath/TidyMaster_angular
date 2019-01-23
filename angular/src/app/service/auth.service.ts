@@ -397,5 +397,14 @@ export class AuthService {
     headers.append('content-Type', 'application/json');
     return this.http.post(this.url + "/cleaner/getallpaidjobs", { headers: headers }).map(res => res.json());
   }
+  viewcompletedjob(){
+    var user = {
+    }
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization',this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/customer/viewcompletedjob",user, { headers: headers }).map(res => res.json());
+  }
 
 }
