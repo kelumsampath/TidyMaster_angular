@@ -11,6 +11,16 @@
           <button>Save</button>
           <button (click)="cncleditimage()">Cancel</button>
         </div> -->
+        <div *ngIf="changepassword===false">
+          <button (click)="changepassnow()">Change password</button>
+        </div>
+        <div *ngIf="changepassword===true">
+          <input type="text" placeholder="Old password" name="oldpass" id="oldpass" [(ngModel)]="oldpass"><br><br>
+          <input type="text" placeholder="New password" name="newpass" id="newpass" [(ngModel)]="newpass"><br><br>
+          <input type="text" placeholder="Confirm New Password" name="confpass" id="confpass" [(ngModel)]="confpass"><br><br>
+          <button (click)="changenow()" class="btn btn-success">save</button>
+          <button (click)="notchangepassnow()" class="btn btn-secondary">cancel</button>
+        </div>
         
           <div class="card-header">
             <h2 class="card-title">{{user.username}}</h2>

@@ -11,12 +11,17 @@ import { Router } from '@angular/router';
 export class ProfileComponent implements OnInit {
   user:any;
   editimagemode:boolean;
+  changepassword:boolean;
+  oldpass:String;
+  newpass:String;
+  confpass:String;
   constructor(
     private authservice : AuthService,
     private ngFlashMessageService: NgFlashMessageService,
     private router:Router,
   ) { 
     this.editimagemode=false;
+    this.changepassword=false;
   }
 
   ngOnInit() {
@@ -25,12 +30,14 @@ export class ProfileComponent implements OnInit {
       console.log(this.user)
     })
   }
-  editimage(){
-    this.editimagemode=true;
+  
+  changepassnow(){
+    this.changepassword=true;
   }
-  cncleditimage(){
-    this.editimagemode=false;
+  notchangepassnow(){
+    this.changepassword=false;
   }
+
 
   profpic(file:FileList){
     const image={
@@ -49,6 +56,38 @@ export class ProfileComponent implements OnInit {
       
       }
     });
+  }
+
+  changenow(){
+    var pass={
+      oldpass:this.oldpass,
+      newpass:this.newpass,
+      confpass:this.confpass
+    }
+    if(this.newpass==this.confpass){
+      var passdata={
+        oldpassword:pass.oldpass,
+        newpassword:pass.newpass
+      }
+      this.authservice.editpassword(passdata).subscribe(res=>{
+        if(res.state){
+         
+        this.ngFlashMessageService.showFlashMessage({messages: [res.msg],dismissible: true,timeout: 4000,type: 'success'});
+        //console.log("ela");
+        this.changepassword=false;
+      
+        }
+        else{
+        //console.log(res.msg);
+        this.ngFlashMessageService.showFlashMessage({messages: [res.msg],dismissible: false,timeout: 4000,type: 'danger'});
+        
+        }
+      });
+
+    }else{
+      alert("not matched")
+    }
+   
   }
 
 }
