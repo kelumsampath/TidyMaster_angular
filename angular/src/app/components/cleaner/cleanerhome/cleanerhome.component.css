@@ -17,8 +17,10 @@
     clear: both;
 }
 div.ex3 {
-    background-color: lightblue;
     width: 430px;
     height: 420px;
     overflow: auto;
+}
+.checked {
+    color: orange;
 }
