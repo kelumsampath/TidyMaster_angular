@@ -45,6 +45,9 @@ import { ViewadvertismentComponent } from './components/admin/viewadvertisment/v
 import { ViewuserprofileComponent } from './components/admin/viewuserprofile/viewuserprofile.component';
 import { CustomerhomeComponent } from './components/customer/customerhome/customerhome.component';
 import { StatisticsComponent } from './components/advertiser/statistics/statistics.component';
+import { CleanerSideComponent } from './components/cleaner/cleaner-side/cleaner-side.component';
+import { GetallaplliedjobsComponent } from './components/cleaner/getallaplliedjobs/getallaplliedjobs.component';
+import { GetdonejobsComponent } from './components/cleaner/getdonejobs/getdonejobs.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -80,6 +83,8 @@ const applicationRoutes:Routes = [
   {path:'viewadvertisments',component:ViewadvertismentComponent, canActivate: [AuthGuard]},
   {path:'searchusers/:username',component:ViewuserprofileComponent, canActivate: [AuthGuard]},
   {path:'customerhome',component:CustomerhomeComponent, canActivate: [AuthGuard]},
+  {path:'getallappliedjobs',component:GetallaplliedjobsComponent, canActivate: [AuthGuard]},
+  {path:'getdonejobs',component:GetdonejobsComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -119,6 +124,9 @@ const applicationRoutes:Routes = [
     ViewuserprofileComponent,
     CustomerhomeComponent,
     StatisticsComponent,
+    CleanerSideComponent,
+    GetallaplliedjobsComponent,
+    GetdonejobsComponent,
   ],
   imports: [
     BrowserModule,

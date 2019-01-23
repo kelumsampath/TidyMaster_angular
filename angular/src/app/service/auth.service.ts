@@ -347,6 +347,15 @@ export class AuthService {
     return this.http.post(this.url + "/customer/iscustomer", user, { headers: headers }).map(res => res.json());
   }
 
+  getappliedjobs() {
+    var user = {
+    }
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization',this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/cleaner/getappliedjobs",user, { headers: headers }).map(res => res.json());
+  }
   editimage(image){
     this.fetchtoken();
    // console.log(this.authtoken)
@@ -356,4 +365,13 @@ export class AuthService {
     return this.http.post(this.url +"/user/profpicchange", formData).map(res=>res.json()); 
   };
   
+  editpassword(passworddata){
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization', this.authtoken);
+    headers.append('content-Type', 'application/json');
+    headers.append('accessresource', '');
+    return this.http.post(this.url + "/user/editpassword", passworddata, { headers: headers }).map(res => res.json());
+  }
+
 }
