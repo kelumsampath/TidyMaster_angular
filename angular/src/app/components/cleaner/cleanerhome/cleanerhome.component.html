@@ -1,68 +1,19 @@
 <div class="row">
   <div class="column">
-      <div class="card" style="width:300px;margin-left: 60px;margin-top: 40px">
-          <img class="card-img-bottom" src="/assets/DP.png" alt="Display Picture" style="margin:auto;;width:80%">
-          <div class="card-header">
-              <h2 class="card-title">{{user.username}}</h2>
-              <h4 class="card-title"><i>{{user.email}}</i></h4>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <p class="card-text"><br>This person can be Owner,Admin,Customer,Cleaner or Advertiser.</p>
-          </div>
-    </div>
+    <app-cleaner-side></app-cleaner-side>
   </div>
-  <div class="column">
-    <h1>Confirmed Jobs</h1>
-    <div class="ex3">
-      <ul>
-      <li><h3>this is an example</h3></li>
-      <br>
-      <li><h3>this is an example</h3></li>
-      <br>
-      <li><h3>this is an example</h3></li>
-      <br>
-      <li><h3>this is an example</h3></li>
-      <br>
-      <li><h3>this is an example</h3></li>
-      <br>
-      <li><h3>this is an example</h3></li>
-      <br>
-      <li><h3>this is an example</h3></li>
-      <br>
-      <li><h3>this is an example</h3></li>
-      <br>
-      <li><h3>this is an example</h3></li>
-      <br>
-      <li><h3>this is an example</h3></li>
-      <br>
-      <li><h3>this is an example</h3></li>
-      <br>
-      <li><h3>this is an example</h3></li>
-      <br>
-      <li><h3>this is an example</h3></li>
-      <br>
-      <li><h3>this is an example</h3></li>
-      <br>
-      </ul>
-      this is an example
-      <br>
-    </div>
-  </div>
-  <div class="column">
-    <h1>All Job Posts</h1>
-    <div class="ex3">
-    <ul *ngFor="let jobs of job">
-      <li *ngIf="jobs.status=='accepted'">
+  <div class="column2">
       <div>
-          <h5> {{ jobs.title }}</h5>
-          <h6> {{ jobs.joblocation }}</h6>
-          <button [routerLink]="['/acceptedjobpost',jobs.postid]" class="btn btn-info btn-lg">View job</button><br>
-      </div>
-      </li>
-      </ul>
-    </div>
+          <h1>All Job Posts</h1>
+          <div class="ex3">
+          <ul *ngFor="let jobs of job">
+            <div>
+                <h5 style="font-size:8mm"> {{ jobs.title }}</h5>
+                <h6 style="font-size:4mm"> {{ jobs.joblocation }}</h6>
+               <button [routerLink]="['/acceptedjobpost',jobs.postid]" class="btn btn-info btn-lg">View job</button><br>
+            </div>
+            </ul>
+          </div>
+        </div>
   </div>
 </div>
