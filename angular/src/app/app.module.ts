@@ -50,6 +50,7 @@ import { GetallaplliedjobsComponent } from './components/cleaner/getallaplliedjo
 import { GetdonejobsComponent } from './components/cleaner/getdonejobs/getdonejobs.component';
 import { GetnonpaidjobsComponent } from './components/cleaner/getnonpaidjobs/getnonpaidjobs.component';
 import { GetpaidjobsComponent } from './components/cleaner/getpaidjobs/getpaidjobs.component';
+import { ViewcompletedjobComponent } from './components/customer/viewcompletedjob/viewcompletedjob.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -90,6 +91,7 @@ const applicationRoutes:Routes = [
   {path:'cleanerhome/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
   {path:'getnonpaidjobs',component:GetnonpaidjobsComponent, canActivate: [AuthGuard]},
   {path:'getpaidjobs',component:GetpaidjobsComponent, canActivate: [AuthGuard]},
+  {path:'viewcompletedjob',component:ViewcompletedjobComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -134,6 +136,7 @@ const applicationRoutes:Routes = [
     GetdonejobsComponent,
     GetnonpaidjobsComponent,
     GetpaidjobsComponent,
+    ViewcompletedjobComponent,
   ],
   imports: [
     BrowserModule,
