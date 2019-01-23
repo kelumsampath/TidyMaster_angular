@@ -3,5 +3,16 @@
       <app-cleaner-side></app-cleaner-side>
     </div>
     <div class="column2">
+        <div>
+            <h1>All Done Jobs</h1>
+            <div class="ex3">
+            <ul *ngFor="let jobs of job">
+              <div>
+                  <h5 style="font-size:8mm"> {{ jobs.title }}</h5>
+                  <h6 style="font-size:4mm"> {{ jobs.joblocation }}</h6>
+              </div>
+              </ul>
+            </div>
+        </div>
     </div>
   </div>

@@ -85,6 +85,7 @@ const applicationRoutes:Routes = [
   {path:'customerhome',component:CustomerhomeComponent, canActivate: [AuthGuard]},
   {path:'getallappliedjobs',component:GetallaplliedjobsComponent, canActivate: [AuthGuard]},
   {path:'getdonejobs',component:GetdonejobsComponent, canActivate: [AuthGuard]},
+  {path:'cleanerhome/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
