@@ -1,15 +1,20 @@
 <div class="row">
-  <div class="column" style="background-color:#aaa;">
-      <div class="card" style="width:400px">
+  <div class="column">
+      <div class="card" style="width:300px;margin-left: 60px;margin-top: 40px">
           <img class="card-img-bottom" src="/assets/DP.png" alt="Display Picture" style="margin:auto;;width:80%">
           <div class="card-header">
               <h2 class="card-title">{{user.username}}</h2>
               <h4 class="card-title"><i>{{user.email}}</i></h4>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
               <p class="card-text"><br>This person can be Owner,Admin,Customer,Cleaner or Advertiser.</p>
           </div>
     </div>
   </div>
-  <div class="column" style="background-color:#bbb;">
+  <div class="column">
     <h1>Confirmed Jobs</h1>
     <div class="ex3">
       <ul>
@@ -46,7 +51,7 @@
       <br>
     </div>
   </div>
-  <div class="column" style="background-color:#ccc;">
+  <div class="column">
     <h1>All Job Posts</h1>
     <div class="ex3">
     <ul *ngFor="let jobs of job">
@@ -54,7 +59,7 @@
       <div>
           <h5> {{ jobs.title }}</h5>
           <h6> {{ jobs.joblocation }}</h6>
-         <button [routerLink]="['/acceptedjobpost',jobs.postid]" class="btn btn-info btn-lg">View job</button><br>
+          <button [routerLink]="['/acceptedjobpost',jobs.postid]" class="btn btn-info btn-lg">View job</button><br>
       </div>
       </li>
       </ul>
