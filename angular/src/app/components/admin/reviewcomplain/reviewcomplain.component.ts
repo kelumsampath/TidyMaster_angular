@@ -47,7 +47,8 @@ export class ReviewcomplainComponent implements OnInit {
     } else {
     var user = {
       uid: uid,
-      complainid:complainid
+      complainid:complainid,
+      reason:reason
     }
     //alert(user.uid)
     this.authservice.complaineduserremove(user).subscribe(res => {

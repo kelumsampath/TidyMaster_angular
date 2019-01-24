@@ -80,7 +80,8 @@ export class SearchusersComponent implements OnInit {
 
     } else {
     var user = {
-      uid: uid
+      uid: uid,
+      reason:reason
     }
     //alert(user.uid)
     this.authservice.removeuser(user).subscribe(res => {
