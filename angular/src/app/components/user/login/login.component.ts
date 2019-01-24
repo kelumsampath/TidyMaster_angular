@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/adminhome']);
         }
         else if(res.user.role=="cleaner"){
+          this.authservice.cleaner=true;
           this.router.navigate(['/cleanerhome']);
         }else if(res.user.role=="advertiser"){
           this.router.navigate(['/advertiserhome']);

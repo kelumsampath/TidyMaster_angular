@@ -17,14 +17,14 @@
             <a class="nav-link" [routerLink]="['/adminhome']" *ngIf='authservice.adminorsuperadmin'> Dashboard</a>
         </li>
         <li class="nav-link">
-            <a class="nav-link" [routerLink]="['/cleanerhome']" *ngIf='authservice.loggedIn()'><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+            <a class="nav-link" [routerLink]="['/cleanerhome']" *ngIf='authservice.cleaner'><i class="fa fa-home" aria-hidden="true"></i> Home</a>
         </li>
 
         <li class="nav-link">
             <a class="nav-link" [routerLink]="['/viewjobs']"><i class="fa fa-child" aria-hidden="true"></i> Jobs</a>
         </li>
         <li class="nav-link" *ngIf='authservice.loggedIn()'>
-            <a class="nav-link" [routerLink]="['/profile']"><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{user.username}}<span class="sr-only">(current)</span></a>
+            <a class="nav-link" [routerLink]="['/profile']"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Profile<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-link" *ngIf='!authservice.loggedIn()'>
             <a class="nav-link" [routerLink]="['/login']"><i class="fa fa-sign-in" aria-hidden="true"></i> Login <span class="sr-only">(current)</span></a>
