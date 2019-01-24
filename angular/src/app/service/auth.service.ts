@@ -10,8 +10,8 @@ export class AuthService {
   authtoken:any;
   adminorsuperadmin:boolean=false;
 
-  //url:String="http://localhost:3000";
-  url:String="http://tidymaster.projects.uom.lk:3000";
+  url:String="http://localhost:3000";
+  //url:String="http://tidymaster.projects.uom.lk:3000";
 
   constructor(
     private http: Http,
