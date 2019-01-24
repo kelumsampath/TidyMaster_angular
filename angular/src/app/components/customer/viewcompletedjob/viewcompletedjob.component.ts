@@ -4,25 +4,24 @@ import { NgFlashMessageService } from 'ng-flash-messages';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-getdonejobs',
-  templateUrl: './getdonejobs.component.html',
-  styleUrls: ['./getdonejobs.component.css']
+  selector: 'app-viewcompletedjob',
+  templateUrl: './viewcompletedjob.component.html',
+  styleUrls: ['./viewcompletedjob.component.css']
 })
-export class GetdonejobsComponent implements OnInit {
+export class ViewcompletedjobComponent implements OnInit {
   job:any;
   constructor(
     private authservice:AuthService,
     private ngFlashMessageService: NgFlashMessageService,
     private router:Router,
-  ) { this.getdonejobs(); }
+  ) { this.viewcompletedjob(); }
 
   ngOnInit() {
   }
-
-  getdonejobs(){
-    this.authservice.getdonejobs().subscribe(res=>{
+  viewcompletedjob(){
+    this.authservice.viewcompletedjob().subscribe(res=>{
       if(res.state){
-        this.job = res.jobs;
+        this.job = res.customerjobs;
         console.log(this.job);
       }
         else{

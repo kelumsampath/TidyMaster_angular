@@ -9,6 +9,7 @@ export class AuthService {
   user:any;
   authtoken:any;
   adminorsuperadmin:boolean=false;
+  cleaner:boolean=false;
 
   //url:String="http://localhost:3000";
   url:String="http://tidymaster.projects.uom.lk:3000";
@@ -356,6 +357,16 @@ export class AuthService {
     headers.append('content-Type', 'application/json');
     return this.http.post(this.url + "/cleaner/getappliedjobs",user, { headers: headers }).map(res => res.json());
   }
+
+  getdonejobs() {
+    var user = {
+    }
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization',this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/cleaner/getdonejobs",user, { headers: headers }).map(res => res.json());
+  }
   editimage(image){
     this.fetchtoken();
    // console.log(this.authtoken)
@@ -372,6 +383,29 @@ export class AuthService {
     headers.append('content-Type', 'application/json');
     headers.append('accessresource', '');
     return this.http.post(this.url + "/user/editpassword", passworddata, { headers: headers }).map(res => res.json());
+  }
+  getnonpaidjobs() {
+    //this.fetchtoken();
+    let headers = new Headers();
+    //headers.append('Authorization',this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/cleaner/getallnonpaidjobs", { headers: headers }).map(res => res.json());
+  }
+  getpaidjobs() {
+    //this.fetchtoken();
+    let headers = new Headers();
+    //headers.append('Authorization',this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/cleaner/getallpaidjobs", { headers: headers }).map(res => res.json());
+  }
+  viewcompletedjob(){
+    var user = {
+    }
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization',this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/customer/viewcompletedjob",user, { headers: headers }).map(res => res.json());
   }
 
 }

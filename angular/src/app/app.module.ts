@@ -48,6 +48,9 @@ import { StatisticsComponent } from './components/advertiser/statistics/statisti
 import { CleanerSideComponent } from './components/cleaner/cleaner-side/cleaner-side.component';
 import { GetallaplliedjobsComponent } from './components/cleaner/getallaplliedjobs/getallaplliedjobs.component';
 import { GetdonejobsComponent } from './components/cleaner/getdonejobs/getdonejobs.component';
+import { GetnonpaidjobsComponent } from './components/cleaner/getnonpaidjobs/getnonpaidjobs.component';
+import { GetpaidjobsComponent } from './components/cleaner/getpaidjobs/getpaidjobs.component';
+import { ViewcompletedjobComponent } from './components/customer/viewcompletedjob/viewcompletedjob.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -85,6 +88,10 @@ const applicationRoutes:Routes = [
   {path:'customerhome',component:CustomerhomeComponent, canActivate: [AuthGuard]},
   {path:'getallappliedjobs',component:GetallaplliedjobsComponent, canActivate: [AuthGuard]},
   {path:'getdonejobs',component:GetdonejobsComponent, canActivate: [AuthGuard]},
+  {path:'cleanerhome/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
+  {path:'getnonpaidjobs',component:GetnonpaidjobsComponent, canActivate: [AuthGuard]},
+  {path:'getpaidjobs',component:GetpaidjobsComponent, canActivate: [AuthGuard]},
+  {path:'viewcompletedjob',component:ViewcompletedjobComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -127,6 +134,9 @@ const applicationRoutes:Routes = [
     CleanerSideComponent,
     GetallaplliedjobsComponent,
     GetdonejobsComponent,
+    GetnonpaidjobsComponent,
+    GetpaidjobsComponent,
+    ViewcompletedjobComponent,
   ],
   imports: [
     BrowserModule,
