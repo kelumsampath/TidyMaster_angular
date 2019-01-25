@@ -41,9 +41,14 @@ export class ReviewcomplainComponent implements OnInit {
   }
 
   complaineduserremove(uid,complainid) {
+    var reason = prompt("Please enter reason:", "Remove");
+    if (reason == null || reason == "") {
+
+    } else {
     var user = {
       uid: uid,
-      complainid:complainid
+      complainid:complainid,
+      reason:reason
     }
     //alert(user.uid)
     this.authservice.complaineduserremove(user).subscribe(res => {
@@ -55,6 +60,7 @@ export class ReviewcomplainComponent implements OnInit {
         this.ngFlashMessageService.showFlashMessage({ messages: [res.msg], dismissible: true, timeout: 4000, type: 'danger' });
       }
     })
+  }
   }
   complaineduserwarn(uid,complainid) {
     var reason = prompt("Please enter reason:", "warn");

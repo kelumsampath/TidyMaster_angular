@@ -9,7 +9,7 @@ import { NgFlashMessageService } from 'ng-flash-messages';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  user:any;
   constructor(
     private router:Router,
     private authservice:AuthService,
@@ -17,12 +17,16 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.authservice.getprofile().subscribe(res=>{
+      this.user = res.userdata;
+    })
   }
 
   logoutUser(){
     this.authservice.logOut().subscribe(res=>{
     if(res.state){
       this.authservice.adminorsuperadmin=false;
+      this.authservice.cleaner=false;
       this.ngFlashMessageService.showFlashMessage({messages: ["You are successfully logged out!"],dismissible: true,timeout: 4000,type: 'success'});
       this.router.navigate(['/home']);
       return false;
