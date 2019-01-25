@@ -85,6 +85,9 @@ const applicationRoutes:Routes = [
   {path:'advertiserProfile',component:AdvertiserprofileComponent,canActivate:[AuthGuard]},
   {path:'viewadvertisments',component:ViewadvertismentComponent, canActivate: [AuthGuard]},
   {path:'searchusers/:username',component:ViewuserprofileComponent, canActivate: [AuthGuard]},
+
+  {path:'statistics',component:StatisticsComponent, canActivate: [AuthGuard]},
+
   {path:'customerhome',component:CustomerhomeComponent, canActivate: [AuthGuard]},
   {path:'getallappliedjobs',component:GetallaplliedjobsComponent, canActivate: [AuthGuard]},
   {path:'getdonejobs',component:GetdonejobsComponent, canActivate: [AuthGuard]},
@@ -92,6 +95,7 @@ const applicationRoutes:Routes = [
   {path:'getnonpaidjobs',component:GetnonpaidjobsComponent, canActivate: [AuthGuard]},
   {path:'getpaidjobs',component:GetpaidjobsComponent, canActivate: [AuthGuard]},
   {path:'viewcompletedjob',component:ViewcompletedjobComponent, canActivate: [AuthGuard]},
+
 ];
 
 @NgModule({

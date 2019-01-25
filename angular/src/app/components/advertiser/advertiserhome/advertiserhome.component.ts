@@ -121,7 +121,7 @@ export class AdvertiserhomeComponent implements OnInit {
           console.log("this.active")
           var i;
           for (i = 0; i < this.active.length; i++) {
-            console.log(this.active[i])
+        
             this.months.push(this.active[i].month);
             this.values.push(this.active[i].count);
           }
