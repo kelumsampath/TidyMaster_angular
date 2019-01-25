@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
           this.authservice.cleaner=true;
           this.router.navigate(['/cleanerhome']);
         }else if(res.user.role=="advertiser"){
+          this.authservice.advertiserLogin=true;
           this.router.navigate(['/advertiserhome']);
         }
         else if(res.user.role=="customer"){
