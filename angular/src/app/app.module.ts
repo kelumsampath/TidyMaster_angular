@@ -78,6 +78,7 @@ const applicationRoutes:Routes = [
   {path:'advertiserProfile',component:AdvertiserprofileComponent,canActivate:[AuthGuard]},
   {path:'viewadvertisments',component:ViewadvertismentComponent, canActivate: [AuthGuard]},
   {path:'searchusers/:username',component:ViewuserprofileComponent, canActivate: [AuthGuard]},
+  {path:'statistics',component:StatisticsComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

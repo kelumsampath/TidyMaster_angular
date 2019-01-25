@@ -2,7 +2,7 @@
   <div class="container bootstrap snippet">
     <div class="row">
       <div class="col-sm-10">
-        <h1>{{ user.username }} </h1>
+        <h1>{{ this.username }} </h1>
       </div>
 
     </div>
@@ -12,7 +12,7 @@
 
 
         <div class="text-center">
-          <img class="avatar img-circle img-thumbnail" alt="avatar" id="output">
+          <img class="avatar img-circle img-thumbnail" alt="avatar" id="output" src="{{this.profurl}}">
           <h6>Upload a different photo...</h6>
           <input type="file" class="text-center center-block file-upload" accept="image/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
         </div>
@@ -87,7 +87,7 @@
                   <label for="email">
                     <h4>Gender</h4>
                   </label>
-                  <input type="select" class="form-control" id="gender" title="enter a location" value="{{ user.firstName }}">
+                  <input type="select" class="form-control" id="gender" title="enter a gender" value="{{ user.gender }}">
                 </div>
               </div>
               <div class="form-group">

@@ -337,4 +337,13 @@ export class AuthService {
     return this.http.post(this.url + "/advertiser/getAllAdsByMonth",user, { headers: headers }).map(res=>res.json());
   }
   
+  getAllAds(){
+    var user={};
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization',this.authtoken);
+    headers.append('content-Type','application/json');
+    headers.append('accessresource', '');
+    return this.http.post(this.url + "/advertiser/getAllAds",user, { headers: headers }).map(res=>res.json());
+  }
 }
