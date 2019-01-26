@@ -45,6 +45,8 @@ import { ViewadvertismentComponent } from './components/admin/viewadvertisment/v
 import { ViewuserprofileComponent } from './components/admin/viewuserprofile/viewuserprofile.component';
 import { CustomerhomeComponent } from './components/customer/customerhome/customerhome.component';
 import { StatisticsComponent } from './components/advertiser/statistics/statistics.component';
+import { ViewcomplainComponent } from './components/admin/viewcomplain/viewcomplain.component';
+import { ViewcomplainactionComponent } from './components/admin/viewcomplainaction/viewcomplainaction.component';
 import { CleanerSideComponent } from './components/cleaner/cleaner-side/cleaner-side.component';
 import { GetallaplliedjobsComponent } from './components/cleaner/getallaplliedjobs/getallaplliedjobs.component';
 import { GetdonejobsComponent } from './components/cleaner/getdonejobs/getdonejobs.component';
@@ -89,13 +91,16 @@ const applicationRoutes:Routes = [
   {path:'statistics',component:StatisticsComponent, canActivate: [AuthGuard]},
 
   {path:'customerhome',component:CustomerhomeComponent, canActivate: [AuthGuard]},
+  {path:'reviewcomplain/:complainid',component:ViewcomplainComponent, canActivate: [AuthGuard]},
+  {path:'reviewcomplainaction/:actcomplainid',component:ViewcomplainactionComponent, canActivate: [AuthGuard]},
+  {path:'viewcomplain/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
+  {path:'jobview/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
   {path:'getallappliedjobs',component:GetallaplliedjobsComponent, canActivate: [AuthGuard]},
   {path:'getdonejobs',component:GetdonejobsComponent, canActivate: [AuthGuard]},
   {path:'cleanerhome/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
   {path:'getnonpaidjobs',component:GetnonpaidjobsComponent, canActivate: [AuthGuard]},
   {path:'getpaidjobs',component:GetpaidjobsComponent, canActivate: [AuthGuard]},
   {path:'viewcompletedjob',component:ViewcompletedjobComponent, canActivate: [AuthGuard]},
-
 ];
 
 @NgModule({
@@ -135,6 +140,8 @@ const applicationRoutes:Routes = [
     ViewuserprofileComponent,
     CustomerhomeComponent,
     StatisticsComponent,
+    ViewcomplainComponent,
+    ViewcomplainactionComponent,
     CleanerSideComponent,
     GetallaplliedjobsComponent,
     GetdonejobsComponent,
