@@ -1,13 +1,20 @@
 * {
     box-sizing: border-box;
+    margin-top: -10px;
 }
 
-/* Create three equal columns that floats next to each other */
+/* Create two equal columns that floats next to each other */
 .column {
     float: left;
-    width: 33.33%;
+    width: 25%;
+    
+    height: 100%; /* Should be removed. Only for demonstration */
+}
+.column2 {
+    float: left;
+    width: 75%;
     padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
+    height: 100%; /* Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
@@ -16,11 +23,8 @@
     display: table;
     clear: both;
 }
-div.ex3 {
-    width: 430px;
-    height: 420px;
-    overflow: auto;
-}
-.checked {
-    color: orange;
+
+.ex3{
+    border: 1px;
+    border-color: aqua;
 }

@@ -47,6 +47,12 @@ import { CustomerhomeComponent } from './components/customer/customerhome/custom
 import { StatisticsComponent } from './components/advertiser/statistics/statistics.component';
 import { ViewcomplainComponent } from './components/admin/viewcomplain/viewcomplain.component';
 import { ViewcomplainactionComponent } from './components/admin/viewcomplainaction/viewcomplainaction.component';
+import { CleanerSideComponent } from './components/cleaner/cleaner-side/cleaner-side.component';
+import { GetallaplliedjobsComponent } from './components/cleaner/getallaplliedjobs/getallaplliedjobs.component';
+import { GetdonejobsComponent } from './components/cleaner/getdonejobs/getdonejobs.component';
+import { GetnonpaidjobsComponent } from './components/cleaner/getnonpaidjobs/getnonpaidjobs.component';
+import { GetpaidjobsComponent } from './components/cleaner/getpaidjobs/getpaidjobs.component';
+import { ViewcompletedjobComponent } from './components/customer/viewcompletedjob/viewcompletedjob.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -81,11 +87,20 @@ const applicationRoutes:Routes = [
   {path:'advertiserProfile',component:AdvertiserprofileComponent,canActivate:[AuthGuard]},
   {path:'viewadvertisments',component:ViewadvertismentComponent, canActivate: [AuthGuard]},
   {path:'searchusers/:username',component:ViewuserprofileComponent, canActivate: [AuthGuard]},
+
+  {path:'statistics',component:StatisticsComponent, canActivate: [AuthGuard]},
+
   {path:'customerhome',component:CustomerhomeComponent, canActivate: [AuthGuard]},
   {path:'reviewcomplain/:complainid',component:ViewcomplainComponent, canActivate: [AuthGuard]},
   {path:'reviewcomplainaction/:actcomplainid',component:ViewcomplainactionComponent, canActivate: [AuthGuard]},
   {path:'viewcomplain/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
   {path:'jobview/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
+  {path:'getallappliedjobs',component:GetallaplliedjobsComponent, canActivate: [AuthGuard]},
+  {path:'getdonejobs',component:GetdonejobsComponent, canActivate: [AuthGuard]},
+  {path:'cleanerhome/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
+  {path:'getnonpaidjobs',component:GetnonpaidjobsComponent, canActivate: [AuthGuard]},
+  {path:'getpaidjobs',component:GetpaidjobsComponent, canActivate: [AuthGuard]},
+  {path:'viewcompletedjob',component:ViewcompletedjobComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -127,6 +142,12 @@ const applicationRoutes:Routes = [
     StatisticsComponent,
     ViewcomplainComponent,
     ViewcomplainactionComponent,
+    CleanerSideComponent,
+    GetallaplliedjobsComponent,
+    GetdonejobsComponent,
+    GetnonpaidjobsComponent,
+    GetpaidjobsComponent,
+    ViewcompletedjobComponent,
   ],
   imports: [
     BrowserModule,
