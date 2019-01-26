@@ -10,8 +10,8 @@ export class AuthService {
   authtoken:any;
   adminorsuperadmin:boolean=false;
 
-  //url:String="http://localhost:3000";
-  url:String="http://tidymaster.projects.uom.lk:3000";
+  url:String="http://localhost:3000";
+  //url:String="http://tidymaster.projects.uom.lk:3000";
 
   constructor(
     private http: Http,
@@ -363,6 +363,24 @@ export class AuthService {
     headers.append('content-Type', 'application/json');
     headers.append('accessresource', '');
     return this.http.post(this.url + "/user/editpassword", passworddata, { headers: headers }).map(res => res.json());
+  }
+
+  viewcomplain(complain){
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization', this.authtoken);
+    headers.append('content-Type', 'application/json');
+    headers.append('accessresource', '');
+    return this.http.post(this.url + "/admin/viewcomplain", complain, { headers: headers }).map(res => res.json());
+  }
+
+  viewcomplainaction(complain){
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization', this.authtoken);
+    headers.append('content-Type', 'application/json');
+    headers.append('accessresource', '');
+    return this.http.post(this.url + "/admin/viewcomplainaction", complain, { headers: headers }).map(res => res.json());
   }
 
 }

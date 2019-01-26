@@ -45,6 +45,8 @@ import { ViewadvertismentComponent } from './components/admin/viewadvertisment/v
 import { ViewuserprofileComponent } from './components/admin/viewuserprofile/viewuserprofile.component';
 import { CustomerhomeComponent } from './components/customer/customerhome/customerhome.component';
 import { StatisticsComponent } from './components/advertiser/statistics/statistics.component';
+import { ViewcomplainComponent } from './components/admin/viewcomplain/viewcomplain.component';
+import { ViewcomplainactionComponent } from './components/admin/viewcomplainaction/viewcomplainaction.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -80,6 +82,10 @@ const applicationRoutes:Routes = [
   {path:'viewadvertisments',component:ViewadvertismentComponent, canActivate: [AuthGuard]},
   {path:'searchusers/:username',component:ViewuserprofileComponent, canActivate: [AuthGuard]},
   {path:'customerhome',component:CustomerhomeComponent, canActivate: [AuthGuard]},
+  {path:'reviewcomplain/:complainid',component:ViewcomplainComponent, canActivate: [AuthGuard]},
+  {path:'reviewcomplainaction/:actcomplainid',component:ViewcomplainactionComponent, canActivate: [AuthGuard]},
+  {path:'viewcomplain/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
+  {path:'jobview/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -119,6 +125,8 @@ const applicationRoutes:Routes = [
     ViewuserprofileComponent,
     CustomerhomeComponent,
     StatisticsComponent,
+    ViewcomplainComponent,
+    ViewcomplainactionComponent,
   ],
   imports: [
     BrowserModule,

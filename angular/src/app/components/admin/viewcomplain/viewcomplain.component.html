@@ -1,0 +1,18 @@
+
+  
+    <div class="container">
+      <div id="menuitem" >
+        <h1 style="margin-top:10%">Complain</h1><br>
+        <h2>Complainid:{{complain.complainid}}</h2><br>
+        <p>Description:{{complain.complain}}</p><br>
+        <p>Time:{{complain.dateandtime}}</p><br>
+        <p>PostID:{{complain.postid}}</p>
+        <button  class="btn btn-info" [routerLink]="['/jobview',complain.postid]">View Job</button><br><br>
+        <p>User ID: {{complain.uid}}</p>
+        <button  class="btn btn-info" [routerLink]="['/searchusers',complain.username]">View User</button><br><br><br>
+      </div>
+
+
+  </div>
+  
+ 
