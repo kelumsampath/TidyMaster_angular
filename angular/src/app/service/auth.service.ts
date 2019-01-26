@@ -429,6 +429,24 @@ export class AuthService {
   }
   
 
+  viewcomplain(complain){
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization', this.authtoken);
+    headers.append('content-Type', 'application/json');
+    headers.append('accessresource', '');
+    return this.http.post(this.url + "/admin/viewcomplain", complain, { headers: headers }).map(res => res.json());
+  }
+
+  viewcomplainaction(complain){
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization', this.authtoken);
+    headers.append('content-Type', 'application/json');
+    headers.append('accessresource', '');
+    return this.http.post(this.url + "/admin/viewcomplainaction", complain, { headers: headers }).map(res => res.json());
+  }
+
 }
 
 
