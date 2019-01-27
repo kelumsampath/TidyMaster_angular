@@ -53,6 +53,7 @@ import { GetdonejobsComponent } from './components/cleaner/getdonejobs/getdonejo
 import { GetnonpaidjobsComponent } from './components/cleaner/getnonpaidjobs/getnonpaidjobs.component';
 import { GetpaidjobsComponent } from './components/cleaner/getpaidjobs/getpaidjobs.component';
 import { ViewcompletedjobComponent } from './components/customer/viewcompletedjob/viewcompletedjob.component';
+import { ViewsingleadvertiesmentComponent } from './components/admin/viewsingleadvertiesment/viewsingleadvertiesment.component';
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -101,6 +102,7 @@ const applicationRoutes:Routes = [
   {path:'getnonpaidjobs',component:GetnonpaidjobsComponent, canActivate: [AuthGuard]},
   {path:'getpaidjobs',component:GetpaidjobsComponent, canActivate: [AuthGuard]},
   {path:'viewcompletedjob',component:ViewcompletedjobComponent, canActivate: [AuthGuard]},
+  {path:'viewadvertisments/:advertiesmentid',component:ViewsingleadvertiesmentComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -148,6 +150,7 @@ const applicationRoutes:Routes = [
     GetnonpaidjobsComponent,
     GetpaidjobsComponent,
     ViewcompletedjobComponent,
+    ViewsingleadvertiesmentComponent,
   ],
   imports: [
     BrowserModule,

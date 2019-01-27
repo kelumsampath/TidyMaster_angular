@@ -447,6 +447,24 @@ export class AuthService {
     return this.http.post(this.url + "/admin/viewcomplainaction", complain, { headers: headers }).map(res => res.json());
   }
 
+  viewadvertiesment(addvertiesment){
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization', this.authtoken);
+    headers.append('content-Type', 'application/json');
+    headers.append('accessresource', '');
+    return this.http.post(this.url + "/admin/viewsingleadvertiesment", addvertiesment, { headers: headers }).map(res => res.json());
+  }
+
+  viewadmin(advertiesment){
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization', this.authtoken);
+    headers.append('content-Type', 'application/json');
+    headers.append('accessresource', '');
+    return this.http.post(this.url + "/admin/viewadmin", advertiesment, { headers: headers }).map(res => res.json());
+  }
+
 }
 
 
