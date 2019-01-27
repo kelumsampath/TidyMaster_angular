@@ -1,7 +1,7 @@
 
   
     <div class="container">
-      <div id="menuitem" >
+      <div id="menuitem" *ngIf="iswarned===true">
         <h1 style="margin-top:10%">Complain</h1><br>
         <h2>Complainid:{{complain.complainid}}</h2><br>
         <p>Description:{{complain.complain}}</p><br>
