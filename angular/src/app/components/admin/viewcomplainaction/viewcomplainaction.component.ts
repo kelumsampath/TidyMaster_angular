@@ -13,13 +13,16 @@ import { Action } from 'rxjs/scheduler/Action';
 })
 export class ViewcomplainactionComponent implements OnInit {
 complain:any;
+iswarned:boolean;
 action:any;
   constructor(
     private authservice: AuthService,
     private ngFlashMessageService: NgFlashMessageService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-  ) { }
+  ) { 
+    this.iswarned=false;
+  }
 
   ngOnInit() {
     var complaindata={
@@ -29,6 +32,10 @@ action:any;
     this.authservice.viewcomplain(complaindata).subscribe(res => {
 
       if (res.state) {
+        if(res.complain){
+          this.iswarned=true;
+        }
+        
         this.complain=res.complain;
         console.log(res.complain);
        
