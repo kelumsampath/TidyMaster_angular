@@ -50,7 +50,7 @@ export class ReviewcomplainComponent implements OnInit {
       complainid:complainid,
       reason:reason
     }
-    //alert(user.uid)
+    console.log(user)
     this.authservice.complaineduserremove(user).subscribe(res => {
       if (res.state) {
         this.ngFlashMessageService.showFlashMessage({ messages: ["user removed!"], dismissible: true, timeout: 4000, type: 'success' });
