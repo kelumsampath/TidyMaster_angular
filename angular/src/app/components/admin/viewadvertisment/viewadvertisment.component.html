@@ -7,7 +7,7 @@
       <div id="menuitem" >
         <ul *ngFor="let adslist of advertisments">
           <li>
-            <button [routerLink]="[]" class="add">
+            <button [routerLink]="['/viewadvertisments',adslist.adId]" class="add">
               <div id="container" style="height:15%">
                 <div class="row" style="height:15%">
                   <div class="col-dm-8 col-md-push-3" style="width:40%; padding-left:2% ">

@@ -1,0 +1,23 @@
+
+  
+    <div class="container">
+      <div id="menuitem" >
+        <h1 style="margin-top:10%">ADVERTIESMENT</h1><br>
+        <h2>Title:{{advertiesment.adTitle}}</h2><br>
+        <p>advertiesment ID:{{advertiesment.adId}}</p><br>
+        <p>Company Name:{{advertiesment.company}}</p><br>
+        <p>User ID: {{advertiesment.uid}}</p>
+        <button  class="btn btn-info" [routerLink]="['/searchusers',advertiesment.username]">View User</button><br>
+        <p>Start date:{{advertiesment.createdDateAndTime}}</p><br>
+        <p>Expire date:{{advertiesment.expiredDateAndTime}}</p><br>
+        <p>Number of Clicks:{{advertiesment.noOFClicks}}</p><br>
+        <p>Number of Views:{{advertiesment.noOFViews}}</p><br>
+      </div><br>
+<hr>
+<h1>Placed by:</h1>
+<p>Admin ID: {{admin.adminId}}</p>
+<button  class="btn btn-info" [routerLink]="['/searchusers',admin.username]">View Admin</button><br><br><br> 
+<img  src={{advertiesment.vendorURL}} alt="Display Picture" style="margin:auto;;width:80%;">
+  </div>
+  
+ 
