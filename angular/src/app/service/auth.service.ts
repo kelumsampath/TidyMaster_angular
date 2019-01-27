@@ -13,7 +13,7 @@ export class AuthService {
   cleaner:boolean=false;
 
   //url:String="http://localhost:3000";
-  url:String="http://tidymaster.projects.uom.lk:3000";
+   url:String="http://tidymaster.projects.uom.lk:3000";
 
 
   constructor(
