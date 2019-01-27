@@ -27,6 +27,7 @@ export class NavbarComponent implements OnInit {
     if(res.state){
       this.authservice.adminorsuperadmin=false;
       this.authservice.cleaner=false;
+      this.authservice.advertiserLogin=false;
       this.ngFlashMessageService.showFlashMessage({messages: ["You are successfully logged out!"],dismissible: true,timeout: 4000,type: 'success'});
       this.router.navigate(['/home']);
       return false;

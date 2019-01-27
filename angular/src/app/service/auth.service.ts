@@ -9,10 +9,11 @@ export class AuthService {
   user:any;
   authtoken:any;
   adminorsuperadmin:boolean=false;
+  advertiserLogin:boolean=false;
   cleaner:boolean=false;
 
   //url:String="http://localhost:3000";
-  url:String="http://tidymaster.projects.uom.lk:3000";
+   url:String="http://tidymaster.projects.uom.lk:3000";
 
   constructor(
     private http: Http,
@@ -376,6 +377,16 @@ export class AuthService {
     return this.http.post(this.url +"/user/profpicchange", formData).map(res=>res.json()); 
   };
   
+  getAllAds(){
+    var user={};
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization',this.authtoken);
+    headers.append('content-Type','application/json');
+    headers.append('accessresource', '');
+    return this.http.post(this.url + "/advertiser/getAllAds",user, { headers: headers }).map(res=>res.json());
+  }
+
   editpassword(passworddata){
     this.fetchtoken();
     let headers = new Headers();
@@ -406,6 +417,52 @@ export class AuthService {
     headers.append('Authorization',this.authtoken);
     headers.append('content-Type', 'application/json');
     return this.http.post(this.url + "/customer/viewcompletedjob",user, { headers: headers }).map(res => res.json());
+  }
+  isadvertiser() {
+    var user = {
+    }
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization', this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/advertiser/isadvertiser", user, { headers: headers }).map(res => res.json());
+  }
+  
+
+  viewcomplain(complain){
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization', this.authtoken);
+    headers.append('content-Type', 'application/json');
+    headers.append('accessresource', '');
+    return this.http.post(this.url + "/admin/viewcomplain", complain, { headers: headers }).map(res => res.json());
+  }
+
+  viewcomplainaction(complain){
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization', this.authtoken);
+    headers.append('content-Type', 'application/json');
+    headers.append('accessresource', '');
+    return this.http.post(this.url + "/admin/viewcomplainaction", complain, { headers: headers }).map(res => res.json());
+  }
+
+  viewadvertiesment(addvertiesment){
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization', this.authtoken);
+    headers.append('content-Type', 'application/json');
+    headers.append('accessresource', '');
+    return this.http.post(this.url + "/admin/viewsingleadvertiesment", addvertiesment, { headers: headers }).map(res => res.json());
+  }
+
+  viewadmin(advertiesment){
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization', this.authtoken);
+    headers.append('content-Type', 'application/json');
+    headers.append('accessresource', '');
+    return this.http.post(this.url + "/admin/viewadmin", advertiesment, { headers: headers }).map(res => res.json());
   }
 
 
@@ -488,3 +545,6 @@ export class AuthService {
   }
 
 }
+
+
+
