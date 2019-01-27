@@ -407,5 +407,23 @@ export class AuthService {
     headers.append('content-Type', 'application/json');
     return this.http.post(this.url + "/customer/viewcompletedjob",user, { headers: headers }).map(res => res.json());
   }
+  applyjob(postid){
+    var user = {
+    }
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization', this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/admin/adminalljobs",user, { headers: headers }).map(res => res.json());
+  }
+  viewactivejob(){
+    var user = {
+    }
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization',this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/customer/viewactivejob",user, { headers: headers }).map(res => res.json());
+  }
 
 }
