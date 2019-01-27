@@ -35,6 +35,7 @@ action:any;
         if(res.complain){
           this.iswarned=true;
         }
+        
         this.complain=res.complain;
         console.log(res.complain);
        
