@@ -13,7 +13,7 @@
 .column2 {
     float: left;
     width: 75%;
-    padding: 10px;
+    padding: 50px;
     height: 100%; /* Should be removed. Only for demonstration */
 }
 
@@ -23,3 +23,16 @@
     display: table;
     clear: both;
 }
+.nn {
+    max-width: 95%;
+    padding: 100px;
+    position: relative;
+    background: linear-gradient(to right, rgba(79, 191, 219, 0.527), rgba(0, 0, 0, 0.527));
+    padding: 15px;
+  }
+  
+ .mm {
+    background: rgb(255, 255, 255);
+    color: black;
+    padding: 50px;
+  }

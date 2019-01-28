@@ -19,6 +19,7 @@ export class SidebarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.authservice.advertiserLogin=true;
     this.authservice.loadprofpic().subscribe(res=>{
       if(res.state){
         console.log(res.data.url);

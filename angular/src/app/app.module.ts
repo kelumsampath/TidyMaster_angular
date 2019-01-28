@@ -53,7 +53,14 @@ import { GetdonejobsComponent } from './components/cleaner/getdonejobs/getdonejo
 import { GetnonpaidjobsComponent } from './components/cleaner/getnonpaidjobs/getnonpaidjobs.component';
 import { GetpaidjobsComponent } from './components/cleaner/getpaidjobs/getpaidjobs.component';
 import { ViewcompletedjobComponent } from './components/customer/viewcompletedjob/viewcompletedjob.component';
+import { CustomerSideComponent } from './components/customer/customer-side/customer-side.component';
+import { ViewactivejobComponent } from './components/customer/viewactivejob/viewactivejob.component';
 import { ViewsingleadvertiesmentComponent } from './components/admin/viewsingleadvertiesment/viewsingleadvertiesment.component';
+import { ViewcuspromotedjobComponent } from './components/customer/viewcuspromotedjob/viewcuspromotedjob.component';
+import { ViewappliedcleanersComponent } from './components/customer/viewappliedcleaners/viewappliedcleaners.component';
+import { RunningjobsComponent } from './components/cleaner/runningjobs/runningjobs.component';
+
+
 
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
@@ -102,7 +109,11 @@ const applicationRoutes:Routes = [
   {path:'getnonpaidjobs',component:GetnonpaidjobsComponent, canActivate: [AuthGuard]},
   {path:'getpaidjobs',component:GetpaidjobsComponent, canActivate: [AuthGuard]},
   {path:'viewcompletedjob',component:ViewcompletedjobComponent, canActivate: [AuthGuard]},
+  {path:'viewactivejob',component:ViewactivejobComponent, canActivate: [AuthGuard]},
   {path:'viewadvertisments/:advertiesmentid',component:ViewsingleadvertiesmentComponent, canActivate: [AuthGuard]},
+  {path:'viewcuspromotedjob',component:ViewcuspromotedjobComponent, canActivate: [AuthGuard]},
+  {path:'appliedcleaners/:postid',component:ViewappliedcleanersComponent, canActivate: [AuthGuard]},
+  {path:'runningjobs',component:RunningjobsComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -150,7 +161,14 @@ const applicationRoutes:Routes = [
     GetnonpaidjobsComponent,
     GetpaidjobsComponent,
     ViewcompletedjobComponent,
+
+    CustomerSideComponent,
+    ViewactivejobComponent,
     ViewsingleadvertiesmentComponent,
+    ViewcuspromotedjobComponent,
+    ViewappliedcleanersComponent,
+    RunningjobsComponent,
+
   ],
   imports: [
     BrowserModule,

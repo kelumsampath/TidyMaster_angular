@@ -2,5 +2,25 @@
     background: white;
     margin-left: 5%;
     margin-right: 5%;
-    height: 80%;
+    height: 90%;
+}
+#chg{
+    cursor: pointer;
+     cursor: hand;
+
+}
+a {
+    color: #0060B6;
+    text-decoration: none;
+}
+
+#chg:hover 
+{
+     color:#00A0C6; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
+#passwordpanel{
+    border-collapse: separate;
+ 
 }

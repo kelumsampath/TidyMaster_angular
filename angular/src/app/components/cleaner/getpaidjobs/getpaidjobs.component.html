@@ -10,6 +10,7 @@
               <div>
                   <h5 style="font-size:8mm"> {{ jobs.title }}</h5>
                   <h6 style="font-size:4mm"> {{ jobs.joblocation }}</h6>
+                  <button [routerLink]="['/cleanerhome',jobs.postid]" class="btn btn-info btn-lg">View job</button><br>
               </div>
               </ul>
             </div>
