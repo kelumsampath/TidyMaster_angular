@@ -15,5 +15,5 @@
         <h2 class="card-title">No of Cleaners : {{this.numberofcleaners}}</h2>
         <h2 class="card-title">Location : {{this.joblocation}}</h2>
       </div>
-      <button type="submit" class="btn btn-primary center-block">Apply</button>
+      <button type="submit" class="btn btn-primary center-block" *ngIf="authservice.cleaner">Apply</button>
   </div>
