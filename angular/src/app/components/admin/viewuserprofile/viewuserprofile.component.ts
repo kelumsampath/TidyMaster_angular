@@ -16,7 +16,9 @@ export class ViewuserprofileComponent implements OnInit {
     private authservice:AuthService,
     private ngFlashMessageService: NgFlashMessageService,
     private router:Router,
-  ) { }
+  ) {
+    authservice.advertiserLogin=true;
+   }
 
   ngOnInit() {
     this.username={
