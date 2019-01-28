@@ -2,6 +2,7 @@
 import {Component, Input, OnInit, AfterViewInit, ChangeDetectionStrategy} from '@angular/core';
 import * as Chartist from 'chartist';
 
+
 export interface LegendItem {
   title: string;
   imageClass: string;
@@ -17,7 +18,8 @@ export enum ChartType {
   selector: 'app-charts',
   templateUrl: './charts.component.html',
   styleUrls: ['./charts.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+ // changeDetection: ChangeDetectionStrategy.OnPush,
+  
 })
 
 export class ChartsComponent implements OnInit, AfterViewInit {
