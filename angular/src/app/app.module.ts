@@ -57,6 +57,7 @@ import { CustomerSideComponent } from './components/customer/customer-side/custo
 import { ViewactivejobComponent } from './components/customer/viewactivejob/viewactivejob.component';
 import { ViewsingleadvertiesmentComponent } from './components/admin/viewsingleadvertiesment/viewsingleadvertiesment.component';
 
+
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
   {path:'login',component:LoginComponent},
@@ -153,9 +154,11 @@ const applicationRoutes:Routes = [
     GetnonpaidjobsComponent,
     GetpaidjobsComponent,
     ViewcompletedjobComponent,
+
     CustomerSideComponent,
     ViewactivejobComponent,
     ViewsingleadvertiesmentComponent,
+
   ],
   imports: [
     BrowserModule,

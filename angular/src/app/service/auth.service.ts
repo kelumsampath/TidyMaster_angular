@@ -427,6 +427,18 @@ export class AuthService {
     headers.append('content-Type', 'application/json');
     return this.http.post(this.url + "/advertiser/isadvertiser", user, { headers: headers }).map(res => res.json());
   }
+
+  getDailyViews(id){
+    // alert(id.id);
+     var user={};
+     this.fetchtoken();
+     let headers = new Headers();
+     headers.append('Authorization',this.authtoken);
+     headers.append('content-Type','application/json');
+     headers.append('accessresource', '');
+     return this.http.post(this.url + "/advertiser/getDailyViews",id, { headers: headers }).map(res=>res.json());
+   }
+
   
 
   viewcomplain(complain){
@@ -474,6 +486,7 @@ export class AuthService {
     headers.append('content-Type', 'application/json');
     return this.http.post(this.url + "/customer/viewactivejob",user, { headers: headers }).map(res => res.json());
   }
+
 
 }
 

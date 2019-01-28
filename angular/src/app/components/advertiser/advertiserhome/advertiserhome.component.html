@@ -7,14 +7,13 @@
         <app-sidebar></app-sidebar>
     </nav>
     <article>
-        <app-charts [title]="'Past Activities'" [subtitle]= "'Past Months'" [chartType]="hoursChartType" [chartData]="hoursChartData"
-                    [chartOptions]="hoursChartOptions" [chartResponsive]="hoursChartResponsive" [legendItems]="hoursChartLegendItems"
-                    [withHr]="true" [footerIconClass]="'fa fa-history'" [footerText]="'Updated 3 minutes ago'">
-        </app-charts>
+        <div *ngIf="chart">
+            <canvas id="canvas">{{ chart }}</canvas>
+        </div>
     </article>
 </section>
 <footer>
     <app-footer>
-        
+
     </app-footer>
 </footer>
