@@ -12,8 +12,8 @@ export class AuthService {
   advertiserLogin:boolean=false;
   cleaner:boolean=false;
 
-  //url:String="http://localhost:3000";
-   url:String="http://tidymaster.projects.uom.lk:3000";
+  url:String="http://localhost:3000";
+   //url:String="http://tidymaster.projects.uom.lk:3000";
 
   constructor(
     private http: Http,
@@ -510,6 +510,12 @@ export class AuthService {
     headers.append('Authorization',this.authtoken);
     headers.append('content-Type', 'application/json');
     return this.http.post(this.url + "/cleaner/applyjob",postid, { headers: headers }).map(res => res.json());
+  }
+
+  fogetpass(user){
+    let headers = new Headers();
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/user/fogetpassword",user, { headers: headers }).map(res => res.json());
   }
 
 }
