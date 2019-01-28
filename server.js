@@ -17,7 +17,7 @@ http.createServer(app).listen(port,(err)=>{
 });
 
 
-app.use(express.static(path.join(__dirname+"/public")));
+app.use(express.static(path.join(__dirname+"./../html")));
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname + './../html/index.html'));
   });
