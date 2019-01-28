@@ -52,6 +52,7 @@ import { GetnonpaidjobsComponent } from './components/cleaner/getnonpaidjobs/get
 import { GetpaidjobsComponent } from './components/cleaner/getpaidjobs/getpaidjobs.component';
 import { ViewcompletedjobComponent } from './components/customer/viewcompletedjob/viewcompletedjob.component';
 
+
 const applicationRoutes:Routes = [
   {path:'home',component:HomeComponent},
   {path:'login',component:LoginComponent},
@@ -141,6 +142,7 @@ const applicationRoutes:Routes = [
     GetnonpaidjobsComponent,
     GetpaidjobsComponent,
     ViewcompletedjobComponent,
+   
   ],
   imports: [
     BrowserModule,

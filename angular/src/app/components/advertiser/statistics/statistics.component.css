@@ -30,3 +30,20 @@
     background-color: rgb(81, 188, 230);
     color: white;
   }
+
+#bar-chart{
+    background-color: darkgray;
+    width: 800px;
+    height: 350px;
+    font-family: Lato, Helvetica-Neue, monospace;
+}
+.ct-bar{
+  background-color: blueviolet;
+  stroke:  #be1e2d;
+  stroke-width: 30;
+}
+
+
+.ct-label {
+  color: white;
+}
