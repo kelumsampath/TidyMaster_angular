@@ -57,7 +57,6 @@ import { CustomerSideComponent } from './components/customer/customer-side/custo
 import { ViewactivejobComponent } from './components/customer/viewactivejob/viewactivejob.component';
 import { ViewsingleadvertiesmentComponent } from './components/admin/viewsingleadvertiesment/viewsingleadvertiesment.component';
 import { RunningjobComponent } from './components/cleaner/runningjob/runningjob.component';
-import { ViewcusjobComponent } from './components/customer/viewcusjob/viewcusjob.component';
 
 
 const applicationRoutes:Routes = [
@@ -110,7 +109,6 @@ const applicationRoutes:Routes = [
   {path:'viewactivejob',component:ViewactivejobComponent, canActivate: [AuthGuard]},
   {path:'viewadvertisments/:advertiesmentid',component:ViewsingleadvertiesmentComponent, canActivate: [AuthGuard]},
   {path:'runningjob',component:RunningjobComponent, canActivate: [AuthGuard]},
-  {path:'viewcusjob',component:ViewcusjobComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -163,7 +161,6 @@ const applicationRoutes:Routes = [
     ViewactivejobComponent,
     ViewsingleadvertiesmentComponent,
     RunningjobComponent,
-    ViewcusjobComponent,
 
   ],
   imports: [
