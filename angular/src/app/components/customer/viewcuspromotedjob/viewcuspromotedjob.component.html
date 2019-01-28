@@ -11,6 +11,7 @@
             <div>
                 <h5 style="font-size:8mm"> {{ jobs.title }}</h5>
                 <h6 style="font-size:4mm"> {{ jobs.joblocation }}</h6>
+                <button [routerLink]="['/appliedcleaners',jobs.postid]">View applied cleaners</button>
             </div>
             </ul>
           </div>
