@@ -3,14 +3,18 @@
       <app-cleaner-side></app-cleaner-side>
     </div>
     <div class="column2">
-        <div class="column2">
+        <div>
             <div>
                 <h1>All Applied Job Posts</h1>
+                <br><br>
                 <div class="ex3">
                 <ul *ngFor="let jobs of job">
-                  <div>
-                      <h5 style="font-size:8mm"> {{ jobs.title }}</h5>
-                      <h6 style="font-size:4mm"> {{ jobs.joblocation }}</h6>
+                  <div class="nn">
+                      <div class="mm">
+                        <h5 style="font-size:8mm"> {{ jobs.title }}</h5><hr>
+                        <h6 style="font-size:4mm"> {{ jobs.joblocation }}</h6>
+                        <button [routerLink]="['/cleanerhome',jobs.postid]" class="btn btn-info btn-lg">View job</button><br>
+                      </div>
                   </div>
                   </ul>
                 </div>
