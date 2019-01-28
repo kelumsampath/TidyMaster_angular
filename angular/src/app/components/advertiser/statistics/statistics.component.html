@@ -1,3 +1,30 @@
-<p>
-  statistics works!
-</p>
+<div>
+    <h2> Past Advertiestment History</h2>
+</div>
+
+
+
+<div class="card">
+    <table id="advertistments">
+        <tr>
+            <th>Title</th>
+            <th>Number of Viewd</th>
+            <th>Created Date</th>
+            <th>Expire Date</th>
+            <th>Vendor URL</th>
+        </tr>
+        <tr *ngFor="let row of ads" (click)="selectUsers($event, row)">
+            <td>{{row.adTitle}}</td>
+            <td>{{row.noOFViews}}</td>
+            <td>{{row.createdDateAndTime}}</td>
+            <td>{{row.expiredDateAndTime}}</td>
+            <td>{{row.vendorURL}}</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <div *ngIf="chart">
+        <canvas id="canvas">{{ chart }}</canvas>
+      </div>
+</div>

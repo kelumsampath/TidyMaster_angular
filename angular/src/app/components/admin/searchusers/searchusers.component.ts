@@ -75,8 +75,13 @@ export class SearchusersComponent implements OnInit {
   }
 
   remove(uid) {
+    var reason = prompt("Please enter reason:", "Remove");
+    if (reason == null || reason == "") {
+
+    } else {
     var user = {
-      uid: uid
+      uid: uid,
+      reason:reason
     }
     //alert(user.uid)
     this.authservice.removeuser(user).subscribe(res => {
@@ -88,6 +93,7 @@ export class SearchusersComponent implements OnInit {
         this.ngFlashMessageService.showFlashMessage({ messages: [res.msg], dismissible: true, timeout: 4000, type: 'danger' });
       }
     })
+  }
   }
   warn(uid) {
     var reason = prompt("Please enter reason:", "warn");

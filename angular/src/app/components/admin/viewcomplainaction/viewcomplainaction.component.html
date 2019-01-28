@@ -1,0 +1,22 @@
+
+  
+    <div class="container">
+      <div id="menuitem" *ngIf="iswarned===true">
+        <h1 style="margin-top:10%">Complain</h1><br>
+        <h2>Complainid:{{complain.complainid}}</h2><br>
+        <p>Description:{{complain.complain}}</p><br>
+        <p>Time:{{complain.dateandtime}}</p><br>
+        <p>PostID:{{complain.postid}}</p>
+        <button  class="btn btn-info" [routerLink]="['/jobview',complain.postid]">View Job</button><br><br>
+        <p>User ID: {{complain.uid}}</p>
+        <button  class="btn btn-info" [routerLink]="['/searchusers',complain.username]">View User</button><br>
+      </div><br>
+<hr>
+<h1>Action</h1>
+<p>Action ID: {{action.actionId}}</p>
+<p>Action: {{action.action}}</p>
+<p>Action taken by (User ID):{{action.uid}} </p>
+<button  class="btn btn-info" [routerLink]="['/searchusers',action.username]">View Admin</button><br><br><br>
+  </div>
+  
+ 
