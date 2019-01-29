@@ -595,6 +595,15 @@ export class AuthService {
  }
 
 
+ getalljobposts2() {
+  //this.fetchtoken();
+  let headers = new Headers();
+  //headers.append('Authorization',this.authtoken);
+  headers.append('content-Type', 'application/json');
+  return this.http.post(this.url + "/cleaner/getalljobs2", { headers: headers }).map(res => res.json());
+}
+
+
 }
    
    
