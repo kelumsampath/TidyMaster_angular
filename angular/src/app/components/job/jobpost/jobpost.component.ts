@@ -56,7 +56,7 @@ export class JobpostComponent implements OnInit {
       timeforstart:this.timeforstart,
       catogaryname:this.selectedValue
     }
-    console.log(job)
+   // console.log(job)
     this.authservice.postjob(job).subscribe(res=>{
       if(res.state){
         console.log(res.state)
