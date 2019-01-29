@@ -59,6 +59,7 @@ import { ViewsingleadvertiesmentComponent } from './components/admin/viewsinglea
 import { ViewcuspromotedjobComponent } from './components/customer/viewcuspromotedjob/viewcuspromotedjob.component';
 import { ViewappliedcleanersComponent } from './components/customer/viewappliedcleaners/viewappliedcleaners.component';
 import { RunningjobsComponent } from './components/cleaner/runningjobs/runningjobs.component';
+import { ViewcustomerprofileComponent } from './components/cleaner/viewcustomerprofile/viewcustomerprofile.component';
 
 
 
@@ -115,6 +116,7 @@ const applicationRoutes:Routes = [
   {path:'customerhome/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
   {path:'appliedcleaners/:postid',component:ViewappliedcleanersComponent, canActivate: [AuthGuard]},
   {path:'runningjobs',component:RunningjobsComponent, canActivate: [AuthGuard]},
+  {path:'view/:customerid',component:ViewcustomerprofileComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -169,6 +171,7 @@ const applicationRoutes:Routes = [
     ViewcuspromotedjobComponent,
     ViewappliedcleanersComponent,
     RunningjobsComponent,
+    ViewcustomerprofileComponent,
 
   ],
   imports: [
