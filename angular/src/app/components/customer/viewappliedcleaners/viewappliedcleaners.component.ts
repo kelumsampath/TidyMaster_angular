@@ -38,7 +38,8 @@ export class ViewappliedcleanersComponent implements OnInit {
     console.log(data)
     this.authservice.confirmcleaner(data).subscribe(res=>{
       if(res.state){
-        alert("applied")
+        alert("applied");
+        
       }
         else{
           this.ngFlashMessageService.showFlashMessage({messages: ["SERVER ERROR OCCUERED!"],dismissible: true,timeout: 4000,type: 'danger'});
