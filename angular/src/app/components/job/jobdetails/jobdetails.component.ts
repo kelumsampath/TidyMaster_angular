@@ -21,7 +21,7 @@ export class JobdetailsComponent implements OnInit {
   joblocation:String;
   splitted:any;
   date:String;
-  
+  Promotestatus:String;
   constructor(
               private activatedRoute: ActivatedRoute,
               private authservice:AuthService,
@@ -44,7 +44,10 @@ export class JobdetailsComponent implements OnInit {
           this.joblocation=res.job.joblocation;
           this.splitted = this.jobdate.split("T",2);
           this.date=this.splitted[0];
+          this.Promotestatus=res.job.paymentstatus;
+          console.log(res.job)
       }
+    
         else{
           this.ngFlashMessageService.showFlashMessage({messages: ["SERVER ERROR OCCUERED!"],dismissible: true,timeout: 4000,type: 'danger'});
         }
@@ -61,6 +64,22 @@ export class JobdetailsComponent implements OnInit {
         console.log("applied")
         this.ngFlashMessageService.showFlashMessage({messages: [res.msg],dismissible: true,timeout: 4000,type: 'success'});
         this.router.navigate(['/cleanerhome']);
+      }
+        else{
+          this.ngFlashMessageService.showFlashMessage({messages: ["SERVER ERROR OCCUERED!"],dismissible: true,timeout: 4000,type: 'danger'});
+        }
+  })
+  }
+
+  promote(){
+    var post={
+      postid:this.postid
+    }
+    this.authservice.promotejob(post).subscribe(res=>{
+      if(res.state){
+        console.log("promoted")
+        this.ngFlashMessageService.showFlashMessage({messages: [res.msg],dismissible: true,timeout: 4000,type: 'success'});
+        this.router.navigate(['/viewjobs',this.postid]);
       }
         else{
           this.ngFlashMessageService.showFlashMessage({messages: ["SERVER ERROR OCCUERED!"],dismissible: true,timeout: 4000,type: 'danger'});
