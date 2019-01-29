@@ -558,6 +558,13 @@ export class AuthService {
     return this.http.post(this.url + "/admin/promotejob",post, { headers: headers }).map(res => res.json());
   }
 
+  viewcustomerprofile(customerid) {
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization', this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/customer/customerprofile", customerid, { headers: headers }).map(res => res.json());
+  };
   countAdViews(adId){
     this.fetchtoken();
     let headers = new Headers();
