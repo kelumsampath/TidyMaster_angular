@@ -14,6 +14,10 @@
         <h2 class="card-title">Estimated Time : {{this.estimatedtime}} Hours</h2>
         <h2 class="card-title">No of Cleaners : {{this.numberofcleaners}}</h2>
         <h2 class="card-title">Location : {{this.joblocation}}</h2>
+        <h2 class="card-title">Is promoted Job : {{this.Promotestatus}}</h2>
       </div>
       <button type="submit" class="btn btn-primary center-block" *ngIf="authservice.cleaner" (click)="apply()">Apply</button>
+      <div *ngIf="authservice.adminorsuperadmin">
+      <button type="submit" class="btn btn-primary center-block" (click)="promote()" *ngIf="this.Promotestatus=='N'">Promote Job</button>
+      </div>
   </div>
