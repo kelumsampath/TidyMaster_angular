@@ -12,8 +12,10 @@ export class AuthService {
   advertiserLogin:boolean=false;
   cleaner:boolean=false;
 
+
   //url:String="http://localhost:3000";
    url:String="http://tidymaster.projects.uom.lk:3000";
+
 
 
   constructor(
@@ -330,7 +332,7 @@ export class AuthService {
   };
 
   getAllAdsByMonth(){
-   // alert("user.username");
+  // alert("user.username");
     var user={};
     this.fetchtoken();
     let headers = new Headers();
