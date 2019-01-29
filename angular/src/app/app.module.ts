@@ -4,6 +4,7 @@ import { RouterModule,Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { NgFlashMessagesModule } from 'ng-flash-messages';
+import {SlideshowModule} from 'ng-simple-slideshow';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -58,6 +59,7 @@ import { ViewactivejobComponent } from './components/customer/viewactivejob/view
 import { ViewsingleadvertiesmentComponent } from './components/admin/viewsingleadvertiesment/viewsingleadvertiesment.component';
 import { ViewcuspromotedjobComponent } from './components/customer/viewcuspromotedjob/viewcuspromotedjob.component';
 import { ViewappliedcleanersComponent } from './components/customer/viewappliedcleaners/viewappliedcleaners.component';
+import { SlideshowComponent } from './components/job/slideshow/slideshow.component';
 
 
 
@@ -166,6 +168,7 @@ const applicationRoutes:Routes = [
     ViewsingleadvertiesmentComponent,
     ViewcuspromotedjobComponent,
     ViewappliedcleanersComponent,
+    SlideshowComponent,
 
   ],
   imports: [
@@ -173,7 +176,8 @@ const applicationRoutes:Routes = [
     HttpModule,
     FormsModule,
     RouterModule.forRoot(applicationRoutes),
-    NgFlashMessagesModule.forRoot()
+    NgFlashMessagesModule.forRoot(),
+    SlideshowModule
   ],
   providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
