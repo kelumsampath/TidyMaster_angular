@@ -14,7 +14,7 @@ export class AuthService {
 
 
   //url:String="http://localhost:3000";
-   url:String="http://tidymaster.projects.uom.lk:3000";
+  url:String="http://tidymaster.projects.uom.lk:3000";
 
 
 
@@ -608,7 +608,13 @@ export class AuthService {
   headers.append('content-Type', 'application/json');
   return this.http.post(this.url + "/cleaner/getalljobs2", { headers: headers }).map(res => res.json());
 }
-
+getcleanerprof(user){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type', 'application/json');
+  return this.http.post(this.url + "/customer/cleanerprofile",user, { headers: headers }).map(res => res.json());
+}
 
 }
    
