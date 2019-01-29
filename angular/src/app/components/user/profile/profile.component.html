@@ -1,34 +1,33 @@
 <div *ngIf="user" class="container">
-    <div class="card" style="width:400px">
-        <img class="card-img-bottom" src={{user.photourl}} alt="Display Picture" style="margin:auto;;width:80%">
-        <button id="files" onclick="document.getElementById('file').click();return false;" class="btn btn-default btn-lg">Change picture</button>
-        <input type="file" (change)="profpic($event.target.files)"  value="choose picc" id="file" accept="image/*" hidden>
-        <br>
-        <!-- <div *ngIf="editimagemode===false"><button style="width:50%;" (click)="editimage()">Change Image</button></div>
-        <div *ngIf="editimagemode===true">
-          choose image here:
-          <input type="text"> <br>
-          <button>Save</button>
-          <button (click)="cncleditimage()">Cancel</button>
-        </div> -->
-        <div *ngIf="changepassword===false">
-          <button (click)="changepassnow()">Change password</button>
+  <div class="card" style="width:370px">
+      <img class="card-img-bottom" src={{user.photourl}} alt="Display Picture" style="margin:auto;;width:70%">
+      <button id="files" onclick="document.getElementById('file').click();return false;" class="btn btn-default">Change picture</button>
+      <input type="file" (change)="profpic($event.target.files)"  value="choose picc" id="file" accept="image/*" hidden>
+      <!-- <div *ngIf="editimagemode===false"><button style="width:50%;" (click)="editimage()">Change Image</button></div>
+      <div *ngIf="editimagemode===true">
+        choose image here:
+        <input type="text"> <br>
+        <button>Save</button>
+        <button (click)="cncleditimage()">Cancel</button>
+      </div> -->
+        <div class="card-header">
+          <h6 class="card-title">I'm {{user.rolename}},</h6>
+          <h6 class="card-title">{{user.firstName}} {{user.lastName}}.</h6>
+          <h6 class="card-title">My email is <i>{{user.email}}.</i></h6>
+          <h6 class="card-title">My NIC number is {{user.nic}}.</h6>
+          <h6 class="card-title">My contact number is {{user.telephone}}.</h6>
+          <h6 class="card-title">I live in {{user.address}}.</h6>
+          <h6 class="card-title">and, I created this account on {{user.createdDate}}.</h6>
         </div>
-        <div *ngIf="changepassword===true">
+        <div class="w3-center" *ngIf="changepassword===false">
+          <button (click)="changepassnow()" class="btn btn-default">Change assword</button>
+        </div>
+        <div class="w3-center" *ngIf="changepassword===true">
           <input type="text" placeholder="Old password" name="oldpass" id="oldpass" [(ngModel)]="oldpass"><br><br>
           <input type="text" placeholder="New password" name="newpass" id="newpass" [(ngModel)]="newpass"><br><br>
           <input type="text" placeholder="Confirm New Password" name="confpass" id="confpass" [(ngModel)]="confpass"><br><br>
           <button (click)="changenow()" class="btn btn-success">save</button>
           <button (click)="notchangepassnow()" class="btn btn-secondary">cancel</button>
         </div>
-        
-          <div class="card-header">
-            <h2 class="card-title">{{user.username}}</h2>
-            <h4 class="card-title"><i>{{user.email}}</i></h4>
-            <h2 class="card-title">{{user.nic}}</h2>
-            <h2 class="card-title">{{user.gender}}</h2>
-
-            <p class="card-text"><br>This person can be Owner,Admin,Customer,Cleaner or Advertiser.</p>
-          </div>
-      </div>
+    </div>
 </div>
