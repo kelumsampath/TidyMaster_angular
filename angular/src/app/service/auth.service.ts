@@ -557,11 +557,16 @@ export class AuthService {
     headers.append('content-Type', 'application/json');
     return this.http.post(this.url + "/admin/promotejob",post, { headers: headers }).map(res => res.json());
   }
-<<<<<<< HEAD
+
   getads(){
     var user = {
     }
-=======
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization',this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/user/displayadvertiesment",user, { headers: headers }).map(res => res.json());
+  }
 
   viewcustomerprofile(customerid) {
     this.fetchtoken();
@@ -571,15 +576,10 @@ export class AuthService {
     return this.http.post(this.url + "/customer/customerprofile", customerid, { headers: headers }).map(res => res.json());
   };
   countAdViews(adId){
->>>>>>> 65d1a376cd943b9558ed05b7d417208559a1ffb9
     this.fetchtoken();
     let headers = new Headers();
     headers.append('Authorization',this.authtoken);
     headers.append('content-Type', 'application/json');
-<<<<<<< HEAD
-    return this.http.post(this.url + "/user/displayadvertiesment",user, { headers: headers }).map(res => res.json());
-  }
-=======
     return this.http.post(this.url + "/advertiser/countViews",adId, { headers: headers }).map(res => res.json());
   }
 
@@ -594,7 +594,7 @@ export class AuthService {
     return this.http.post(this.url + "/customer/customerrunningjobs",user, { headers: headers }).map(res => res.json());
  }
 
->>>>>>> 65d1a376cd943b9558ed05b7d417208559a1ffb9
+
 }
    
    
