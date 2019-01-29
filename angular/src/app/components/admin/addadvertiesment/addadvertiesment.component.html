@@ -7,7 +7,7 @@
       <div class="form-group" style="width:50%;margin-left:25%;">
         <label for="exampleInputPassword1">Select Advertiser:</label>
         <select type="submit" [(ngModel)]="selectedValue">
-          <option *ngFor="let option of options" value="{{option.username}}">{{ option.username }}</option>
+          <option *ngFor="let option of options" value="{{option.username}}" style="color:black;">{{ option.username }}</option>
         </select>
         <br>
         {{ selectedValue }}
