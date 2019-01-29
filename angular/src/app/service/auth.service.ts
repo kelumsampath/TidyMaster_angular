@@ -15,6 +15,7 @@ export class AuthService {
   //url:String="http://localhost:3000";
    url:String="http://tidymaster.projects.uom.lk:3000";
 
+
   constructor(
     private http: Http,
   ) { }
@@ -487,6 +488,7 @@ export class AuthService {
     return this.http.post(this.url + "/customer/viewactivejob",user, { headers: headers }).map(res => res.json());
   }
 
+
   viewcuspromotedjob(){
     var user = {
     }
@@ -496,6 +498,39 @@ export class AuthService {
     headers.append('content-Type', 'application/json');
     return this.http.post(this.url + "/customer/viewcuspromotedjob",user, { headers: headers }).map(res => res.json());
   }
+    
+    editprofile(userdata){
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization',this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/user/editprofile",userdata, { headers: headers }).map(res => res.json());
+    }
+
+  viewappliedcleaners(post){
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization',this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/customer/getappliedcleaners",post, { headers: headers }).map(res => res.json());
+  }
+  applyjob(postid){
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization',this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/cleaner/applyjob",postid, { headers: headers }).map(res => res.json());
+  }
+  runningjobs(){
+    var user = {
+    }
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization',this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/cleaner/cleanerrunningjobs", user, { headers: headers }).map(res => res.json());
+  }
+
 
   getcatogory(){
     var user = {
@@ -505,6 +540,12 @@ export class AuthService {
     headers.append('Authorization',this.authtoken);
     headers.append('content-Type', 'application/json');
     return this.http.post(this.url + "/customer/viewcategory",user, { headers: headers }).map(res => res.json());  
+  }
+  
+  fogetpass(user){
+    let headers = new Headers();
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/user/fogetpassword",user, { headers: headers }).map(res => res.json());
   }
 
 }

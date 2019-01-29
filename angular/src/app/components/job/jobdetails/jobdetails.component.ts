@@ -49,11 +49,22 @@ export class JobdetailsComponent implements OnInit {
           this.ngFlashMessageService.showFlashMessage({messages: ["SERVER ERROR OCCUERED!"],dismissible: true,timeout: 4000,type: 'danger'});
         }
   })
+
+ 
   }
 
   ngOnInit() {
   }
-  getpost(){
-    
+  apply(){
+    this.authservice.applyjob(this.postid).subscribe(res=>{
+      if(res.state){
+        console.log("applied")
+        this.ngFlashMessageService.showFlashMessage({messages: [res.msg],dismissible: true,timeout: 4000,type: 'success'});
+        this.router.navigate(['/cleanerhome']);
+      }
+        else{
+          this.ngFlashMessageService.showFlashMessage({messages: ["SERVER ERROR OCCUERED!"],dismissible: true,timeout: 4000,type: 'danger'});
+        }
+  })
   }
 }
