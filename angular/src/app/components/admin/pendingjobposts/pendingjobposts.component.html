@@ -4,14 +4,15 @@
   </div>
   <div class="column2" style="background-color:#bbb;min-height: 800px;">
           <div class="container" >
-              <h2>Pending Job Posts</h2>
+              <h2 style="margin-top: 5%">Pending Job Posts</h2>
           <div id="menuitem">
               <ul *ngFor="let jobs of job">
                <li *ngIf="jobs.status=='pending'">
                       <div   class="add pending">
                       <div id="menu">
-                      
-                      <h1> {{ jobs.title }}</h1>
+                        <br><br>
+                        <h3> {{ jobs.title }}</h3><br>
+                        <h4> {{ jobs.joblocation }}</h4><br><hr>
                       <button [routerLink]="['/pendingjobpost',jobs.postid]" class="btn btn-info btn-lg">View job</button><br>
                   </div>
                   <div class="statusbtn">
