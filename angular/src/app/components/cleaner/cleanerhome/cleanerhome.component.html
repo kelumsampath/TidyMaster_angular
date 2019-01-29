@@ -5,11 +5,14 @@
   <div class="column2">
       <div>
           <div>
-              <h1 style="font-size:10mm">All Job Posts</h1>
-              <br><br>
+              <h1 style="font-size:10mm">Select Prefered Jobs</h1>
+              <br>
+              <select  style="color:rgb(79,191,219);padding: 5px;font-size: 5mm;border-radius: 20px;" type="submit" [(ngModel)]="selectedValue">
+                  <option *ngFor="let option of options" value="{{option}}">{{ option }}</option>
+              </select><br><br><br><hr>
               <div class="ex3">
               <ul *ngFor="let jobs of job">
-                <div class="nn">
+                <div class="nn" *ngIf="jobs.categoryname==selectedValue">
                     <div class="mm">
                       <h5 style="font-size:8mm"> {{ jobs.title }}</h5><br><hr>
                       <h6 style="font-size:4mm"><i class='fas fa-map-marked-alt' style='font-size:25px;color:rgb(54, 111, 202)'></i> JOB LOCATION : {{ jobs.joblocation }}</h6><br><hr>
