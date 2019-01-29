@@ -1,16 +1,9 @@
 <div class="janakee">
   <ul *ngFor="let cleaner of data">
-    <li>
-      <button (click)="confirm(cleaner.cleanerid)">
-        
-            <div class="col-dm-8 col-md-pull-8" style="width:50%;height:30%;padding-left: 5%;">
-              <h1 style="font-size:210%; margin-top: 20px;margin-left: -20%;"> {{ cleaner.uid }}</h1><br>
-              <h2 style="font-size:110%;margin-left:-150%;">{{ cleaner.username }}</h2>
-              <h2 style="font-size:110%;margin-left:-150%;">{{ cleaner.firstname }}</h2>
-              <h2 style="font-size:110%;margin-left:-150%;">{{ cleaner.lastname }}</h2>
-            </div>
-          
-      </button>
+      
+              <div class="w3-panel" style="width:80%">
+              <button class="w3-button w3-block w3-teal" (click)="confirm(cleaner.cleanerid)">{{ cleaner.firstName }} {{ cleaner.lastName }}</button>
+              </div> <br>
       
   </ul>
 </div>
