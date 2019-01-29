@@ -57,7 +57,6 @@ import { CustomerSideComponent } from './components/customer/customer-side/custo
 import { ViewactivejobComponent } from './components/customer/viewactivejob/viewactivejob.component';
 import { ViewsingleadvertiesmentComponent } from './components/admin/viewsingleadvertiesment/viewsingleadvertiesment.component';
 import { ViewcuspromotedjobComponent } from './components/customer/viewcuspromotedjob/viewcuspromotedjob.component';
-import { RunningjobComponent } from './components/cleaner/runningjob/runningjob.component';
 
 
 
@@ -111,7 +110,7 @@ const applicationRoutes:Routes = [
   {path:'viewactivejob',component:ViewactivejobComponent, canActivate: [AuthGuard]},
   {path:'viewadvertisments/:advertiesmentid',component:ViewsingleadvertiesmentComponent, canActivate: [AuthGuard]},
   {path:'viewcuspromotedjob',component:ViewcuspromotedjobComponent, canActivate: [AuthGuard]},
-  {path:'runningjob',component:RunningjobComponent, canActivate: [AuthGuard]},
+  {path:'customerhome/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
 
 ];
 
@@ -165,7 +164,7 @@ const applicationRoutes:Routes = [
     ViewactivejobComponent,
     ViewsingleadvertiesmentComponent,
     ViewcuspromotedjobComponent,
-    RunningjobComponent,
+  
 
   ],
   imports: [
@@ -176,6 +175,7 @@ const applicationRoutes:Routes = [
     NgFlashMessagesModule.forRoot()
   ],
   providers: [AuthService,AuthGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }
