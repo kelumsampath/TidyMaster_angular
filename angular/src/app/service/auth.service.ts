@@ -531,6 +531,17 @@ export class AuthService {
     return this.http.post(this.url + "/cleaner/cleanerrunningjobs", user, { headers: headers }).map(res => res.json());
   }
 
+
+  getcatogory(){
+    var user = {
+    }
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization',this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/customer/viewcategory",user, { headers: headers }).map(res => res.json());  
+  }
+  
   fogetpass(user){
     let headers = new Headers();
     headers.append('content-Type', 'application/json');

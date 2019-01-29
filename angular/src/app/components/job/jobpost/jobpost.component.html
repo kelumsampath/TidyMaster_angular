@@ -20,10 +20,7 @@
   
             <div class="form-group">
                 <label for="exampleInputPassword1">Estimated time :</label><br>
-                <input type="radio" class="" id="estimatedtime" name="estimatedtime" [(ngModel)]="estimatedtime" value="2" required>2 Hour<br>
-                <input type="radio" class="" id="estimatedtime" name="estimatedtime" [(ngModel)]="estimatedtime" value="5" required>5 Hour<br>
-                <input type="radio" class="" id="estimatedtime" name="estimatedtime" [(ngModel)]="estimatedtime" value="8" required>8 Hour<br>
-                <input type="radio" class="" id="estimatedtime" name="estimatedtime" [(ngModel)]="estimatedtime" value="other" required>Other<br>
+                <input type="Number" class="form-control" id="estimatedtime" placeholder="Estimated time" name="estimatedtime" [(ngModel)]="estimatedtime" required>
               </div>
 
               <div class="form-group">
@@ -32,6 +29,12 @@
                   <input type="radio" class="" id="levelofjob" name="levelofjob" [(ngModel)]="levelofjob" value="medium" required>Medium<br>
                   <input type="radio" class="" id="levelofjob" name="levelofjob" [(ngModel)]="levelofjob" value="hard" required>Hard<br>
                 </div>
+
+                
+                <label for="exampleInputPassword1">Select Job Category:</label><br>
+                 <select type="submit" [(ngModel)]="selectedValue">
+                 <option *ngFor="let option of options" value="{{option.categoryname}}">{{ option.categoryname }}</option>
+                 </select>
 
                 <div class="form-group">
                     <label for="exampleInputPassword1">Number of cleaners :</label>
