@@ -1,14 +1,9 @@
 <div class="janakee">
   <ul *ngFor="let cleaner of data">
-    
-      
       
               <div class="w3-panel" style="width:80%">
-              <button class="w3-button w3-block w3-teal">{{ cleaner.firstName }} {{ cleaner.lastName }}</button>
+              <button class="w3-button w3-block w3-teal" (click)="confirm(cleaner.cleanerid)">{{ cleaner.firstName }} {{ cleaner.lastName }}</button>
               </div> <br>
-          
-          
-      
       
   </ul>
 </div>

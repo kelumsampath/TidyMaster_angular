@@ -10,6 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ViewappliedcleanersComponent implements OnInit {
   data:any;
+  post:any;
   constructor(
     private authservice: AuthService,
     private ngFlashMessageService: NgFlashMessageService,
@@ -18,15 +19,29 @@ export class ViewappliedcleanersComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    var post={
+     this.post={
       postid:this.activatedRoute.snapshot.paramMap.get('postid')
      // postid:"-0-Z8CPBN"
     }
-    this.authservice.viewappliedcleaners(post).subscribe(res=>{
+    this.authservice.viewappliedcleaners(this.post).subscribe(res=>{
       if(res.state===true){
         this.data=res.cleaners;
         console.log(this.data)
       }
+  })
+  }
+  confirm(cleanerid){
+    var data={
+      cleanerid:cleanerid,
+      postid:this.post.postid
+    }
+    this.authservice.confirmcleaner(data).subscribe(res=>{
+      if(res.state){
+        ;
+      }
+        else{
+          this.ngFlashMessageService.showFlashMessage({messages: ["SERVER ERROR OCCUERED!"],dismissible: true,timeout: 4000,type: 'danger'});
+        }
   })
   }
 
