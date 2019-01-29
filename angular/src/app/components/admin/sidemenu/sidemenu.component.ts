@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class SidemenuComponent implements OnInit {
   profurl:String;
   username:String;
+  userrole:String;
+  address:String;
   constructor(
     private authservice:AuthService,
     private ngFlashMessageService: NgFlashMessageService,
@@ -20,9 +22,11 @@ export class SidemenuComponent implements OnInit {
   ngOnInit() {
     this.authservice.loadprofpic().subscribe(res=>{
       if(res.state){
-        console.log(res.data.url);
+        console.log(res.data);
         this.profurl=res.data.url;
         this.username=res.data.username;
+        this.userrole=res.data.role;
+        this.address=res.data.address;
         }else{
         console.log("error image url load")
         }

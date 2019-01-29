@@ -12,8 +12,10 @@ export class AuthService {
   advertiserLogin:boolean=false;
   cleaner:boolean=false;
 
+
   //url:String="http://localhost:3000";
    url:String="http://tidymaster.projects.uom.lk:3000";
+
 
 
   constructor(
@@ -330,7 +332,7 @@ export class AuthService {
   };
 
   getAllAdsByMonth(){
-   // alert("user.username");
+  // alert("user.username");
     var user={};
     this.fetchtoken();
     let headers = new Headers();
@@ -563,7 +565,29 @@ export class AuthService {
     headers.append('content-Type', 'application/json');
     return this.http.post(this.url + "/customer/customerprofile", customerid, { headers: headers }).map(res => res.json());
   };
+  countAdViews(adId){
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization',this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/advertiser/countViews",adId, { headers: headers }).map(res => res.json());
+  }
+
+
+ customerrunningjobs(){
+    var user = {
+    }
+     this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization',this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/customer/customerrunningjobs",user, { headers: headers }).map(res => res.json());
+ }
+
 }
+   
+   
+   
 
 
 
