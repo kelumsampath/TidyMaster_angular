@@ -2,7 +2,22 @@
   <ul *ngFor="let cleaner of data">
       
               <div class="w3-panel" style="width:80%">
-              <button class="w3-button w3-block w3-teal" (click)="confirm(cleaner.cleanerid)">{{ cleaner.firstName }} {{ cleaner.lastName }}</button>
+              <button class="w3-button w3-block w3-teal" (click)="confirm(cleaner.cleanerid)">
+                <div>
+                    <div class="w3-card w3-round w3-white" style="width:50%;margin: auto">
+                        <div class="w3-container">
+                          <h1 class="w3-center">{{cleaner.username}}</h1><hr>
+                          <p class="w3-center"><img src="{{cleaner.photourl}}" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+                          <hr>
+                          <h5><i class='fas fa-user-tie' style='font-size:15px;color:rgb(199, 52, 52)'></i> FULL NAME : {{cleaner.firstName}} {{cleaner.lastName}}</h5>
+                          <h5><i class='fas fa-map-marked-alt' style='font-size:15px;color:rgb(54, 111, 202)'></i> ADDRESS : {{cleaner.address}}</h5>
+                          <h5><i class='fas fa-star' style='font-size:15px;color:orange;'></i> E-MAIL ADDRESS : {{cleaner.email}}</h5>
+                          <h5><i class='fas fa-mobile-alt' style='font-size:15px;color:rgb(73, 177, 47)'></i> CONTACT NUMBER : {{cleaner.telephone}}</h5>
+                        </div>
+                      </div>
+                  
+                </div>
+              </button>
               </div> <br>
       
   </ul>
