@@ -3,16 +3,16 @@
     <app-sidemenu></app-sidemenu>
   </div>
   <div class="column2" style="background-color:#bbb;min-height: 800px;">
-          <div class="outerbox" style="background-color:rgba(255, 255, 255, 0.8)">
-              <h2>Accepted JOB POSTS</h2>
+    <div class="container" >
+        <h2 style="margin-top: 5%">Accepted Job Posts</h2>
           <div id="menuitem">
               <ul *ngFor="let jobs of job">
               <li *ngIf="jobs.status=='accepted'">
                   <div   class="add accepted">
                   <div id="menu">
-                  
-                  <h1> {{ jobs.title }}</h1>
-                  <h1> {{ jobs.joblocation }}</h1>
+                  <br><br>
+                  <h3> {{ jobs.title }}</h3><br>
+                  <h4> {{ jobs.joblocation }}</h4><br><hr>
                   <button [routerLink]="['/acceptedjobpost',jobs.postid]" class="btn btn-info btn-lg">View job</button><br>
                   </div>
                   <div class="statusbtn">
