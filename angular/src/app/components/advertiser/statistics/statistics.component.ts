@@ -15,11 +15,7 @@ export class StatisticsComponent implements OnInit {
   ads: any;
   user: any;
   list: any[];
-  /*public dailyChartType: ChartType;
-  public dailyChartData: any;
-  public dailyChartOptions: any;
-  public dailyChartResponsive: any[];
-  public dailyChartLegendItems: LegendItem[];*/
+
   active: any;
   adproviderid: any;
   profurl: String;
@@ -33,7 +29,7 @@ export class StatisticsComponent implements OnInit {
     private router: Router,
 
   ) {
-    //  this.dailyChartType = ChartType.Bar;
+
     this.adId = "ad7";
 
   }

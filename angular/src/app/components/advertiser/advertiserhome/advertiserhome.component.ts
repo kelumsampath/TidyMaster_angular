@@ -11,13 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 
-export class AdvertiserhomeComponent implements OnInit {
-  
-  /*public hoursChartType: ChartType;
-  public hoursChartData: any;
-  public hoursChartOptions: any;
-  public hoursChartResponsive: any[];
-  public hoursChartLegendItems: LegendItem[];*/
+export class AdvertiserhomeComponent implements OnInit { 
   active: any;
   adproviderid: any;
   profurl: String;
