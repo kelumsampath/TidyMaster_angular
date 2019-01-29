@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    margin-top: -10px;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    
+    height: 100%; /* Should be removed. Only for demonstration */
+}
+.column2 {
+    float: left;
+    width: 75%;
+    padding: 50px;
+    height: 100%; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.nn {
+    max-width: 98%;
+    padding: 100px;
+    position: relative;
+    background: linear-gradient(to right, rgba(79, 191, 219, 0.5), rgba(0, 0, 0, 0.5));
+    padding: 20px;
+  }
+  
+ .mm {
+    background: rgb(255, 255, 255);
+    color: black;
+    padding: 50px;
+  }
+.janakee {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+  }
