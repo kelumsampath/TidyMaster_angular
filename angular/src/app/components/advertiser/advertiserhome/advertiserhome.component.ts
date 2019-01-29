@@ -41,7 +41,7 @@ export class AdvertiserhomeComponent implements OnInit {
        if (res.state) {
          this.active = res.ad;
   
-         console.log("this.active")
+        
          var i;
          for (i = 0; i < this.active.length; i++) {
        
