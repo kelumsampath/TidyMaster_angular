@@ -24,11 +24,11 @@
     clear: both;
 }
 .nn {
-    max-width: 95%;
+    max-width: 98%;
     padding: 100px;
     position: relative;
-    background: linear-gradient(to right, rgba(79, 191, 219, 0.527), rgba(0, 0, 0, 0.527));
-    padding: 15px;
+    background: linear-gradient(to right, rgba(79, 191, 219, 0.5), rgba(0, 0, 0, 0.5));
+    padding: 20px;
   }
   
  .mm {
