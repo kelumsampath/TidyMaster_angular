@@ -1,13 +1,14 @@
 <div *ngIf="user" class="container">
     <div class="card" style="width:400px">
-        <img class="card-img-bottom" src="/assets/DP.png" alt="Display Picture" style="margin:auto;;width:80%">
+        <img class="card-img-bottom" src={{user.photourl}} alt="Display Picture" style="margin:auto;;width:80%">
           <div class="card-header">
             <h2 class="card-title">{{user.username}}</h2>
+            <h2 class="card-title">{{user.firstName}} {{user.lastName}}</h2>
             <h4 class="card-title"><i>{{user.email}}</i></h4>
             <h2 class="card-title">{{user.nic}}</h2>
             <h2 class="card-title">{{user.gender}}</h2>
-
-            <p class="card-text"><br>This person can be Owner,Admin,Customer,Cleaner or Advertiser.</p>
+            <h2 class="card-title">{{user.telephone}}</h2>
+            <h2 class="card-title">{{user.address}}</h2>
           </div>
       </div>
 </div>
