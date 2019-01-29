@@ -593,7 +593,13 @@ export class AuthService {
     headers.append('content-Type', 'application/json');
     return this.http.post(this.url + "/customer/customerrunningjobs",user, { headers: headers }).map(res => res.json());
  }
-
+ confirmcleaner(data){
+  this.fetchtoken();
+  let headers = new Headers();
+  headers.append('Authorization',this.authtoken);
+  headers.append('content-Type', 'application/json');
+  return this.http.post(this.url + "/customer/selectcleanerforjob",data, { headers: headers }).map(res => res.json());
+ }
 
  getalljobposts2() {
   //this.fetchtoken();
