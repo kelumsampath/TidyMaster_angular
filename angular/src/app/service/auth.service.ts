@@ -558,6 +558,16 @@ export class AuthService {
     return this.http.post(this.url + "/admin/promotejob",post, { headers: headers }).map(res => res.json());
   }
 
+  getads(){
+    var user = {
+    }
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization',this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/user/displayadvertiesment",user, { headers: headers }).map(res => res.json());
+  }
+
   viewcustomerprofile(customerid) {
     this.fetchtoken();
     let headers = new Headers();
@@ -584,6 +594,7 @@ export class AuthService {
     return this.http.post(this.url + "/customer/customerrunningjobs",user, { headers: headers }).map(res => res.json());
  }
 
+
  getalljobposts2() {
   //this.fetchtoken();
   let headers = new Headers();
@@ -591,6 +602,7 @@ export class AuthService {
   headers.append('content-Type', 'application/json');
   return this.http.post(this.url + "/cleaner/getalljobs2", { headers: headers }).map(res => res.json());
 }
+
 
 }
    
