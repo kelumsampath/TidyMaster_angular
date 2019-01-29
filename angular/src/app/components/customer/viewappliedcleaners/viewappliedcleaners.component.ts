@@ -30,14 +30,32 @@ export class ViewappliedcleanersComponent implements OnInit {
       }
   })
   }
-  confirm(cleanerid){
+  confirmapply(cleanerid){
     var data={
       cleanerid:cleanerid,
       postid:this.post.postid
     }
+    console.log(data)
     this.authservice.confirmcleaner(data).subscribe(res=>{
       if(res.state){
-        ;
+        alert("applied")
+      }
+        else{
+          this.ngFlashMessageService.showFlashMessage({messages: ["SERVER ERROR OCCUERED!"],dismissible: true,timeout: 4000,type: 'danger'});
+        }
+  })
+  }
+
+  confirm(uname){
+    var user={
+      username:uname
+    }
+    console.log(uname)
+    this.authservice.getcleanerprof(user).subscribe(res=>{
+      if(res.state){
+       // alert("applied1")
+        console.log(res.userdata)
+        this.confirmapply(res.userdata.cleanerid)
       }
         else{
           this.ngFlashMessageService.showFlashMessage({messages: ["SERVER ERROR OCCUERED!"],dismissible: true,timeout: 4000,type: 'danger'});
