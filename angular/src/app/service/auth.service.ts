@@ -518,6 +518,13 @@ export class AuthService {
     return this.http.post(this.url + "/user/fogetpassword",user, { headers: headers }).map(res => res.json());
   }
 
+  promotejob(post){
+    this.fetchtoken();
+    let headers = new Headers();
+    headers.append('Authorization',this.authtoken);
+    headers.append('content-Type', 'application/json');
+    return this.http.post(this.url + "/admin/promotejob",post, { headers: headers }).map(res => res.json());
+  }
 }
 
 
