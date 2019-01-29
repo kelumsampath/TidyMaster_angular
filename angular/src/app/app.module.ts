@@ -112,6 +112,7 @@ const applicationRoutes:Routes = [
   {path:'viewactivejob',component:ViewactivejobComponent, canActivate: [AuthGuard]},
   {path:'viewadvertisments/:advertiesmentid',component:ViewsingleadvertiesmentComponent, canActivate: [AuthGuard]},
   {path:'viewcuspromotedjob',component:ViewcuspromotedjobComponent, canActivate: [AuthGuard]},
+  {path:'customerhome/:postid',component:JobdetailsComponent, canActivate: [AuthGuard]},
   {path:'appliedcleaners/:postid',component:ViewappliedcleanersComponent, canActivate: [AuthGuard]},
   {path:'runningjobs',component:RunningjobsComponent, canActivate: [AuthGuard]},
 ];
@@ -178,6 +179,7 @@ const applicationRoutes:Routes = [
     NgFlashMessagesModule.forRoot()
   ],
   providers: [AuthService,AuthGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }
