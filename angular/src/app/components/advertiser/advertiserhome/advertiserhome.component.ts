@@ -35,12 +35,12 @@ export class AdvertiserhomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    console.log("Ds");
     this.authservice.getAllAdsByMonth().subscribe(res => {
      
        if (res.state) {
          this.active = res.ad;
-  
+        
         
          var i;
          for (i = 0; i < this.active.length; i++) {
