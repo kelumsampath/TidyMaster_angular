@@ -11,11 +11,14 @@ import { Router } from '@angular/router';
 export class CleanerhomeComponent implements OnInit {
   user:any;
   job:any;
+  
+  selectedValue;
+  options = ["Fencing","Bathroom Cleaning","After Party / Events Cleaning","Carpet Cleaning","Electrical Service","Gardening","High pressure water","Kitchen Cleaning","Post Construction Cleans","Roof Cleaning","Window Cleaning"]
   constructor(
     private authservice:AuthService,
     private ngFlashMessageService: NgFlashMessageService,
     private router:Router,
-  ) { this.getalljobs(); }
+  ) { this.getalljobs2(); }
 
   ngOnInit() {
     this.authservice.iscleaner().subscribe(res=>{
@@ -29,8 +32,8 @@ export class CleanerhomeComponent implements OnInit {
         this.user = res.userdata;
       })
   }
-  getalljobs(){
-    this.authservice.getalljobposts().subscribe(res=>{
+  getalljobs2(){
+    this.authservice.getalljobposts2().subscribe(res=>{
       if(res.state){
         this.job = res.jobs;
       }
