@@ -1,14 +1,16 @@
-<ul *ngFor="let cleaner of data">
-  <li>
-    <button [routerLink]="[]">
-      
-          <div class="col-dm-8 col-md-pull-8" style="width:50%;height:10%;padding-left: 5%;">
-            <h1 style="font-size:210%; margin-top: 20px;margin-left: -20%;"> {{ cleaner.uid }}</h1><br>
-            <h2 style="font-size:110%;margin-left:-150%;">{{ cleaner.username }}</h2>
-            <h2 style="font-size:110%;margin-left:-150%;">{{ cleaner.firstname }}</h2>
-            <h2 style="font-size:110%;margin-left:-150%;">{{ cleaner.lastname }}</h2>
-          </div>
+<div class="janakee">
+  <ul *ngFor="let cleaner of data">
+    <li>
+      <button [routerLink]="[]">
         
-    </button>
-    
-</ul>
+            <div class="col-dm-8 col-md-pull-8" style="width:50%;height:30%;padding-left: 5%;">
+              <h1 style="font-size:210%; margin-top: 20px;margin-left: -20%;"> {{ cleaner.uid }}</h1><br>
+              <h2 style="font-size:110%;margin-left:-150%;">{{ cleaner.username }}</h2>
+              <h2 style="font-size:110%;margin-left:-150%;">{{ cleaner.firstname }}</h2>
+              <h2 style="font-size:110%;margin-left:-150%;">{{ cleaner.lastname }}</h2>
+            </div>
+          
+      </button>
+      
+  </ul>
+</div>

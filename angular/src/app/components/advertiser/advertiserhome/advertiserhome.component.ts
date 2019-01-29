@@ -11,13 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 
-export class AdvertiserhomeComponent implements OnInit {
-  
-  /*public hoursChartType: ChartType;
-  public hoursChartData: any;
-  public hoursChartOptions: any;
-  public hoursChartResponsive: any[];
-  public hoursChartLegendItems: LegendItem[];*/
+export class AdvertiserhomeComponent implements OnInit { 
   active: any;
   adproviderid: any;
   profurl: String;
@@ -35,13 +29,13 @@ export class AdvertiserhomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    console.log("Ds");
     this.authservice.getAllAdsByMonth().subscribe(res => {
      
        if (res.state) {
          this.active = res.ad;
-  
-         console.log("this.active")
+        
+        
          var i;
          for (i = 0; i < this.active.length; i++) {
        

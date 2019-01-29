@@ -1,11 +1,12 @@
+
 <div class="row">
   <div class="column">
-    <app-cleaner-side></app-cleaner-side>
+    <app-customer-side></app-customer-side>
   </div>
   <div class="column2">
       <div>
           <div>
-              <h1 style="font-size:10mm">All Job Posts</h1>
+              <h1 style="font-size:10mm">All Upcoming Jobs</h1>
               <br><br>
               <div class="ex3">
               <ul *ngFor="let jobs of job">
@@ -15,8 +16,8 @@
                       <h6 style="font-size:4mm"><i class='fas fa-map-marked-alt' style='font-size:25px;color:rgb(54, 111, 202)'></i> JOB LOCATION : {{ jobs.joblocation }}</h6><br><hr>
                       <h6 style="font-size:4mm"><i class='fas fa-comments-dollar' style='font-size:25px;color:rgb(6, 226, 72)'></i> PRICE PER HOUR : {{ jobs.priceperhour }} Rs</h6><br><hr>
                       <h6 style="font-size:4mm"><i class='fas fa-business-time' style='font-size:25px;color:rgb(209, 65, 65)'></i> DATE : {{ jobs.jobdate }}</h6><br><hr>
-                      <button [routerLink]="['/cleanerhome',jobs.postid]" class="btn btn-info btn-lg">View job</button>
-                      <button [routerLink]="['/view',jobs.customerid]" class="btn btn-info btn-lg">View Customer</button><br>
+                      <button [routerLink]="['/customerhome',jobs.postid]" class="btn btn-info btn-lg">View job</button>
+                      <button [routerLink]="['/appliedcleaners',jobs.postid]" class="btn btn-info btn-lg">View applied cleaners</button><br>
                     </div>
                 </div>
                 </ul>
