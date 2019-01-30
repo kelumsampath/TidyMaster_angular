@@ -6,7 +6,7 @@
     <div class="container">
       <div id="menuitem" >
         <ul *ngFor="let adslist of advertisments">
-          <li>
+         
             <button [routerLink]="['/viewadvertisments',adslist.adId]" class="add">
               <div id="container" style="height:15%">
                 <div class="row" style="height:15%">
@@ -22,11 +22,12 @@
                   </div>
                   <div style="margin-left:60%">
                   
-                  <button type="submit" class="btn btn-danger btn-md" (click)="deletead(adslist.adId,adslist.imageId)">Delete</button>
+                  
                   </div>
                 </div>
               </div>
             </button>
+            <button type="submit" class="btn btn-danger btn-md" (click)="deletead(adslist.adId,adslist.imageId)" style="margin-top:20%">Delete</button>
         </ul>
       </div>
 
